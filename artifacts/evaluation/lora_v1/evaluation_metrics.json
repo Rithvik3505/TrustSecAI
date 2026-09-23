@@ -1,0 +1,217 @@
+{
+  "test_file": "/home/student-3/rithvik/TrustSecAI/artifacts/training/datasets/test_sft.jsonl",
+  "base": null,
+  "lora": {
+    "file": "artifacts/evaluation/lora_v1/lora_generations_compact.jsonl",
+    "model_mode": "lora",
+    "total": 76,
+    "non_empty_count": 76,
+    "non_empty_rate": 1.0,
+    "length_chars": {
+      "min": 1428,
+      "max": 2646,
+      "mean": 1699.67,
+      "median": 1633.5
+    },
+    "generated_tokens": {
+      "min": 375,
+      "max": 889,
+      "mean": 468.18,
+      "median": 459.0
+    },
+    "generated_token_cap_value": 1200,
+    "generated_token_cap_hit_count": 0,
+    "generated_token_cap_hit_rate": 0.0,
+    "metadata_preservation": {
+      "example_id": {
+        "count": 76,
+        "coverage": 1.0
+      },
+      "ids_label": {
+        "count": 76,
+        "coverage": 1.0
+      },
+      "task_type": {
+        "count": 76,
+        "coverage": 1.0
+      },
+      "base_context_id": {
+        "count": 76,
+        "coverage": 1.0
+      },
+      "sample_id": {
+        "count": 76,
+        "coverage": 1.0
+      }
+    },
+    "error_or_traceback_count": 0,
+    "error_or_traceback_rate": 0.0,
+    "json_expected_count": 76,
+    "json_parse_ok_count": 63,
+    "json_parse_rate": 0.8289,
+    "unsupported_id_counts": {
+      "cwe": 4
+    },
+    "unsafe_attribution_phrase_count": 35,
+    "graph_proof_wording_count": 0,
+    "issues_sample": [
+      {
+        "example_id": "trustsecai-gold-v1-00381",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00704",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00176",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00177",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00181",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00428",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00429",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00430",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00431",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00433",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00442",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00443",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00444",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00445",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00446",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00447",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00448",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00472",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00474",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00127",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00132",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00152",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00311",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00312",
+        "issue": "unsupported_cwe",
+        "values": [
+          "CWE-330",
+          "CWE-521"
+        ]
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00312",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00314",
+        "issue": "unsupported_cwe",
+        "values": [
+          "CWE-330",
+          "CWE-521"
+        ]
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00314",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00372",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00373",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00375",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00376",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00378",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00450",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00451",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00452",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00454",
+        "issue": "unsafe_attribution_phrase"
+      },
+      {
+        "example_id": "trustsecai-gold-v1-00224",
+        "issue": "unsafe_attribution_phrase"
+      }
+    ]
+  },
+  "comparison": {}
+}

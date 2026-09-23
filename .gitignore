@@ -1,0 +1,74 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local logs and transient outputs
+*.log
+artifacts/matplotlib_cache/
+
+# Downloaded third-party datasets (retained locally)
+Datasets/
+
+# Downloaded application runtimes and installers (retained locally)
+tools/downloads/
+tools/runtime/
+
+# Large processed CICIDS data; retain compact demo samples and summaries
+artifacts/processed/*.parquet
+
+# Large generated synthetic corpora; retain their small quality reports
+artifacts/corpus/*.jsonl
+artifacts/corpus/*_pretty.json
+
+# Superseded and duplicate gold-candidate exports
+artifacts/gold_candidates/trustsecai_gold_candidate_v0.jsonl
+artifacts/gold_candidates/trustsecai_gold_candidate_v0_pretty.json
+artifacts/gold_candidates/train.jsonl
+artifacts/gold_candidates/validation.jsonl
+artifacts/gold_candidates/test.jsonl
+artifacts/gold_candidates/review_samples/
+artifacts/gold_candidates/v1/trustsecai_gold_candidate_v1.jsonl
+artifacts/gold_candidates/v1/trustsecai_gold_candidate_v1_pretty.json
+artifacts/gold_candidates/v1/train.jsonl
+artifacts/gold_candidates/v1/validation.jsonl
+artifacts/gold_candidates/v1/test.jsonl
+artifacts/gold_candidates/v1/review_samples/
+artifacts/gold_candidates/v1/review_workbook*.csv
+artifacts/gold_candidates/v1/review_workbook*.xlsx
+artifacts/gold_candidates/v1/reviewed/*candidate_plus_reviewed*.jsonl
+artifacts/gold_candidates/v1/reviewed/*candidate_plus_reviewed*_pretty.json
+artifacts/gold_candidates/v1/reviewed/*reviewed_pretty.json
+
+# Derived SFT text copies; source reviewed splits and statistics remain tracked
+artifacts/training/datasets/*.jsonl
+
+# Keep the final compact evaluation output; exclude superseded/smoke generations
+artifacts/evaluation/lora_v1/lora_generations.jsonl
+artifacts/evaluation/lora_v1/*smoke*.jsonl
+
+# Large trained model outputs; keep the small XGBoost model and metadata
+models/lora/
+models/random_forest/*.joblib
+
+# Local backup archive (must remain on disk)
+trustsecai_lora_v1_backup.tar.gz
+
+# OS/editor metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

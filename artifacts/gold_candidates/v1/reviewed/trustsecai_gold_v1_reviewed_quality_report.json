@@ -1,0 +1,55 @@
+{
+  "corpus": "strict_reviewed",
+  "total_examples": 492,
+  "approved_count": 492,
+  "revised_count": 0,
+  "rejected_count": 0,
+  "unreviewed_count": 0,
+  "duplicate_example_ids": [],
+  "duplicate_target_outputs": 0,
+  "flagged": [],
+  "split_leakage": {
+    "train_validation": [],
+    "train_test": [],
+    "validation_test": []
+  },
+  "split_counts": {
+    "train": 338,
+    "validation": 78,
+    "test": 76
+  },
+  "ids_label_distribution": {
+    "DDoS": 77,
+    "PortScan": 79,
+    "Bot": 122,
+    "Web Attack - Sql Injection": 119,
+    "FTP-Patator": 95
+  },
+  "task_distribution": {
+    "vulnerability_context": 66,
+    "threat_hunting_followup": 58,
+    "soc_incident_assessment": 81,
+    "attack_mapping": 58,
+    "executive_summary": 53,
+    "multi_turn_analyst_interaction": 67,
+    "mitigation_detection": 55,
+    "uncertainty_evidence_gap": 54
+  },
+  "confidence_band_distribution": {
+    "high": 447,
+    "medium": 33,
+    "low": 12
+  },
+  "cve_distribution": {
+    "cve_absent": 318,
+    "cve_present": 174
+  },
+  "shap_coverage": {
+    "True": 492
+  },
+  "provenance_type_distribution": {
+    "direct": 318,
+    "mixed_direct_and_inferred": 174
+  },
+  "passed": true
+}

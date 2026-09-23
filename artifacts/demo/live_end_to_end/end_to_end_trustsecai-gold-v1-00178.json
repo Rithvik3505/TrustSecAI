@@ -1,0 +1,294 @@
+{
+  "demo_mode": "end_to_end_live_local",
+  "live_components": [
+    "classifier",
+    "feature_extraction",
+    "report_assembly",
+    "agreement_analysis",
+    "attack_chain_logic"
+  ],
+  "cached_components": [
+    "lora_text_generation_from_hpc_evaluation",
+    "graph_context_from_frozen_lora_prompt"
+  ],
+  "lora_generation_available": true,
+  "lora_generation_file": "artifacts\\evaluation\\lora_v1\\lora_generations_compact.jsonl",
+  "selected_lora_example_id": "trustsecai-gold-v1-00178",
+  "graph_context_mode": "cached_context_static_fallback",
+  "classifier_evidence": {
+    "ids_label": "PortScan",
+    "model_prediction": "ATTACK",
+    "model_confidence": 0.9960756897926331,
+    "attack_probability": 0.9960756897926331,
+    "benign_probability": 0.003924310207366943,
+    "confidence_band": "high",
+    "sample_id": "classifier-demo-010",
+    "source_file": "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+    "true_ids_label": "PortScan",
+    "binary_ground_truth": 1,
+    "binary_correct": true,
+    "feature_count": 78,
+    "model_path": "C:\\Users\\LENOVO\\WORK\\Projects\\TrustSecAI\\TrustSecAI\\models\\xgboost\\xgboost_model.joblib",
+    "sample_data_path": "C:\\Users\\LENOVO\\WORK\\Projects\\TrustSecAI\\TrustSecAI\\artifacts\\demo\\classifier_live_samples.csv",
+    "excluded_from_prediction": [
+      "label",
+      "binary_label",
+      "source_file",
+      "sample_id"
+    ]
+  },
+  "shap_evidence": {
+    "has_real_shap": true,
+    "top_features": [
+      {
+        "feature": "Average Packet Size",
+        "value": 5.0,
+        "shap_value": 2.782721757888794,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Destination Port",
+        "value": 801.0,
+        "shap_value": -1.285577654838562,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Bwd Packets/s",
+        "value": 12987.01299,
+        "shap_value": 0.916008710861206,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 6.0,
+        "shap_value": 0.8468784689903259,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Header Length",
+        "value": 20.0,
+        "shap_value": 0.8438590168952942,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 0.0,
+        "shap_value": -0.7672853469848633,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Fwd Packet Length Max",
+        "value": 2.0,
+        "shap_value": 0.6557226181030273,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 2.309401077,
+        "shap_value": 0.5422543287277222,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 6.0,
+        "shap_value": 0.432893842458725,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": 0.38383591175079346,
+        "direction": "supports_attack"
+      }
+    ],
+    "source": "frozen_lora_prompt_context",
+    "fallback_note": "Live SHAP unavailable; package `shap` is not installed."
+  },
+  "graph_context_summary": {
+    "technique": {
+      "id": "T1046",
+      "name": "Network Service Discovery"
+    },
+    "tactics": [
+      {
+        "id": "TA0007",
+        "name": "Discovery"
+      }
+    ],
+    "mitigation_ids": [
+      "M1030",
+      "M1031",
+      "M1042"
+    ],
+    "capec_ids": [
+      "CAPEC-300"
+    ],
+    "cwe_ids": [
+      "CWE-200"
+    ],
+    "cve_ids": [
+      "CVE-2026-44486",
+      "CVE-2026-44786",
+      "CVE-2026-45329",
+      "CVE-2026-42907",
+      "CVE-2026-44784",
+      "CVE-2026-46443",
+      "CVE-2026-47124",
+      "CVE-2026-47284",
+      "CVE-2026-42906",
+      "CVE-2026-42970"
+    ],
+    "provenance_type": "mixed_direct_and_inferred",
+    "has_cve": true,
+    "context_mode": "cached_frozen_lora_context"
+  },
+  "llm_secondary_assessment": {
+    "ids_label": "PortScan",
+    "sample_id": 308785,
+    "classifier_evidence": "The binary XGBoost classifier predicted ATTACK with 99.86% confidence; the IDS subtype used for retrieval is the real CICIDS label PortScan.",
+    "shap_evidence": [
+      {
+        "feature": "Average Packet Size",
+        "value": 5.0,
+        "shap_value": 2.7827,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Destination Port",
+        "value": 801.0,
+        "shap_value": -1.2856,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Bwd Packets/s",
+        "value": 12987.0129,
+        "shap_value": 0.916,
+        "direction": "supports_attack"
+      }
+    ],
+    "graph_interpretation": "Retrieved graph context maps the subtype to Network Service Discovery (T1046) under Discovery (TA0007) as contextual intelligence, not proof of compromise.",
+    "limitations": [
+      "CVE and product entries are candidate enrichment only; asset exposure is not established.",
+      "ATT&CK group, tool, and malware entries are usage context, not attribution.",
+      "Some graph relationships are inferred and should be weighted below direct provenance."
+    ],
+    "provenance_summary": [
+      "Derived associations: CVE-2026-12203, CVE-2026-3433, CVE-2026-42906, CVE-2026-42907, CVE-2026-42971, CVE-2026-44486, CVE-2026-44784, CVE-2026-44786",
+      "Inverse CAPEC: Port Scanning (CAPEC-300)",
+      "Common weaknesses: CWE-200"
+    ],
+    "recommended_actions": [
+      "Prioritize validation against the source capture",
+      "Compare the SHAP-highlighted flow characteristics against packet and session telemetry",
+      "Escalate if independent telemetry supports the mapped behavior"
+    ],
+    "parse_ok": true,
+    "raw_output": "{\n  \"ids_label\": \"PortScan\",\n  \"sample_id\": 308785,\n  \"classifier_evidence\": \"The binary XGBoost classifier predicted ATTACK with 99.86% confidence; the IDS subtype used for retrieval is the real CICIDS label PortScan.\",\n  \"shap_evidence\": [\n    {\n      \"feature\": \"Average Packet Size\",\n      \"value\": 5.0,\n      \"shap_value\": 2.7827,\n      \"direction\": \"supports_attack\"\n    },\n    {\n      \"feature\": \"Destination Port\",\n      \"value\": 801.0,\n      \"shap_value\": -1.2856,\n      \"direction\": \"supports_benign\"\n    },\n    {\n      \"feature\": \"Bwd Packets/s\",\n      \"value\": 12987.0129,\n      \"shap_value\": 0.916,\n      \"direction\": \"supports_attack\"\n    }\n  ],\n  \"graph_interpretation\": \"Retrieved graph context maps the subtype to Network Service Discovery (T1046) under Discovery (TA0007) as contextual intelligence, not proof of compromise.\",\n  \"limitations\": [\n    \"CVE and product entries are candidate enrichment only; asset exposure is not established.\",\n    \"ATT&CK group, tool, and malware entries are usage context, not attribution.\",\n    \"Some graph relationships are inferred and should be weighted below direct provenance.\"\n  ],\n  \"provenance_summary\": [\n    \"Derived associations: CVE-2026-12203, CVE-2026-3433, CVE-2026-42906, CVE-2026-42907, CVE-2026-42971, CVE-2026-44486, CVE-2026-44784, CVE-2026-44786\",\n    \"Inverse CAPEC: Port Scanning (CAPEC-300)\",\n    \"Common weaknesses: CWE-200\"\n  ],\n  \"recommended_actions\": [\n    \"Prioritize validation against the source capture\",\n    \"Compare the SHAP-highlighted flow characteristics against packet and session telemetry\",\n    \"Escalate if independent telemetry supports the mapped behavior\"\n  ]\n}"
+  },
+  "agreement_result": {
+    "category": "agree_attack_high_confidence",
+    "classifier_prediction": "ATTACK",
+    "classifier_confidence": 0.9960756897926331,
+    "ids_label": "PortScan",
+    "rationale": "Classifier and LLM both support an attack-oriented assessment for PortScan with high classifier confidence."
+  },
+  "attack_chain_prediction": {
+    "mode": "static_fallback",
+    "graph_available": false,
+    "seed": {
+      "ids_label": "PortScan",
+      "technique_id": "T1046",
+      "technique_name": "Network Service Discovery",
+      "tactic": "Discovery"
+    },
+    "candidate_next_steps": [
+      {
+        "technique_id": "T1018",
+        "technique_name": "Remote System Discovery",
+        "tactic": "Discovery",
+        "rationale": "Static ATT&CK seed mapping suggests this as a defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "static_seed_mapping",
+            "relationship_type": "STATIC_FALLBACK",
+            "inferred": true
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "technique_id": "T1110",
+        "technique_name": "Brute Force",
+        "tactic": "Credential Access",
+        "rationale": "Static ATT&CK seed mapping suggests this as a defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "static_seed_mapping",
+            "relationship_type": "STATIC_FALLBACK",
+            "inferred": true
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "technique_id": "T1021",
+        "technique_name": "Remote Services",
+        "tactic": "Lateral Movement",
+        "rationale": "Static ATT&CK seed mapping suggests this as a defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "static_seed_mapping",
+            "relationship_type": "STATIC_FALLBACK",
+            "inferred": true
+          }
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "seed_technique": {
+      "id": "T1046",
+      "name": "Network Service Discovery",
+      "tactic": "Discovery"
+    },
+    "likely_next_tactics_techniques": [
+      {
+        "tactic": "Discovery",
+        "technique": "Remote System Discovery",
+        "id": "T1018"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique": "Brute Force",
+        "id": "T1110"
+      },
+      {
+        "tactic": "Lateral Movement",
+        "technique": "Remote Services",
+        "id": "T1021"
+      }
+    ],
+    "mitigations": [
+      "M1031 Network Intrusion Prevention",
+      "M1030 Network Segmentation",
+      "M1018 User Account Management"
+    ],
+    "vulnerability_context": {
+      "capec": [],
+      "cwes": [],
+      "cves": []
+    },
+    "caveats": [
+      "This is a defensive hypothesis for prioritizing investigation, not an instruction sequence.",
+      "Graph context and ATT&CK mappings provide contextual intelligence, not proof of attacker behavior.",
+      "This output is not attribution and does not confirm compromise.",
+      "Neo4j unavailable; used static ATT&CK seed mapping."
+    ],
+    "confidence": "medium"
+  },
+  "limitations": [
+    "Live demo runs classifier inference, response parsing, agreement analysis, attack-chain logic, and report assembly.",
+    "LoRA text generation is cached from HPC compact evaluation outputs and is not executed locally.",
+    "Graph context in the report is contextual intelligence, not proof of compromise or attribution."
+  ],
+  "markdown_report": "# TrustSecAI Security Assessment Report\n\n## Executive Summary\n\nThe classifier identified PortScan with 99.61% confidence and prediction ATTACK. SHAP evidence is led by Average Packet Size, Destination Port, and graph context maps the behavior to T1046 Network Service Discovery as contextual intelligence. CVE/CWE candidate enrichment is present, but asset exposure is not established.\n\n## Incident Summary\n\n- IDS label: `PortScan`\n- Binary classifier prediction: `ATTACK`\n- Classifier confidence: `99.61%`\n- Sample ID: `classifier-demo-010`\n\n## Classifier And SHAP Evidence\n\n- Average Packet Size = 5.0, SHAP +2.7827, supports attack\n- Destination Port = 801.0, SHAP -1.2856, supports benign\n- Bwd Packets/s = 12987.01299, SHAP +0.9160, supports attack\n- Max Packet Length = 6.0, SHAP +0.8469, supports attack\n- Bwd Header Length = 20.0, SHAP +0.8439, supports attack\n\n## Graph Context\n\n- Technique: `T1046` Network Service Discovery\n- Tactics: TA0007 Discovery\n- Mitigations: M1030, M1031, M1042\n\nGraph context is contextual intelligence and does not prove compromise or attribution.\n\n## LLM Secondary Assessment\n\n- LLM output parsed successfully.\n- Graph interpretation: Retrieved graph context maps the subtype to Network Service Discovery (T1046) under Discovery (TA0007) as contextual intelligence, not proof of compromise.\n\n### Recommended Actions\n\n- Prioritize validation against the source capture\n- Compare the SHAP-highlighted flow characteristics against packet and session telemetry\n- Escalate if independent telemetry supports the mapped behavior\n\n### LLM Limitations\n\n- CVE and product entries are candidate enrichment only; asset exposure is not established.\n- ATT&CK group, tool, and malware entries are usage context, not attribution.\n- Some graph relationships are inferred and should be weighted below direct provenance.\n\n## Classifier vs LLM Agreement\n\n- Category: `agree_attack_high_confidence`\n- Rationale: Classifier and LLM both support an attack-oriented assessment for PortScan with high classifier confidence.\n\n## Defensive Attack Chain Hypothesis\n\n- Attack-chain mode: static fallback\n- Seed technique: `T1046` Network Service Discovery\n- Confidence: `medium`\n\n### Likely Next Tactics/Techniques\n\n- Discovery: T1018 Remote System Discovery\n- Credential Access: T1110 Brute Force\n- Lateral Movement: T1021 Remote Services\n\n### Chain Mitigations\n\n- M1031 Network Intrusion Prevention\n- M1030 Network Segmentation\n- M1018 User Account Management\n\n### Vulnerability Context\n\n- CAPEC: none reached\n- CWE: none reached\n- CVE: none reached\n\n### Caveats\n\n- This is a defensive hypothesis for prioritizing investigation, not an instruction sequence.\n- Graph context and ATT&CK mappings provide contextual intelligence, not proof of attacker behavior.\n- This output is not attribution and does not confirm compromise.\n- Neo4j unavailable; used static ATT&CK seed mapping.\n\n## Overall Limitations\n\n- Live demo runs classifier inference, response parsing, agreement analysis, attack-chain logic, and report assembly.\n- LoRA text generation is cached from HPC compact evaluation outputs and is not executed locally.\n- Graph context in the report is contextual intelligence, not proof of compromise or attribution.\n"
+}

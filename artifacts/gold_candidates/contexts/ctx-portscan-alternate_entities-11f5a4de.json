@@ -1,0 +1,1200 @@
+{
+  "base_context_id": "ctx-portscan-alternate_entities-11f5a4de",
+  "ids_label": "PortScan",
+  "classifier": {
+    "prediction": "PortScan",
+    "confidence_band": "unavailable"
+  },
+  "shap": {
+    "available": false,
+    "top_features": []
+  },
+  "graph_context": {
+    "prediction": "PortScan",
+    "retrieval": {
+      "latency_ms": 1439.46,
+      "relationships_traversed": 97
+    },
+    "attack": {
+      "technique": {
+        "id": "T1046",
+        "name": "Network Service Discovery",
+        "summary": "Adversaries may attempt to get a listing of services running on remote hosts and local network infrastructure devices, including those that may be vulnerable to remote software exploitation. Common methods to acquire this information include port,...",
+        "rank_score": 1.88,
+        "distance": 1,
+        "provenance": [
+          {
+            "confidence": "high",
+            "inferred": false,
+            "method": null,
+            "origin_node": "PortScan",
+            "relationship_type": "DETECTED_AS",
+            "source": "TrustSecAI",
+            "target_node": "T1046"
+          }
+        ]
+      },
+      "tactics": [
+        {
+          "id": "TA0007",
+          "name": "Discovery",
+          "summary": "The adversary is trying to figure out your environment. Discovery consists of techniques an adversary may use to gain knowledge about the system and internal network. These techniques help adversaries observe the environment and orient themselves before...",
+          "rank_score": 1.71,
+          "distance": 2,
+          "provenance": [
+            {
+              "confidence": "source",
+              "inferred": false,
+              "method": null,
+              "origin_node": "T1046",
+              "relationship_type": "HAS_TACTIC",
+              "source": "MITRE ATT&CK Enterprise",
+              "target_node": "TA0007"
+            }
+          ]
+        }
+      ],
+      "mitigations": [
+        {
+          "id": "M1042",
+          "name": "Disable or Remove Feature or Program",
+          "summary": "Disable or remove unnecessary and potentially vulnerable software, features, or services to reduce the attack surface and prevent abuse by adversaries. This involves identifying software or features that are no longer needed or that could be exploited and...",
+          "rank_score": 1.71,
+          "distance": 2,
+          "provenance": [
+            {
+              "confidence": "source",
+              "inferred": false,
+              "method": null,
+              "origin_node": "T1046",
+              "relationship_type": "MITIGATED_BY",
+              "source": "MITRE ATT&CK Enterprise",
+              "target_node": "M1042"
+            }
+          ]
+        }
+      ]
+    },
+    "capec": [
+      {
+        "id": "CAPEC-300",
+        "name": "Port Scanning",
+        "summary": "An adversary uses a combination of techniques to determine the state of the ports on a remote target. Any service or application available for TCP or UDP networking will have a port open for communications over the network.",
+        "rank_score": 1.66,
+        "distance": 2,
+        "severity": "Low",
+        "abstraction": "Standard",
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": true,
+            "method": "inverse_capec_attack_mapping",
+            "origin_node": "T1046",
+            "relationship_type": "HAS_ATTACK_PATTERN",
+            "source": "TrustSecAI",
+            "target_node": "CAPEC-300"
+          }
+        ]
+      }
+    ],
+    "cwes": [],
+    "cves": [
+      {
+        "id": "CVE-2026-46443",
+        "name": "Flowise is a drag & drop user interface to build a customized large language model flow. Prior to version 3.1.2, when credentials are fetched with a credentialName filter parameter, the encryptedData field is not stripped from the response. The code properly omits encryptedData when no filter is used but fails to do so when a filter is used. This issue has been patched in version 3.1.2.",
+        "summary": "Flowise is a drag & drop user interface to build a customized large language model flow. Prior to version 3.1.2, when credentials are fetched with a credentialName filter parameter, the encryptedData field is not stripped from the response. The code...",
+        "rank_score": 2.12,
+        "distance": 4,
+        "severity": "MEDIUM",
+        "provenance": [
+          {
+            "confidence": "medium",
+            "inferred": true,
+            "method": "shared_cwe_bridge",
+            "origin_node": "CAPEC-300",
+            "relationship_type": "ASSOCIATED_CVE",
+            "source": "TrustSecAI",
+            "target_node": "CVE-2026-46443"
+          }
+        ]
+      },
+      {
+        "id": "CVE-2026-47124",
+        "name": "Nezha Monitoring is a self-hostable, lightweight, servers and websites monitoring and O&M tool. From version 1.4.0 to before version 2.0.9, any authenticated non-admin member can connect to the server-status WebSocket and receive telemetry for all servers, including servers owned by other users. The normal server list API filters objects by HasPermission, but the WebSocket stream treats the presence of any authenticated user as authorization for the full unfiltered server list. This issue has been patched in version 2.0.9.",
+        "summary": "Nezha Monitoring is a self-hostable, lightweight, servers and websites monitoring and O&M tool. From version 1.4.0 to before version 2.0.9, any authenticated non-admin member can connect to the server-status WebSocket and receive telemetry for all servers,...",
+        "rank_score": 2.12,
+        "distance": 4,
+        "severity": "MEDIUM",
+        "provenance": [
+          {
+            "confidence": "medium",
+            "inferred": true,
+            "method": "shared_cwe_bridge",
+            "origin_node": "CAPEC-300",
+            "relationship_type": "ASSOCIATED_CVE",
+            "source": "TrustSecAI",
+            "target_node": "CVE-2026-47124"
+          }
+        ]
+      },
+      {
+        "id": "CVE-2026-47284",
+        "name": "Exposure of sensitive information to an unauthorized actor in Visual Studio Code allows an unauthorized attacker to disclose information over a network.",
+        "summary": "Exposure of sensitive information to an unauthorized actor in Visual Studio Code allows an unauthorized attacker to disclose information over a network.",
+        "rank_score": 2.12,
+        "distance": 4,
+        "severity": "MEDIUM",
+        "provenance": [
+          {
+            "confidence": "medium",
+            "inferred": true,
+            "method": "shared_cwe_bridge",
+            "origin_node": "CAPEC-300",
+            "relationship_type": "ASSOCIATED_CVE",
+            "source": "TrustSecAI",
+            "target_node": "CVE-2026-47284"
+          }
+        ]
+      },
+      {
+        "id": "CVE-2026-42906",
+        "name": "Exposure of sensitive information to an unauthorized actor in Windows Shell allows an authorized attacker to disclose information locally.",
+        "summary": "Exposure of sensitive information to an unauthorized actor in Windows Shell allows an authorized attacker to disclose information locally.",
+        "rank_score": 2.02,
+        "distance": 4,
+        "severity": "MEDIUM",
+        "provenance": [
+          {
+            "confidence": "medium",
+            "inferred": true,
+            "method": "shared_cwe_bridge",
+            "origin_node": "CAPEC-300",
+            "relationship_type": "ASSOCIATED_CVE",
+            "source": "TrustSecAI",
+            "target_node": "CVE-2026-42906"
+          }
+        ]
+      },
+      {
+        "id": "CVE-2026-42970",
+        "name": "Use of uninitialized resource in Windows Push Notifications allows an authorized attacker to disclose information locally.",
+        "summary": "Use of uninitialized resource in Windows Push Notifications allows an authorized attacker to disclose information locally.",
+        "rank_score": 2.02,
+        "distance": 4,
+        "severity": "MEDIUM",
+        "provenance": [
+          {
+            "confidence": "medium",
+            "inferred": true,
+            "method": "shared_cwe_bridge",
+            "origin_node": "CAPEC-300",
+            "relationship_type": "ASSOCIATED_CVE",
+            "source": "TrustSecAI",
+            "target_node": "CVE-2026-42970"
+          }
+        ]
+      }
+    ],
+    "products": [
+      {
+        "id": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x64:*",
+        "name": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x64:*",
+        "rank_score": 1.35,
+        "distance": 5,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "CVE-2026-42971",
+            "relationship_type": "AFFECTS",
+            "source": "NVD",
+            "target_node": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x64:*"
+          }
+        ]
+      },
+      {
+        "id": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x86:*",
+        "name": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x86:*",
+        "rank_score": 1.35,
+        "distance": 5,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "CVE-2026-42971",
+            "relationship_type": "AFFECTS",
+            "source": "NVD",
+            "target_node": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x86:*"
+          }
+        ]
+      },
+      {
+        "id": "cpe:2.3:o:microsoft:windows_10_1809:*:*:*:*:*:*:x64:*",
+        "name": "cpe:2.3:o:microsoft:windows_10_1809:*:*:*:*:*:*:x64:*",
+        "rank_score": 1.35,
+        "distance": 5,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "CVE-2026-45594",
+            "relationship_type": "AFFECTS",
+            "source": "NVD",
+            "target_node": "cpe:2.3:o:microsoft:windows_10_1809:*:*:*:*:*:*:x64:*"
+          }
+        ]
+      },
+      {
+        "id": "cpe:2.3:o:microsoft:windows_10_1809:*:*:*:*:*:*:x86:*",
+        "name": "cpe:2.3:o:microsoft:windows_10_1809:*:*:*:*:*:*:x86:*",
+        "rank_score": 1.35,
+        "distance": 5,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "CVE-2026-45594",
+            "relationship_type": "AFFECTS",
+            "source": "NVD",
+            "target_node": "cpe:2.3:o:microsoft:windows_10_1809:*:*:*:*:*:*:x86:*"
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "id": "https://github.com/HKUDS/AI-Trader/issues/242",
+        "name": "cna@vuldb.com",
+        "rank_score": 1.35,
+        "distance": 5,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "CVE-2026-12203",
+            "relationship_type": "REFERENCES",
+            "source": "NVD",
+            "target_node": "https://github.com/HKUDS/AI-Trader/issues/242"
+          }
+        ]
+      },
+      {
+        "id": "https://github.com/HKUDS/AI-Trader/pull/227",
+        "name": "cna@vuldb.com",
+        "rank_score": 1.35,
+        "distance": 5,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "CVE-2026-12203",
+            "relationship_type": "REFERENCES",
+            "source": "NVD",
+            "target_node": "https://github.com/HKUDS/AI-Trader/pull/227"
+          }
+        ]
+      },
+      {
+        "id": "https://github.com/ImageMagick/ImageMagick/security/advisories/GHSA-xcjm-wqff-m669",
+        "name": "security-advisories@github.com",
+        "rank_score": 1.35,
+        "distance": 5,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "CVE-2026-49219",
+            "relationship_type": "REFERENCES",
+            "source": "NVD",
+            "target_node": "https://github.com/ImageMagick/ImageMagick/security/advisories/GHSA-xcjm-wqff-m669"
+          }
+        ]
+      },
+      {
+        "id": "https://github.com/axios/axios/security/advisories/GHSA-j5f8-grm9-p9fc",
+        "name": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+        "rank_score": 1.35,
+        "distance": 5,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "CVE-2026-44486",
+            "relationship_type": "REFERENCES",
+            "source": "NVD",
+            "target_node": "https://github.com/axios/axios/security/advisories/GHSA-j5f8-grm9-p9fc"
+          }
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "intrusion-set--813636db-3939-4a45-bea9-6113e970c029",
+        "name": "DarkVishnya",
+        "summary": "[DarkVishnya](https://attack.mitre.org/groups/G0105) is a financially motivated threat actor targeting financial institutions in Eastern Europe. In 2017-2018 the group attacked at least 8 banks in this region.(Citation: Securelist DarkVishnya Dec 2018)",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1046",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "intrusion-set--813636db-3939-4a45-bea9-6113e970c029"
+          }
+        ]
+      },
+      {
+        "id": "intrusion-set--8c1f0187-0826-4320-bddc-5f326cfcfe2c",
+        "name": "Chimera",
+        "summary": "[Chimera](https://attack.mitre.org/groups/G0114) is a suspected China-based threat group that has been active since at least 2018 targeting the semiconductor industry in Taiwan as well as data from the airline industry.(Citation: Cycraft Chimera April...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1046",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "intrusion-set--8c1f0187-0826-4320-bddc-5f326cfcfe2c"
+          }
+        ]
+      },
+      {
+        "id": "intrusion-set--9735c036-8ebe-47e9-9c77-b0ae656dab93",
+        "name": "BackdoorDiplomacy",
+        "summary": "[BackdoorDiplomacy](https://attack.mitre.org/groups/G0135) is a cyber espionage threat group that has been active since at least 2017. [BackdoorDiplomacy](https://attack.mitre.org/groups/G0135) has targeted Ministries of Foreign Affairs and...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1046",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "intrusion-set--9735c036-8ebe-47e9-9c77-b0ae656dab93"
+          }
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "id": "tool--79dd477a-8226-4b3d-ad15-28623675f221",
+        "name": "Peirates",
+        "summary": "[Peirates](https://attack.mitre.org/software/S0683) is a post-exploitation Kubernetes exploitation framework with a focus on gathering service account tokens for lateral movement and privilege escalation. The tool is written in GoLang and publicly...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1046",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "tool--79dd477a-8226-4b3d-ad15-28623675f221"
+          }
+        ]
+      },
+      {
+        "id": "tool--b63970b7-ddfb-4aee-97b1-80d335e033a8",
+        "name": "NBTscan",
+        "summary": "[NBTscan](https://attack.mitre.org/software/S0590) is an open source tool that has been used by state groups to conduct internal reconnaissance within a compromised network.(Citation: Debian nbtscan Nov 2019)(Citation: SecTools nbtscan June 2003)(Citation:...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1046",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "tool--b63970b7-ddfb-4aee-97b1-80d335e033a8"
+          }
+        ]
+      },
+      {
+        "id": "tool--c8655260-9f4b-44e3-85e1-6538a5f6e4f4",
+        "name": "Koadic",
+        "summary": "[Koadic](https://attack.mitre.org/software/S0250) is a Windows post-exploitation framework and penetration testing tool that is publicly available on GitHub. [Koadic](https://attack.mitre.org/software/S0250) has several options for staging payloads and...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1046",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "tool--c8655260-9f4b-44e3-85e1-6538a5f6e4f4"
+          }
+        ]
+      }
+    ],
+    "malware": [
+      {
+        "id": "malware--5a3a31fe-5a8f-48e1-bff0-a753e5b1be70",
+        "name": "China Chopper",
+        "summary": "[China Chopper](https://attack.mitre.org/software/S0020) is a [Web Shell](https://attack.mitre.org/techniques/T1505/003) hosted on Web servers to provide access back into an enterprise network that does not rely on an infected system calling back to a...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1046",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "malware--5a3a31fe-5a8f-48e1-bff0-a753e5b1be70"
+          }
+        ]
+      },
+      {
+        "id": "malware--751b77e6-af1f-483b-93fe-eddf17f92a64",
+        "name": "Caterpillar WebShell",
+        "summary": "[Caterpillar WebShell](https://attack.mitre.org/software/S0572) is a self-developed Web Shell tool created by the group [Volatile Cedar](https://attack.mitre.org/groups/G0123).(Citation: ClearSky Lebanese Cedar Jan 2021)",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1046",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "malware--751b77e6-af1f-483b-93fe-eddf17f92a64"
+          }
+        ]
+      },
+      {
+        "id": "malware--9454bb5d-3bdb-40f9-a878-b5fb446ded3d",
+        "name": "BlackByte Ransomware",
+        "summary": "[BlackByte Ransomware](https://attack.mitre.org/software/S1180) is uniquely associated with [BlackByte](https://attack.mitre.org/groups/G1043) operations. [BlackByte Ransomware](https://attack.mitre.org/software/S1180) used a common key for infections,...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1046",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "malware--9454bb5d-3bdb-40f9-a878-b5fb446ded3d"
+          }
+        ]
+      }
+    ],
+    "detection_guidance": [
+      {
+        "id": "x-mitre-detection-strategy--82e20b1f-300e-43cc-9259-1d506ef5d1f8",
+        "name": "Behavioral Detection Strategy for Network Service Discovery Across Platforms",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1046",
+            "relationship_type": "DETECTED_BY",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "x-mitre-detection-strategy--82e20b1f-300e-43cc-9259-1d506ef5d1f8"
+          }
+        ]
+      }
+    ],
+    "provenance": [
+      {
+        "category": "capec",
+        "confidence": "source",
+        "entity_id": "CAPEC-300",
+        "inferred": true,
+        "method": "inverse_capec_attack_mapping",
+        "origin_node": "T1046",
+        "relationship_type": "HAS_ATTACK_PATTERN",
+        "source": "TrustSecAI",
+        "target_node": "CAPEC-300"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-12203",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-12203"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-3433",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-3433"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-42906",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-42906"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-42907",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-42907"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-42970",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-42970"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-42971",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-42971"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-44486",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-44486"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-44784",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-44784"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-44786",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-44786"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-45085",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-45085"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-45329",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-45329"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-45594",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-45594"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-46443",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-46443"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-47124",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-47124"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-47264",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-47264"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-47284",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-47284"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-49219",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-49219"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-49397",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-49397"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-50009",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-50009"
+      },
+      {
+        "category": "cves",
+        "confidence": "medium",
+        "entity_id": "CVE-2026-6046",
+        "inferred": true,
+        "method": "shared_cwe_bridge",
+        "origin_node": "CAPEC-300",
+        "relationship_type": "ASSOCIATED_CVE",
+        "source": "TrustSecAI",
+        "target_node": "CVE-2026-6046"
+      },
+      {
+        "category": "cwes",
+        "confidence": "source",
+        "entity_id": "CWE-200",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CAPEC-300",
+        "relationship_type": "RELATED_WEAKNESS",
+        "source": "CAPEC",
+        "target_node": "CWE-200"
+      },
+      {
+        "category": "detection_guidance",
+        "confidence": "source",
+        "entity_id": "x-mitre-detection-strategy--82e20b1f-300e-43cc-9259-1d506ef5d1f8",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "DETECTED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "x-mitre-detection-strategy--82e20b1f-300e-43cc-9259-1d506ef5d1f8"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--02b16bd6-ae88-417a-8a3f-02c5e166175a",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--02b16bd6-ae88-417a-8a3f-02c5e166175a"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--18854f55-ac7c-4634-bd9a-352dd07613b7",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--18854f55-ac7c-4634-bd9a-352dd07613b7"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--6fe8a2a1-a1b0-4af8-953d-4babd329f8f8",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--6fe8a2a1-a1b0-4af8-953d-4babd329f8f8"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--813636db-3939-4a45-bea9-6113e970c029",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--813636db-3939-4a45-bea9-6113e970c029"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--8c1f0187-0826-4320-bddc-5f326cfcfe2c",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--8c1f0187-0826-4320-bddc-5f326cfcfe2c"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--9735c036-8ebe-47e9-9c77-b0ae656dab93",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--9735c036-8ebe-47e9-9c77-b0ae656dab93"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--b8137919-38cb-4db0-90f3-437be885faba",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--b8137919-38cb-4db0-90f3-437be885faba"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--dc6fe6ee-04c2-49be-ba3d-f38d2463c02a",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--dc6fe6ee-04c2-49be-ba3d-f38d2463c02a"
+      },
+      {
+        "category": "ids_label",
+        "confidence": null,
+        "entity_id": "PortScan",
+        "inferred": false,
+        "method": null,
+        "origin_node": "PortScan",
+        "relationship_type": "SELF",
+        "source": "TrustSecAI",
+        "target_node": "PortScan"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--007b44b6-e4c5-480b-b5b9-56f2081b1b7b",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--007b44b6-e4c5-480b-b5b9-56f2081b1b7b"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--083bb47b-02c8-4423-81a2-f9ef58572974",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--083bb47b-02c8-4423-81a2-f9ef58572974"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--3553b49d-d4ae-4fb6-ab17-0adbc520c888",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--3553b49d-d4ae-4fb6-ab17-0adbc520c888"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--54cc1d4f-5c53-4f0e-9ef5-11b4998e82e4",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--54cc1d4f-5c53-4f0e-9ef5-11b4998e82e4"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--58eddbaf-7416-419a-ad7b-e65b9d4c3b55",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--58eddbaf-7416-419a-ad7b-e65b9d4c3b55"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--5a3a31fe-5a8f-48e1-bff0-a753e5b1be70",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--5a3a31fe-5a8f-48e1-bff0-a753e5b1be70"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--751b77e6-af1f-483b-93fe-eddf17f92a64",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--751b77e6-af1f-483b-93fe-eddf17f92a64"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--9454bb5d-3bdb-40f9-a878-b5fb446ded3d",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--9454bb5d-3bdb-40f9-a878-b5fb446ded3d"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--a7881f21-e978-4fe4-af56-92c9416a2616",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--a7881f21-e978-4fe4-af56-92c9416a2616"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--ff7ed9c1-dca3-4e62-9da6-72c5d388b8fa",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--ff7ed9c1-dca3-4e62-9da6-72c5d388b8fa"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1030",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1030"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1031",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1031"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1042",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1046",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1042"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:a:axios:axios:*:*:*:*:*:node.js:*:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-44486",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:a:axios:axios:*:*:*:*:*:node.js:*:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:a:espressif:esp-idf:5.5.4:*:*:*:*:*:*:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-45329",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:a:espressif:esp-idf:5.5.4:*:*:*:*:*:*:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:a:espressif:esp-idf:6.0:*:*:*:*:*:*:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-45329",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:a:espressif:esp-idf:6.0:*:*:*:*:*:*:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:a:flowiseai:flowise:*:*:*:*:*:*:*:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-46443",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:a:flowiseai:flowise:*:*:*:*:*:*:*:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-49219",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:a:imagemagick:imagemagick:*:*:*:*:*:*:*:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x64:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-42970",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x64:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x64:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-42971",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x64:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x64:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-45594",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x64:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x86:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-42970",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x86:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x86:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-42971",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x86:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x86:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-45594",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:o:microsoft:windows_10_1607:*:*:*:*:*:*:x86:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:o:microsoft:windows_10_1809:*:*:*:*:*:*:x64:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-42907",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:o:microsoft:windows_10_1809:*:*:*:*:*:*:x64:*"
+      },
+      {
+        "category": "products",
+        "confidence": "source",
+        "entity_id": "cpe:2.3:o:microsoft:windows_10_1809:*:*:*:*:*:*:x64:*",
+        "inferred": false,
+        "method": null,
+        "origin_node": "CVE-2026-42970",
+        "relationship_type": "AFFECTS",
+        "source": "NVD",
+        "target_node": "cpe:2.3:o:microsoft:windows_10_1809:*:*:*:*:*:*:x64:*"
+      }
+    ]
+  },
+  "evidence_conditions": [
+    "alternate_entities_retrieval_context",
+    "missing_local_shap_context",
+    "classifier_confidence_unavailable",
+    "cve_context_present",
+    "capec_context_present",
+    "contains_inferred_graph_relationships"
+  ],
+  "provenance_type": "mixed_direct_and_inferred",
+  "source_artifacts": [
+    "artifacts/retrieval/PortScan.json"
+  ]
+}

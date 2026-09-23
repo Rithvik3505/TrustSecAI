@@ -1,0 +1,519 @@
+{
+  "created_at": "2026-07-07",
+  "currently_available_evidence": {
+    "cicids_label_inventory": {
+      "source_artifact": "C:/Users/LENOVO/WORK/Projects/TrustSecAI/artifacts/processed/cleaned_cicids_sample.csv",
+      "sample_rows": 10000,
+      "labels": {
+        "BENIGN": 8288,
+        "DoS Hulk": 699,
+        "DDoS": 504,
+        "PortScan": 381,
+        "DoS GoldenEye": 41,
+        "DoS slowloris": 26,
+        "FTP-Patator": 20,
+        "DoS Slowhttptest": 11,
+        "SSH-Patator": 11,
+        "Bot": 8,
+        "Web Attack - XSS": 6,
+        "Web Attack - Brute Force": 5
+      },
+      "source_files_by_label": {
+        "BENIGN": {
+          "Monday-WorkingHours.pcap_ISCX.csv": 1916,
+          "Wednesday-workingHours.pcap_ISCX.csv": 1649,
+          "Tuesday-WorkingHours.pcap_ISCX.csv": 1550,
+          "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": 1005,
+          "Friday-WorkingHours-Morning.pcap_ISCX.csv": 720,
+          "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": 594,
+          "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": 501,
+          "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": 353
+        },
+        "DoS Hulk": {
+          "Wednesday-workingHours.pcap_ISCX.csv": 699
+        },
+        "DDoS": {
+          "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": 504
+        },
+        "PortScan": {
+          "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": 381
+        },
+        "DoS GoldenEye": {
+          "Wednesday-workingHours.pcap_ISCX.csv": 41
+        },
+        "Web Attack - XSS": {
+          "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": 6
+        },
+        "DoS Slowhttptest": {
+          "Wednesday-workingHours.pcap_ISCX.csv": 11
+        },
+        "FTP-Patator": {
+          "Tuesday-WorkingHours.pcap_ISCX.csv": 20
+        },
+        "DoS slowloris": {
+          "Wednesday-workingHours.pcap_ISCX.csv": 26
+        },
+        "Bot": {
+          "Friday-WorkingHours-Morning.pcap_ISCX.csv": 8
+        },
+        "Web Attack - Brute Force": {
+          "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": 5
+        },
+        "SSH-Patator": {
+          "Tuesday-WorkingHours.pcap_ISCX.csv": 11
+        }
+      },
+      "note": "Counts are from cleaned_cicids_sample.csv for lightweight inventory; the full cleaned parquet remains available for later export."
+    },
+    "retrieval_contexts": {
+      "Bot": {
+        "prediction": "Bot",
+        "technique": {
+          "id": "T1105",
+          "name": "Ingress Tool Transfer",
+          "summary": "Adversaries may transfer tools or other files from an external system into a compromised environment. Tools or files may be copied from an external adversary-controlled system to the victim network through the command and control channel or through...",
+          "rank_score": 1.23,
+          "distance": 1,
+          "provenance": [
+            {
+              "confidence": "low",
+              "inferred": false,
+              "method": null,
+              "origin_node": "Bot",
+              "relationship_type": "DETECTED_AS",
+              "source": "TrustSecAI",
+              "target_node": "T1105"
+            }
+          ]
+        },
+        "tactics": [
+          {
+            "id": "TA0011",
+            "name": "Command and Control",
+            "summary": "The adversary is trying to communicate with compromised systems to control them. Command and Control consists of techniques that adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to...",
+            "rank_score": 1.71,
+            "distance": 2,
+            "provenance": [
+              {
+                "confidence": "source",
+                "inferred": false,
+                "method": null,
+                "origin_node": "T1105",
+                "relationship_type": "HAS_TACTIC",
+                "source": "MITRE ATT&CK Enterprise",
+                "target_node": "TA0011"
+              }
+            ]
+          }
+        ],
+        "mitigation_count": 2,
+        "capec_count": 0,
+        "cwe_count": 0,
+        "cve_count": 0,
+        "product_count": 0,
+        "group_count": 8,
+        "tool_count": 8,
+        "malware_count": 8,
+        "detection_guidance_count": 1,
+        "provenance_count": 36,
+        "inferred_provenance_count": 0,
+        "source_artifact": "artifacts/retrieval/Bot.json",
+        "has_direct_provenance": true,
+        "has_inferred_relationships": false,
+        "has_cve_evidence": false,
+        "has_candidate_only_cve_evidence": false
+      },
+      "DDoS": {
+        "prediction": "DDoS",
+        "technique": {
+          "id": "T1498",
+          "name": "Network Denial of Service",
+          "summary": "Adversaries may perform Network Denial of Service (DoS) attacks to degrade or block the availability of targeted resources to users. Network DoS can be performed by exhausting the network bandwidth services rely on. Example resources include specific...",
+          "rank_score": 1.88,
+          "distance": 1,
+          "provenance": [
+            {
+              "confidence": "high",
+              "inferred": false,
+              "method": null,
+              "origin_node": "DDoS",
+              "relationship_type": "DETECTED_AS",
+              "source": "TrustSecAI",
+              "target_node": "T1498"
+            }
+          ]
+        },
+        "tactics": [
+          {
+            "id": "TA0040",
+            "name": "Impact",
+            "summary": "The adversary is trying to manipulate, interrupt, or destroy your systems and data. Impact consists of techniques that adversaries use to disrupt availability or compromise integrity by manipulating business and operational processes. Techniques used for...",
+            "rank_score": 1.71,
+            "distance": 2,
+            "provenance": [
+              {
+                "confidence": "source",
+                "inferred": false,
+                "method": null,
+                "origin_node": "T1498",
+                "relationship_type": "HAS_TACTIC",
+                "source": "MITRE ATT&CK Enterprise",
+                "target_node": "TA0040"
+              }
+            ]
+          }
+        ],
+        "mitigation_count": 1,
+        "capec_count": 0,
+        "cwe_count": 0,
+        "cve_count": 0,
+        "product_count": 0,
+        "group_count": 1,
+        "tool_count": 0,
+        "malware_count": 2,
+        "detection_guidance_count": 1,
+        "provenance_count": 8,
+        "inferred_provenance_count": 0,
+        "source_artifact": "artifacts/retrieval/DDoS.json",
+        "has_direct_provenance": true,
+        "has_inferred_relationships": false,
+        "has_cve_evidence": false,
+        "has_candidate_only_cve_evidence": false
+      },
+      "FTP-Patator": {
+        "prediction": "FTP-Patator",
+        "technique": {
+          "id": "T1110",
+          "name": "Brute Force",
+          "summary": "Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained.(Citation: TrendMicro Pawn Storm Dec 2020) Without knowledge of the password for an account or set of accounts, an...",
+          "rank_score": 1.88,
+          "distance": 1,
+          "provenance": [
+            {
+              "confidence": "high",
+              "inferred": false,
+              "method": null,
+              "origin_node": "FTP-Patator",
+              "relationship_type": "DETECTED_AS",
+              "source": "TrustSecAI",
+              "target_node": "T1110"
+            }
+          ]
+        },
+        "tactics": [
+          {
+            "id": "TA0006",
+            "name": "Credential Access",
+            "summary": "The adversary is trying to steal account names and passwords. Credential Access consists of techniques for stealing credentials like account names and passwords. Techniques used to get credentials include keylogging or credential dumping. Using legitimate...",
+            "rank_score": 1.71,
+            "distance": 2,
+            "provenance": [
+              {
+                "confidence": "source",
+                "inferred": false,
+                "method": null,
+                "origin_node": "T1110",
+                "relationship_type": "HAS_TACTIC",
+                "source": "MITRE ATT&CK Enterprise",
+                "target_node": "TA0006"
+              }
+            ]
+          }
+        ],
+        "mitigation_count": 4,
+        "capec_count": 1,
+        "cwe_count": 2,
+        "cve_count": 3,
+        "product_count": 2,
+        "group_count": 8,
+        "tool_count": 2,
+        "malware_count": 5,
+        "detection_guidance_count": 1,
+        "provenance_count": 40,
+        "inferred_provenance_count": 4,
+        "source_artifact": "artifacts/retrieval/FTP_Patator.json",
+        "has_direct_provenance": true,
+        "has_inferred_relationships": true,
+        "has_cve_evidence": true,
+        "has_candidate_only_cve_evidence": true
+      },
+      "PortScan": {
+        "prediction": "PortScan",
+        "technique": {
+          "id": "T1046",
+          "name": "Network Service Discovery",
+          "summary": "Adversaries may attempt to get a listing of services running on remote hosts and local network infrastructure devices, including those that may be vulnerable to remote software exploitation. Common methods to acquire this information include port,...",
+          "rank_score": 1.88,
+          "distance": 1,
+          "provenance": [
+            {
+              "confidence": "high",
+              "inferred": false,
+              "method": null,
+              "origin_node": "PortScan",
+              "relationship_type": "DETECTED_AS",
+              "source": "TrustSecAI",
+              "target_node": "T1046"
+            }
+          ]
+        },
+        "tactics": [
+          {
+            "id": "TA0007",
+            "name": "Discovery",
+            "summary": "The adversary is trying to figure out your environment. Discovery consists of techniques an adversary may use to gain knowledge about the system and internal network. These techniques help adversaries observe the environment and orient themselves before...",
+            "rank_score": 1.71,
+            "distance": 2,
+            "provenance": [
+              {
+                "confidence": "source",
+                "inferred": false,
+                "method": null,
+                "origin_node": "T1046",
+                "relationship_type": "HAS_TACTIC",
+                "source": "MITRE ATT&CK Enterprise",
+                "target_node": "TA0007"
+              }
+            ]
+          }
+        ],
+        "mitigation_count": 3,
+        "capec_count": 1,
+        "cwe_count": 1,
+        "cve_count": 10,
+        "product_count": 10,
+        "group_count": 8,
+        "tool_count": 8,
+        "malware_count": 8,
+        "detection_guidance_count": 1,
+        "provenance_count": 98,
+        "inferred_provenance_count": 21,
+        "source_artifact": "artifacts/retrieval/PortScan.json",
+        "has_direct_provenance": true,
+        "has_inferred_relationships": true,
+        "has_cve_evidence": true,
+        "has_candidate_only_cve_evidence": true
+      },
+      "Web Attack - Sql Injection": {
+        "prediction": "Web Attack - Sql Injection",
+        "technique": {
+          "id": "T1190",
+          "name": "Exploit Public-Facing Application",
+          "summary": "Adversaries may attempt to exploit a weakness in an Internet-facing host or system to initially access a network. The weakness in the system can be a software bug, a temporary glitch, or a misconfiguration. Exploited applications are often websites/web...",
+          "rank_score": 1.58,
+          "distance": 1,
+          "provenance": [
+            {
+              "confidence": "medium",
+              "inferred": false,
+              "method": null,
+              "origin_node": "Web Attack - Sql Injection",
+              "relationship_type": "DETECTED_AS",
+              "source": "TrustSecAI",
+              "target_node": "T1190"
+            }
+          ]
+        },
+        "tactics": [
+          {
+            "id": "TA0001",
+            "name": "Initial Access",
+            "summary": "The adversary is trying to get into your network. Initial Access consists of techniques that use various entry vectors to gain their initial foothold within a network. Techniques used to gain a foothold include targeted spearphishing and exploiting...",
+            "rank_score": 1.71,
+            "distance": 2,
+            "provenance": [
+              {
+                "confidence": "source",
+                "inferred": false,
+                "method": null,
+                "origin_node": "T1190",
+                "relationship_type": "HAS_TACTIC",
+                "source": "MITRE ATT&CK Enterprise",
+                "target_node": "TA0001"
+              }
+            ]
+          }
+        ],
+        "mitigation_count": 8,
+        "capec_count": 0,
+        "cwe_count": 0,
+        "cve_count": 0,
+        "product_count": 0,
+        "group_count": 8,
+        "tool_count": 2,
+        "malware_count": 6,
+        "detection_guidance_count": 1,
+        "provenance_count": 30,
+        "inferred_provenance_count": 0,
+        "source_artifact": "artifacts/retrieval/Web_Attack___Sql_Injection.json",
+        "has_direct_provenance": true,
+        "has_inferred_relationships": false,
+        "has_cve_evidence": false,
+        "has_candidate_only_cve_evidence": false
+      }
+    },
+    "local_shap_explanations": {
+      "BENIGN": {
+        "sample_count": 10,
+        "confidence_values": [
+          1.0
+        ],
+        "source_files": {
+          "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": 2,
+          "Wednesday-workingHours.pcap_ISCX.csv": 1,
+          "Monday-WorkingHours.pcap_ISCX.csv": 3,
+          "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": 1,
+          "Tuesday-WorkingHours.pcap_ISCX.csv": 1,
+          "Friday-WorkingHours-Morning.pcap_ISCX.csv": 1,
+          "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": 1
+        },
+        "distinct_top_feature_patterns": 10
+      },
+      "DDoS": {
+        "sample_count": 3,
+        "confidence_values": [
+          1.0
+        ],
+        "source_files": {
+          "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": 3
+        },
+        "distinct_top_feature_patterns": 2
+      },
+      "DoS Hulk": {
+        "sample_count": 7,
+        "confidence_values": [
+          1.0
+        ],
+        "source_files": {
+          "Wednesday-workingHours.pcap_ISCX.csv": 7
+        },
+        "distinct_top_feature_patterns": 4
+      }
+    },
+    "attack_label_mappings": {
+      "Bot": {
+        "attack_id": "T1105",
+        "attack_name": "Ingress Tool Transfer",
+        "mapping_confidence": "low"
+      },
+      "DDoS": {
+        "attack_id": "T1498",
+        "attack_name": "Network Denial of Service",
+        "mapping_confidence": "high"
+      },
+      "DoS GoldenEye": {
+        "attack_id": "T1499",
+        "attack_name": "Endpoint Denial of Service",
+        "mapping_confidence": "medium"
+      },
+      "DoS Hulk": {
+        "attack_id": "T1499",
+        "attack_name": "Endpoint Denial of Service",
+        "mapping_confidence": "medium"
+      },
+      "DoS Slowhttptest": {
+        "attack_id": "T1499",
+        "attack_name": "Endpoint Denial of Service",
+        "mapping_confidence": "medium"
+      },
+      "DoS slowloris": {
+        "attack_id": "T1499",
+        "attack_name": "Endpoint Denial of Service",
+        "mapping_confidence": "medium"
+      },
+      "FTP-Patator": {
+        "attack_id": "T1110",
+        "attack_name": "Brute Force",
+        "mapping_confidence": "high"
+      },
+      "Heartbleed": {
+        "attack_id": "T1190",
+        "attack_name": "Exploit Public-Facing Application",
+        "mapping_confidence": "medium"
+      },
+      "Infiltration": {
+        "attack_id": "T1190",
+        "attack_name": "Exploit Public-Facing Application",
+        "mapping_confidence": "low"
+      },
+      "PortScan": {
+        "attack_id": "T1046",
+        "attack_name": "Network Service Discovery",
+        "mapping_confidence": "high"
+      },
+      "SSH-Patator": {
+        "attack_id": "T1110",
+        "attack_name": "Brute Force",
+        "mapping_confidence": "high"
+      },
+      "Web Attack - Brute Force": {
+        "attack_id": "T1110",
+        "attack_name": "Brute Force",
+        "mapping_confidence": "high"
+      },
+      "Web Attack - Sql Injection": {
+        "attack_id": "T1190",
+        "attack_name": "Exploit Public-Facing Application",
+        "mapping_confidence": "medium"
+      },
+      "Web Attack - XSS": {
+        "attack_id": "T1189",
+        "attack_name": "Drive-by Compromise",
+        "mapping_confidence": "low"
+      }
+    }
+  },
+  "evidence_exportable_from_existing_artifacts": {
+    "retrieval_context_json": [
+      "artifacts/retrieval/Bot.json",
+      "artifacts/retrieval/DDoS.json",
+      "artifacts/retrieval/FTP_Patator.json",
+      "artifacts/retrieval/PortScan.json",
+      "artifacts/retrieval/Web_Attack___Sql_Injection.json"
+    ],
+    "local_shap_json": [
+      "artifacts/shap/sample_explanations.json"
+    ],
+    "global_shap_importance": [
+      "artifacts/shap/global_feature_importance.csv"
+    ],
+    "cleaned_dataset_sample": [
+      "artifacts/processed/cleaned_cicids_sample.csv"
+    ],
+    "cleaned_dataset_full": [
+      "artifacts/processed/cleaned_cicids.parquet"
+    ],
+    "attack_label_mapping": [
+      "artifacts/attack_label_mapping.json"
+    ]
+  },
+  "unavailable_evidence_not_synthesized_as_fact": [
+    "Real local SHAP explanations are unavailable for Bot, FTP-Patator, PortScan, and Web Attack - Sql Injection in artifacts/shap/sample_explanations.json.",
+    "Medium- and low-confidence classifier examples are not present in the exported local SHAP artifact; all exported local explanations have confidence 1.0.",
+    "No asset ownership, exposure, or incident timeline evidence is present in the current artifacts.",
+    "Threat actor attribution is unavailable; group/tool/malware nodes from ATT&CK are contextual usage evidence only.",
+    "Additional retrieval neighborhoods beyond the saved deterministic retrieval JSON files were not synthesized."
+  ],
+  "gold_candidate_scope": {
+    "supported_retrieval_labels": [
+      "Bot",
+      "DDoS",
+      "FTP-Patator",
+      "PortScan",
+      "Web Attack - Sql Injection"
+    ],
+    "labels_with_real_local_shap": [
+      "BENIGN",
+      "DDoS",
+      "DoS Hulk"
+    ],
+    "labels_used_for_sft_generation": [
+      "Bot",
+      "DDoS",
+      "FTP-Patator",
+      "PortScan",
+      "Web Attack - Sql Injection"
+    ],
+    "reason_for_not_forcing_3000_examples": "Only five deterministic retrieval contexts and three attack-label local SHAP groups are exported. The gold-candidate set therefore prioritizes base-context diversity and reviewability over target size."
+  }
+}

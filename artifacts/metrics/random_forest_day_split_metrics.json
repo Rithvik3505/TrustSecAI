@@ -1,0 +1,85 @@
+{
+  "class_distribution": {
+    "test": {
+      "0": {
+        "count": 394777,
+        "percentage": 64.146219
+      },
+      "1": {
+        "count": 220656,
+        "percentage": 35.853781
+      }
+    },
+    "train": {
+      "0": {
+        "count": 1700280,
+        "percentage": 89.236446
+      },
+      "1": {
+        "count": 205085,
+        "percentage": 10.763554
+      }
+    }
+  },
+  "excluded_columns": [
+    "binary_label",
+    "label",
+    "source_file"
+  ],
+  "feature_count": 78,
+  "hyperparameters": {
+    "class_weight": "balanced_subsample",
+    "criterion": "gini",
+    "max_depth": null,
+    "n_estimators": 100,
+    "n_jobs": -1,
+    "random_state": 42
+  },
+  "input_path": "C:\\Users\\LENOVO\\WORK\\Projects\\TrustSecAI\\artifacts\\processed\\cleaned_cicids.parquet",
+  "model": "RandomForestClassifier",
+  "split_sizes": {
+    "test": 615433,
+    "train": 1905365
+  },
+  "task": "binary_ids_day_aware_validation",
+  "test_files": [
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+    "Friday-WorkingHours-Morning.pcap_ISCX.csv"
+  ],
+  "test_metrics": {
+    "accuracy": 0.6770875139942122,
+    "confusion_matrix": {
+      "fn": 198630,
+      "fp": 101,
+      "labels": [
+        0,
+        1
+      ],
+      "matrix": [
+        [
+          394676,
+          101
+        ],
+        [
+          198630,
+          22026
+        ]
+      ],
+      "tn": 394676,
+      "tp": 22026
+    },
+    "f1_score": 0.18144598262646067,
+    "precision": 0.9954354408641026,
+    "recall": 0.09982053513160757,
+    "roc_auc": 0.7816187753165065
+  },
+  "train_files": [
+    "Monday-WorkingHours.pcap_ISCX.csv",
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+    "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "Tuesday-WorkingHours.pcap_ISCX.csv",
+    "Wednesday-workingHours.pcap_ISCX.csv"
+  ],
+  "training_time_seconds": 63.633484399993904
+}

@@ -1,0 +1,351 @@
+{
+  "attack": {
+    "mitigations": [
+      {
+        "distance": 2,
+        "id": "M1037",
+        "name": "Filter Network Traffic",
+        "properties": {
+          "attack_id": "M1037",
+          "created": "2019-06-11T16:33:55.337Z",
+          "deprecated": false,
+          "description": "Employ network appliances and endpoint software to filter ingress, egress, and lateral network traffic. This includes protocol-based filtering, enforcing firewall rules, and blocking or restricting traffic based on predefined conditions to limit adversary movement and data exfiltration. This mitigation can be implemented through the following measures:\n\nIngress Traffic Filtering:\n\n- Use Case: Configure network firewalls to allow traffic only from authorized IP addresses to public-facing servers.\n- Implementation: Limit SSH (port 22) and RDP (port 3389) traffic to specific IP ranges.\n\nEgress Traffic Filtering:\n\n- Use Case: Use firewalls or endpoint security software to block unauthorized outbound traffic to prevent data exfiltration and command-and-control (C2) communications.\n- Implementation: Block outbound traffic to known malicious IPs or regions where communication is unexpected.\n\nProtocol-Based Filtering:\n\n- Use Case: Restrict the use of specific protocols that are commonly abused by adversaries, such as SMB, RPC, or Telnet, based on business needs.\n- Implementation: Disable SMBv1 on endpoints to prevent exploits like EternalBlue.\n\nNetwork Segmentation:\n\n- Use Case: Create network segments for critical systems and restrict communication between segments unless explicitly authorized.\n- Implementation: Implement VLANs to isolate IoT devices or guest networks from core business systems.\n\nApplication Layer Filtering:\n\n- Use Case: Use proxy servers or Web Application Firewalls (WAFs) to inspect and block malicious HTTP/S traffic.\n- Implementation: Configure a WAF to block SQL injection attempts or other web application exploitation techniques.",
+          "modified": "2026-05-12T15:12:00.730Z",
+          "name": "Filter Network Traffic",
+          "revoked": false,
+          "source": "MITRE ATT&CK Enterprise",
+          "url": "https://attack.mitre.org/mitigations/M1037"
+        },
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1498",
+            "relationship_type": "MITIGATED_BY",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "M1037"
+          }
+        ],
+        "rank_score": 1.71
+      }
+    ],
+    "tactics": [
+      {
+        "distance": 2,
+        "id": "TA0040",
+        "name": "Impact",
+        "properties": {
+          "attack_id": "TA0040",
+          "created": "2019-03-14T18:44:44.639Z",
+          "deprecated": false,
+          "description": "The adversary is trying to manipulate, interrupt, or destroy your systems and data.\n \nImpact consists of techniques that adversaries use to disrupt availability or compromise integrity by manipulating business and operational processes. Techniques used for impact can include destroying or tampering with data. In some cases, business processes can look fine, but may have been altered to benefit the adversaries\u2019 goals. These techniques might be used by adversaries to follow through on their end goal or to provide cover for a confidentiality breach.",
+          "modified": "2025-04-25T14:45:33.130Z",
+          "name": "Impact",
+          "revoked": false,
+          "short_name": "impact",
+          "source": "MITRE ATT&CK Enterprise",
+          "url": "https://attack.mitre.org/tactics/TA0040"
+        },
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1498",
+            "relationship_type": "HAS_TACTIC",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "TA0040"
+          }
+        ],
+        "rank_score": 1.71
+      }
+    ],
+    "technique": {
+      "distance": 1,
+      "id": "T1498",
+      "name": "Network Denial of Service",
+      "properties": {
+        "attack_id": "T1498",
+        "created": "2019-04-17T20:23:15.105Z",
+        "deprecated": false,
+        "description": "Adversaries may perform Network Denial of Service (DoS) attacks to degrade or block the availability of targeted resources to users. Network DoS can be performed by exhausting the network bandwidth services rely on. Example resources include specific websites, email services, DNS, and web-based applications. Adversaries have been observed conducting network DoS attacks for political purposes(Citation: FireEye OpPoisonedHandover February 2016) and to support other malicious activities, including distraction(Citation: FSISAC FraudNetDoS September 2012), hacktivism, and extortion.(Citation: Symantec DDoS October 2014)\n\nA Network DoS will occur when the bandwidth capacity of the network connection to a system is exhausted due to the volume of malicious traffic directed at the resource or the network connections and network devices the resource relies on. For example, an adversary may send 10Gbps of traffic to a server that is hosted by a network with a 1Gbps connection to the internet. This traffic can be generated by a single system or multiple systems spread across the internet, which is commonly referred to as a distributed DoS (DDoS).\n\nTo perform Network DoS attacks several aspects apply to multiple methods, including IP address spoofing, and botnets.\n\nAdversaries may use the original IP address of an attacking system, or spoof the source IP address to make the attack traffic more difficult to trace back to the attacking system or to enable reflection. This can increase the difficulty defenders have in defending against the attack by reducing or eliminating the effectiveness of filtering by the source address on network defense devices.\n\nFor DoS attacks targeting the hosting system directly, see [Endpoint Denial of Service](https://attack.mitre.org/techniques/T1499).",
+        "modified": "2025-10-24T17:49:28.162Z",
+        "name": "Network Denial of Service",
+        "platforms": [
+          "Windows",
+          "IaaS",
+          "Linux",
+          "macOS",
+          "Containers"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/techniques/T1498"
+      },
+      "provenance": [
+        {
+          "confidence": "high",
+          "inferred": false,
+          "method": null,
+          "origin_node": "DDoS",
+          "relationship_type": "DETECTED_AS",
+          "source": "TrustSecAI",
+          "target_node": "T1498"
+        }
+      ],
+      "rank_score": 1.88
+    }
+  },
+  "capec": [],
+  "classifier": {
+    "confidence": null
+  },
+  "cves": [],
+  "cwes": [],
+  "detection_guidance": [
+    {
+      "distance": 2,
+      "id": "x-mitre-detection-strategy--8103189e-83c8-4246-a56c-193e19c98182",
+      "name": "Behavioral Detection of T1498 \u2013 Network Denial of Service Across Platforms",
+      "properties": {
+        "analytic_refs": [
+          "x-mitre-analytic--0eff49de-834e-42d3-9a7a-3ac032aa9836",
+          "x-mitre-analytic--1578f892-0644-4974-bf55-9abb802612fa"
+        ],
+        "attack_id": "DET0518",
+        "created": "2025-10-21T15:10:28.402Z",
+        "deprecated": false,
+        "modified": "2026-05-12T16:34:50.683Z",
+        "name": "Behavioral Detection of T1498 \u2013 Network Denial of Service Across Platforms",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0518"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1498",
+          "relationship_type": "DETECTED_BY",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "x-mitre-detection-strategy--8103189e-83c8-4246-a56c-193e19c98182"
+        }
+      ],
+      "rank_score": 1.71
+    }
+  ],
+  "groups": [
+    {
+      "distance": 2,
+      "id": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c",
+      "name": "APT28",
+      "properties": {
+        "aliases": [
+          "APT28",
+          "IRON TWILIGHT",
+          "SNAKEMACKEREL",
+          "Swallowtail",
+          "Group 74",
+          "Sednit",
+          "Sofacy",
+          "Pawn Storm",
+          "Fancy Bear",
+          "STRONTIUM",
+          "Tsar Team",
+          "Threat Group-4127",
+          "TG-4127",
+          "Forest Blizzard",
+          "FROZENLAKE",
+          "GruesomeLarch"
+        ],
+        "attack_id": "G0007",
+        "created": "2017-05-31T21:31:48.664Z",
+        "deprecated": false,
+        "description": "[APT28](https://attack.mitre.org/groups/G0007) is a threat group that has been attributed to Russia's General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (GTsSS) military unit 26165.(Citation: NSA/FBI Drovorub August 2020)(Citation: Cybersecurity Advisory GRU Brute Force Campaign July 2021) This group has been active since at least 2004.(Citation: DOJ GRU Indictment Jul 2018)(Citation: Ars Technica GRU indictment Jul 2018)(Citation: Crowdstrike DNC June 2016)(Citation: FireEye APT28)(Citation: SecureWorks TG-4127)(Citation: FireEye APT28 January 2017)(Citation: GRIZZLY STEPPE JAR)(Citation: Sofacy DealersChoice)(Citation: Palo Alto Sofacy 06-2018)(Citation: Symantec APT28 Oct 2018)(Citation: ESET Zebrocy May 2019)\n\n[APT28](https://attack.mitre.org/groups/G0007) reportedly compromised the Hillary Clinton campaign, the Democratic National Committee, and the Democratic Congressional Campaign Committee in 2016 in an attempt to interfere with the U.S. presidential election.(Citation: Crowdstrike DNC June 2016) In 2018, the US indicted five GRU Unit 26165 officers associated with [APT28](https://attack.mitre.org/groups/G0007) for cyber operations (including close-access operations) conducted between 2014 and 2018 against the World Anti-Doping Agency (WADA), the US Anti-Doping Agency, a US nuclear facility, the Organization for the Prohibition of Chemical Weapons (OPCW), the Spiez Swiss Chemicals Laboratory, and other organizations.(Citation: US District Court Indictment GRU Oct 2018) Some of these were conducted with the assistance of GRU Unit 74455, which is also referred to as [Sandworm Team](https://attack.mitre.org/groups/G0034). ",
+        "modified": "2026-05-12T15:12:00.732Z",
+        "name": "APT28",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/groups/G0007"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1498",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c"
+        }
+      ],
+      "rank_score": 1.71
+    }
+  ],
+  "malware": [
+    {
+      "distance": 2,
+      "id": "malware--54a73038-1937-4d71-a253-316e76d5413c",
+      "name": "Lucifer",
+      "properties": {
+        "attack_id": "S0532",
+        "created": "2020-11-16T18:40:34.473Z",
+        "deprecated": false,
+        "description": "[Lucifer](https://attack.mitre.org/software/S0532) is a crypto miner and DDoS hybrid malware that leverages well-known exploits to spread laterally on Windows platforms.(Citation: Unit 42 Lucifer June 2020)",
+        "modified": "2025-04-25T14:43:22.226Z",
+        "name": "Lucifer",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0532"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1498",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "malware--54a73038-1937-4d71-a253-316e76d5413c"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "malware--bd2ebee8-7c38-408a-871d-221012104222",
+      "name": "NKAbuse",
+      "properties": {
+        "attack_id": "S1107",
+        "created": "2024-02-08T15:41:33.284Z",
+        "deprecated": false,
+        "description": "[NKAbuse](https://attack.mitre.org/software/S1107) is a Go-based, multi-platform malware abusing NKN (New Kind of Network) technology for data exchange between peers, functioning as a potent implant, and equipped with both flooder and backdoor capabilities.(Citation: NKAbuse BC)(Citation: NKAbuse SL)",
+        "modified": "2024-04-13T14:10:23.936Z",
+        "name": "NKAbuse",
+        "platforms": [
+          "Linux",
+          "macOS",
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S1107"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1498",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "malware--bd2ebee8-7c38-408a-871d-221012104222"
+        }
+      ],
+      "rank_score": 1.71
+    }
+  ],
+  "prediction": "DDoS",
+  "products": [],
+  "provenance": [
+    {
+      "category": "detection_guidance",
+      "confidence": "source",
+      "entity_id": "x-mitre-detection-strategy--8103189e-83c8-4246-a56c-193e19c98182",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1498",
+      "relationship_type": "DETECTED_BY",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "x-mitre-detection-strategy--8103189e-83c8-4246-a56c-193e19c98182"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1498",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c"
+    },
+    {
+      "category": "ids_label",
+      "confidence": null,
+      "entity_id": "DDoS",
+      "inferred": false,
+      "method": null,
+      "origin_node": "DDoS",
+      "relationship_type": "SELF",
+      "source": "TrustSecAI",
+      "target_node": "DDoS"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--54a73038-1937-4d71-a253-316e76d5413c",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1498",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--54a73038-1937-4d71-a253-316e76d5413c"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--bd2ebee8-7c38-408a-871d-221012104222",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1498",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--bd2ebee8-7c38-408a-871d-221012104222"
+    },
+    {
+      "category": "mitigations",
+      "confidence": "source",
+      "entity_id": "M1037",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1498",
+      "relationship_type": "MITIGATED_BY",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "M1037"
+    },
+    {
+      "category": "tactics",
+      "confidence": "source",
+      "entity_id": "TA0040",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1498",
+      "relationship_type": "HAS_TACTIC",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "TA0040"
+    },
+    {
+      "category": "technique",
+      "confidence": "high",
+      "entity_id": "T1498",
+      "inferred": false,
+      "method": null,
+      "origin_node": "DDoS",
+      "relationship_type": "DETECTED_AS",
+      "source": "TrustSecAI",
+      "target_node": "T1498"
+    }
+  ],
+  "references": [],
+  "retrieval": {
+    "latency_ms": 74.198,
+    "relationships_traversed": 7
+  },
+  "tools": []
+}

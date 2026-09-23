@@ -1,0 +1,229 @@
+{
+  "base_context_id": "ctx-ddos-mitigation_focus-09741b10",
+  "ids_label": "DDoS",
+  "classifier": {
+    "prediction": "DDoS",
+    "confidence": 1.0,
+    "confidence_band": "high"
+  },
+  "shap": {
+    "available": true,
+    "sample_id": 179193,
+    "true_label": 1,
+    "multiclass_label": "DDoS",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 2901.75,
+        "shap_value": 0.0654
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 5795.5007,
+        "shap_value": 0.0601
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 10300000.0,
+        "shap_value": 0.0597
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 3214.1675,
+        "shap_value": 0.0569
+      },
+      {
+        "feature": "Bwd Packet Length Max",
+        "value": 11595.0,
+        "shap_value": 0.0372
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 11595.0,
+        "shap_value": 0.0356
+      }
+    ]
+  },
+  "graph_context": {
+    "prediction": "DDoS",
+    "retrieval": {
+      "latency_ms": 74.198,
+      "relationships_traversed": 7
+    },
+    "attack": {
+      "technique": {
+        "id": "T1498",
+        "name": "Network Denial of Service",
+        "summary": "Adversaries may perform Network Denial of Service (DoS) attacks to degrade or block the availability of targeted resources to users. Network DoS can be performed by exhausting the network bandwidth services rely on. Example resources include specific...",
+        "rank_score": 1.88,
+        "distance": 1,
+        "provenance": [
+          {
+            "confidence": "high",
+            "inferred": false,
+            "method": null,
+            "origin_node": "DDoS",
+            "relationship_type": "DETECTED_AS",
+            "source": "TrustSecAI",
+            "target_node": "T1498"
+          }
+        ]
+      },
+      "tactics": [
+        {
+          "id": "TA0040",
+          "name": "Impact",
+          "summary": "The adversary is trying to manipulate, interrupt, or destroy your systems and data. Impact consists of techniques that adversaries use to disrupt availability or compromise integrity by manipulating business and operational processes. Techniques used for...",
+          "rank_score": 1.71,
+          "distance": 2,
+          "provenance": [
+            {
+              "confidence": "source",
+              "inferred": false,
+              "method": null,
+              "origin_node": "T1498",
+              "relationship_type": "HAS_TACTIC",
+              "source": "MITRE ATT&CK Enterprise",
+              "target_node": "TA0040"
+            }
+          ]
+        }
+      ],
+      "mitigations": []
+    },
+    "capec": [],
+    "cwes": [],
+    "cves": [],
+    "products": [],
+    "references": [],
+    "groups": [],
+    "tools": [],
+    "malware": [],
+    "detection_guidance": [
+      {
+        "id": "x-mitre-detection-strategy--8103189e-83c8-4246-a56c-193e19c98182",
+        "name": "Behavioral Detection of T1498 – Network Denial of Service Across Platforms",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1498",
+            "relationship_type": "DETECTED_BY",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "x-mitre-detection-strategy--8103189e-83c8-4246-a56c-193e19c98182"
+          }
+        ]
+      }
+    ],
+    "provenance": [
+      {
+        "category": "detection_guidance",
+        "confidence": "source",
+        "entity_id": "x-mitre-detection-strategy--8103189e-83c8-4246-a56c-193e19c98182",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1498",
+        "relationship_type": "DETECTED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "x-mitre-detection-strategy--8103189e-83c8-4246-a56c-193e19c98182"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1498",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c"
+      },
+      {
+        "category": "ids_label",
+        "confidence": null,
+        "entity_id": "DDoS",
+        "inferred": false,
+        "method": null,
+        "origin_node": "DDoS",
+        "relationship_type": "SELF",
+        "source": "TrustSecAI",
+        "target_node": "DDoS"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--54a73038-1937-4d71-a253-316e76d5413c",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1498",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--54a73038-1937-4d71-a253-316e76d5413c"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--bd2ebee8-7c38-408a-871d-221012104222",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1498",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--bd2ebee8-7c38-408a-871d-221012104222"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1037",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1498",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1037"
+      },
+      {
+        "category": "tactics",
+        "confidence": "source",
+        "entity_id": "TA0040",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1498",
+        "relationship_type": "HAS_TACTIC",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "TA0040"
+      },
+      {
+        "category": "technique",
+        "confidence": "high",
+        "entity_id": "T1498",
+        "inferred": false,
+        "method": null,
+        "origin_node": "DDoS",
+        "relationship_type": "DETECTED_AS",
+        "source": "TrustSecAI",
+        "target_node": "T1498"
+      }
+    ]
+  },
+  "evidence_conditions": [
+    "mitigation_focus_retrieval_context",
+    "real_local_shap_context",
+    "high_classifier_confidence",
+    "no_cve_context",
+    "no_capec_context",
+    "direct_graph_provenance"
+  ],
+  "provenance_type": "direct",
+  "source_artifacts": [
+    "artifacts/retrieval/DDoS.json",
+    "artifacts/shap/sample_explanations.json"
+  ]
+}

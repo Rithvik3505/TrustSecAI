@@ -1,0 +1,789 @@
+{
+  "average_node_degree": 7.922662945983656,
+  "connected_components_estimate": 570,
+  "graph_density": 0.0003948302076140564,
+  "ids_label_resolution": [
+    {
+      "label": "Bot",
+      "resolved": true
+    },
+    {
+      "label": "DDoS",
+      "resolved": true
+    },
+    {
+      "label": "DoS GoldenEye",
+      "resolved": true
+    },
+    {
+      "label": "DoS Hulk",
+      "resolved": true
+    },
+    {
+      "label": "DoS Slowhttptest",
+      "resolved": true
+    },
+    {
+      "label": "DoS slowloris",
+      "resolved": true
+    },
+    {
+      "label": "FTP-Patator",
+      "resolved": true
+    },
+    {
+      "label": "Heartbleed",
+      "resolved": true
+    },
+    {
+      "label": "Infiltration",
+      "resolved": true
+    },
+    {
+      "label": "PortScan",
+      "resolved": true
+    },
+    {
+      "label": "SSH-Patator",
+      "resolved": true
+    },
+    {
+      "label": "Web Attack - Brute Force",
+      "resolved": true
+    },
+    {
+      "label": "Web Attack - Sql Injection",
+      "resolved": true
+    },
+    {
+      "label": "Web Attack - XSS",
+      "resolved": true
+    }
+  ],
+  "isolated_node_count": 301,
+  "isolated_node_samples": [
+    {
+      "id": "T1174",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1151",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1148",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1081",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1212",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1012",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1162",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1166",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1223",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1488",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1084",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1044",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1103",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1159",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1117",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1147",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1213",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1210",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1482",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1072",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1009",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1123",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1033",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1120",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1115",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1144",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1029",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1217",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1013",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1155",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1202",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1135",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1130",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1169",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1079",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1493",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1020",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1010",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1019",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1002",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1022",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1083",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1062",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1150",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1077",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1004",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1494",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1183",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1186",
+      "label": "Mitigation"
+    },
+    {
+      "id": "T1107",
+      "label": "Mitigation"
+    }
+  ],
+  "node_counts": {
+    "CAPECPattern": 615,
+    "CVE": 1448,
+    "CWE": 353,
+    "Campaign": 56,
+    "DetectionStrategy": 699,
+    "Group": 189,
+    "IDSLabel": 14,
+    "Malware": 729,
+    "Mitigation": 268,
+    "Product": 383,
+    "Reference": 4312,
+    "SubTechnique": 493,
+    "Tactic": 15,
+    "Technique": 365,
+    "Tool": 95
+  },
+  "relationship_counts": {
+    "AFFECTS": 2914,
+    "ASSOCIATED_CVE": 6741,
+    "ATTRIBUTED_TO": 26,
+    "CAN_ALSO_BE": 3,
+    "CAN_FOLLOW": 10,
+    "CAN_PRECEDE": 162,
+    "CHILD_OF": 533,
+    "DETECTED_AS": 14,
+    "DETECTED_BY": 697,
+    "HAS_ATTACK_PATTERN": 270,
+    "HAS_TACTIC": 1090,
+    "HAS_WEAKNESS": 1412,
+    "MAPS_TO_ATTACK": 270,
+    "MITIGATED_BY": 1448,
+    "PEER_OF": 19,
+    "REFERENCES": 4663,
+    "RELATED_WEAKNESS": 779,
+    "SUBTECHNIQUE_OF": 477,
+    "USES_MALWARE": 764,
+    "USES_TECHNIQUE": 16903,
+    "USES_TOOL": 553
+  },
+  "schema_version": "attack-v1",
+  "top_20_highest_degree_capec_patterns": [
+    {
+      "capec_id": "CAPEC-85",
+      "degree": 116,
+      "name": "AJAX Footprinting"
+    },
+    {
+      "capec_id": "CAPEC-79",
+      "degree": 99,
+      "name": "Using Slashes in Alternate Encoding"
+    },
+    {
+      "capec_id": "CAPEC-64",
+      "degree": 98,
+      "name": "Using Slashes and URL Encoding Combined to Bypass Validation Logic"
+    },
+    {
+      "capec_id": "CAPEC-88",
+      "degree": 76,
+      "name": "OS Command Injection"
+    },
+    {
+      "capec_id": "CAPEC-22",
+      "degree": 75,
+      "name": "Exploiting Trust in Client"
+    },
+    {
+      "capec_id": "CAPEC-59",
+      "degree": 75,
+      "name": "Session Credential Falsification through Prediction"
+    },
+    {
+      "capec_id": "CAPEC-108",
+      "degree": 75,
+      "name": "Command Line Execution through SQL Injection"
+    },
+    {
+      "capec_id": "CAPEC-592",
+      "degree": 74,
+      "name": "Stored XSS"
+    },
+    {
+      "capec_id": "CAPEC-588",
+      "degree": 73,
+      "name": "DOM-Based XSS"
+    },
+    {
+      "capec_id": "CAPEC-10",
+      "degree": 73,
+      "name": "Buffer Overflow via Environment Variables"
+    },
+    {
+      "capec_id": "CAPEC-63",
+      "degree": 72,
+      "name": "Cross-Site Scripting (XSS)"
+    },
+    {
+      "capec_id": "CAPEC-267",
+      "degree": 71,
+      "name": "Leverage Alternate Encoding"
+    },
+    {
+      "capec_id": "CAPEC-591",
+      "degree": 71,
+      "name": "Reflected XSS"
+    },
+    {
+      "capec_id": "CAPEC-45",
+      "degree": 68,
+      "name": "Buffer Overflow via Symbolic Links"
+    },
+    {
+      "capec_id": "CAPEC-473",
+      "degree": 68,
+      "name": "Signature Spoof"
+    },
+    {
+      "capec_id": "CAPEC-104",
+      "degree": 67,
+      "name": "Cross Zone Scripting"
+    },
+    {
+      "capec_id": "CAPEC-46",
+      "degree": 67,
+      "name": "Overflow Variables and Tags"
+    },
+    {
+      "capec_id": "CAPEC-9",
+      "degree": 66,
+      "name": "Buffer Overflow in Local Command-Line Utilities"
+    },
+    {
+      "capec_id": "CAPEC-540",
+      "degree": 65,
+      "name": "Overread Buffers"
+    },
+    {
+      "capec_id": "CAPEC-665",
+      "degree": 64,
+      "name": "Exploitation of Thunderbolt Protection Flaws"
+    }
+  ],
+  "top_20_highest_degree_techniques": [
+    {
+      "attack_id": "T1105",
+      "degree": 520,
+      "name": "Ingress Tool Transfer"
+    },
+    {
+      "attack_id": "T1082",
+      "degree": 432,
+      "name": "System Information Discovery"
+    },
+    {
+      "attack_id": "T1071.001",
+      "degree": 424,
+      "name": "Web Protocols"
+    },
+    {
+      "attack_id": "T1059.003",
+      "degree": 390,
+      "name": "Windows Command Shell"
+    },
+    {
+      "attack_id": "T1083",
+      "degree": 375,
+      "name": "File and Directory Discovery"
+    },
+    {
+      "attack_id": "T1140",
+      "degree": 352,
+      "name": "Deobfuscate/Decode Files or Information"
+    },
+    {
+      "attack_id": "T1057",
+      "degree": 322,
+      "name": "Process Discovery"
+    },
+    {
+      "attack_id": "T1070.004",
+      "degree": 311,
+      "name": "File Deletion"
+    },
+    {
+      "attack_id": "T1016",
+      "degree": 291,
+      "name": "System Network Configuration Discovery"
+    },
+    {
+      "attack_id": "T1547.001",
+      "degree": 266,
+      "name": "Registry Run Keys / Startup Folder"
+    },
+    {
+      "attack_id": "T1027.013",
+      "degree": 251,
+      "name": "Encrypted/Encoded File"
+    },
+    {
+      "attack_id": "T1033",
+      "degree": 245,
+      "name": "System Owner/User Discovery"
+    },
+    {
+      "attack_id": "T1059.001",
+      "degree": 241,
+      "name": "PowerShell"
+    },
+    {
+      "attack_id": "T1005",
+      "degree": 240,
+      "name": "Data from Local System"
+    },
+    {
+      "attack_id": "T1106",
+      "degree": 232,
+      "name": "Native API"
+    },
+    {
+      "attack_id": "T1036.005",
+      "degree": 226,
+      "name": "Match Legitimate Resource Name or Location"
+    },
+    {
+      "attack_id": "T1041",
+      "degree": 205,
+      "name": "Exfiltration Over C2 Channel"
+    },
+    {
+      "attack_id": "T1204.002",
+      "degree": 202,
+      "name": "Malicious File"
+    },
+    {
+      "attack_id": "T1053.005",
+      "degree": 199,
+      "name": "Scheduled Task"
+    },
+    {
+      "attack_id": "T1573.001",
+      "degree": 188,
+      "name": "Symmetric Cryptography"
+    }
+  ],
+  "top_referenced_cves": [
+    {
+      "base_score": 7.1,
+      "cve_id": "CVE-2026-45329",
+      "references": 97,
+      "severity": "HIGH"
+    },
+    {
+      "base_score": 5.3,
+      "cve_id": "CVE-2026-12203",
+      "references": 84,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": 5.5,
+      "cve_id": "CVE-2026-42970",
+      "references": 82,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": 3.3,
+      "cve_id": "CVE-2026-11459",
+      "references": 81,
+      "severity": "LOW"
+    },
+    {
+      "base_score": 5.5,
+      "cve_id": "CVE-2026-45594",
+      "references": 80,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": 5.5,
+      "cve_id": "CVE-2026-42971",
+      "references": 80,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": 6.5,
+      "cve_id": "CVE-2026-42907",
+      "references": 77,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": 5.5,
+      "cve_id": "CVE-2026-42906",
+      "references": 74,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": 3.3,
+      "cve_id": "CVE-2025-13462",
+      "references": 68,
+      "severity": "LOW"
+    },
+    {
+      "base_score": 5.3,
+      "cve_id": "CVE-2026-49397",
+      "references": 66,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": 5.5,
+      "cve_id": "CVE-2026-49219",
+      "references": 65,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": null,
+      "cve_id": "CVE-2026-9210",
+      "references": 64,
+      "severity": "UNSCORED"
+    },
+    {
+      "base_score": 6.1,
+      "cve_id": "CVE-2026-41539",
+      "references": 64,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": null,
+      "cve_id": "CVE-2026-49742",
+      "references": 63,
+      "severity": "UNSCORED"
+    },
+    {
+      "base_score": 4.8,
+      "cve_id": "CVE-2026-50009",
+      "references": 63,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": null,
+      "cve_id": "CVE-2026-0411",
+      "references": 63,
+      "severity": "UNSCORED"
+    },
+    {
+      "base_score": 4.0,
+      "cve_id": "CVE-2026-45536",
+      "references": 62,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": null,
+      "cve_id": "CVE-2026-47351",
+      "references": 62,
+      "severity": "UNSCORED"
+    },
+    {
+      "base_score": 5.3,
+      "cve_id": "CVE-2026-45085",
+      "references": 60,
+      "severity": "MEDIUM"
+    },
+    {
+      "base_score": 6.5,
+      "cve_id": "CVE-2026-46443",
+      "references": 60,
+      "severity": "MEDIUM"
+    }
+  ],
+  "top_referenced_cwes": [
+    {
+      "cwe_id": "CWE-416",
+      "references": 93
+    },
+    {
+      "cwe_id": "CWE-200",
+      "references": 93
+    },
+    {
+      "cwe_id": "NVD-CWE-noinfo",
+      "references": 89
+    },
+    {
+      "cwe_id": "CWE-20",
+      "references": 79
+    },
+    {
+      "cwe_id": "CWE-79",
+      "references": 66
+    },
+    {
+      "cwe_id": "CWE-125",
+      "references": 64
+    },
+    {
+      "cwe_id": "CWE-284",
+      "references": 51
+    },
+    {
+      "cwe_id": "CWE-787",
+      "references": 47
+    },
+    {
+      "cwe_id": "CWE-22",
+      "references": 47
+    },
+    {
+      "cwe_id": "CWE-862",
+      "references": 45
+    },
+    {
+      "cwe_id": "CWE-863",
+      "references": 41
+    },
+    {
+      "cwe_id": "CWE-770",
+      "references": 36
+    },
+    {
+      "cwe_id": "CWE-122",
+      "references": 31
+    },
+    {
+      "cwe_id": "CWE-74",
+      "references": 30
+    },
+    {
+      "cwe_id": "CWE-476",
+      "references": 29
+    },
+    {
+      "cwe_id": "CWE-639",
+      "references": 28
+    },
+    {
+      "cwe_id": "CWE-400",
+      "references": 27
+    },
+    {
+      "cwe_id": "CWE-693",
+      "references": 27
+    },
+    {
+      "cwe_id": "CWE-78",
+      "references": 26
+    },
+    {
+      "cwe_id": "CWE-89",
+      "references": 26
+    }
+  ],
+  "total_nodes": 10034,
+  "total_relationships": 39748,
+  "validation_results": [
+    {
+      "attack_id": "T1046",
+      "capec_patterns": 1,
+      "cves": 37,
+      "cwes": 1,
+      "label": "PortScan",
+      "mitigations": 3,
+      "products": 30,
+      "resolved": true,
+      "tactics": [
+        "Discovery"
+      ],
+      "technique": "Network Service Discovery"
+    },
+    {
+      "attack_id": "T1190",
+      "capec_patterns": 0,
+      "cves": 0,
+      "cwes": 0,
+      "label": "Web Attack - Sql Injection",
+      "mitigations": 8,
+      "products": 0,
+      "resolved": true,
+      "tactics": [
+        "Initial Access"
+      ],
+      "technique": "Exploit Public-Facing Application"
+    },
+    {
+      "attack_id": "T1110",
+      "capec_patterns": 1,
+      "cves": 3,
+      "cwes": 2,
+      "label": "FTP-Patator",
+      "mitigations": 4,
+      "products": 2,
+      "resolved": true,
+      "tactics": [
+        "Credential Access"
+      ],
+      "technique": "Brute Force"
+    },
+    {
+      "attack_id": "T1498",
+      "capec_patterns": 0,
+      "cves": 0,
+      "cwes": 0,
+      "label": "DDoS",
+      "mitigations": 1,
+      "products": 0,
+      "resolved": true,
+      "tactics": [
+        "Impact"
+      ],
+      "technique": "Network Denial of Service"
+    },
+    {
+      "attack_id": "T1105",
+      "capec_patterns": 0,
+      "cves": 0,
+      "cwes": 0,
+      "label": "Bot",
+      "mitigations": 2,
+      "products": 0,
+      "resolved": true,
+      "tactics": [
+        "Command and Control"
+      ],
+      "technique": "Ingress Tool Transfer"
+    }
+  ]
+}

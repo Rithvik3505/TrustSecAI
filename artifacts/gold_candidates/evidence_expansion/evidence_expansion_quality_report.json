@@ -1,0 +1,95 @@
+{
+  "status": "complete",
+  "passed": true,
+  "feature_count": 78,
+  "model_metadata_keys": [
+    "excluded_columns",
+    "feature_columns",
+    "hyperparameters",
+    "metadata",
+    "split_config"
+  ],
+  "duplicate_sample_ids": [],
+  "duplicate_base_context_ids": [],
+  "missing_classifier_prediction_count": 0,
+  "missing_confidence_count": 0,
+  "missing_shap_count": 0,
+  "unsupported_ids_label_count": 0,
+  "missing_retrieval_context_count": 0,
+  "repeated_identical_shap_profiles": [
+    {
+      "features": [
+        "Bwd Packet Length Std",
+        "Init_Win_bytes_backward",
+        "Bwd Packet Length Mean",
+        "Destination Port",
+        "Packet Length Std"
+      ],
+      "count": 8
+    },
+    {
+      "features": [
+        "Average Packet Size",
+        "Destination Port",
+        "Max Packet Length",
+        "Bwd Header Length",
+        "Init_Win_bytes_backward"
+      ],
+      "count": 9
+    },
+    {
+      "features": [
+        "Average Packet Size",
+        "Bwd Header Length",
+        "Init_Win_bytes_backward",
+        "Fwd Header Length",
+        "Destination Port"
+      ],
+      "count": 7
+    },
+    {
+      "features": [
+        "Destination Port",
+        "Init_Win_bytes_backward",
+        "Init_Win_bytes_forward",
+        "Flow Bytes/s",
+        "Fwd Packet Length Max"
+      ],
+      "count": 7
+    },
+    {
+      "features": [
+        "Destination Port",
+        "Init_Win_bytes_backward",
+        "Bwd Packet Length Mean",
+        "Bwd Packet Length Std",
+        "Bwd IAT Total"
+      ],
+      "count": 7
+    }
+  ],
+  "excessive_duplicate_rows_from_same_source_file": [],
+  "train_validation_test_leakage_risk_indicators": {
+    "same_source_file_per_label": {
+      "DDoS": [
+        "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv"
+      ],
+      "PortScan": [
+        "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv"
+      ],
+      "Bot": [
+        "Friday-WorkingHours-Morning.pcap_ISCX.csv"
+      ],
+      "Web Attack - Sql Injection": [
+        "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv"
+      ],
+      "FTP-Patator": [
+        "Tuesday-WorkingHours.pcap_ISCX.csv"
+      ]
+    },
+    "note": "CICIDS attack labels are often concentrated in one capture day/source_file. v1 train/validation/test splits must group by base_context_id and should consider source_file-aware review."
+  },
+  "quality_flags": [
+    "Repeated SHAP profiles above threshold: 5"
+  ]
+}

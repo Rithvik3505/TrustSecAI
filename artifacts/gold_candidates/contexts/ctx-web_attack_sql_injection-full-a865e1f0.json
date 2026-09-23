@@ -1,0 +1,651 @@
+{
+  "base_context_id": "ctx-web_attack_sql_injection-full-a865e1f0",
+  "ids_label": "Web Attack - Sql Injection",
+  "classifier": {
+    "prediction": "Web Attack - Sql Injection",
+    "confidence_band": "unavailable"
+  },
+  "shap": {
+    "available": false,
+    "top_features": []
+  },
+  "graph_context": {
+    "prediction": "Web Attack - Sql Injection",
+    "retrieval": {
+      "latency_ms": 88.056,
+      "relationships_traversed": 29
+    },
+    "attack": {
+      "technique": {
+        "id": "T1190",
+        "name": "Exploit Public-Facing Application",
+        "summary": "Adversaries may attempt to exploit a weakness in an Internet-facing host or system to initially access a network. The weakness in the system can be a software bug, a temporary glitch, or a misconfiguration. Exploited applications are often websites/web...",
+        "rank_score": 1.58,
+        "distance": 1,
+        "provenance": [
+          {
+            "confidence": "medium",
+            "inferred": false,
+            "method": null,
+            "origin_node": "Web Attack - Sql Injection",
+            "relationship_type": "DETECTED_AS",
+            "source": "TrustSecAI",
+            "target_node": "T1190"
+          }
+        ]
+      },
+      "tactics": [
+        {
+          "id": "TA0001",
+          "name": "Initial Access",
+          "summary": "The adversary is trying to get into your network. Initial Access consists of techniques that use various entry vectors to gain their initial foothold within a network. Techniques used to gain a foothold include targeted spearphishing and exploiting...",
+          "rank_score": 1.71,
+          "distance": 2,
+          "provenance": [
+            {
+              "confidence": "source",
+              "inferred": false,
+              "method": null,
+              "origin_node": "T1190",
+              "relationship_type": "HAS_TACTIC",
+              "source": "MITRE ATT&CK Enterprise",
+              "target_node": "TA0001"
+            }
+          ]
+        }
+      ],
+      "mitigations": [
+        {
+          "id": "M1016",
+          "name": "Vulnerability Scanning",
+          "summary": "Vulnerability scanning involves the automated or manual assessment of systems, applications, and networks to identify misconfigurations, unpatched software, or other security weaknesses. The process helps prioritize remediation efforts by classifying...",
+          "rank_score": 1.71,
+          "distance": 2,
+          "provenance": [
+            {
+              "confidence": "source",
+              "inferred": false,
+              "method": null,
+              "origin_node": "T1190",
+              "relationship_type": "MITIGATED_BY",
+              "source": "MITRE ATT&CK Enterprise",
+              "target_node": "M1016"
+            }
+          ]
+        },
+        {
+          "id": "M1026",
+          "name": "Privileged Account Management",
+          "summary": "Privileged Account Management focuses on implementing policies, controls, and tools to securely manage privileged accounts (e.g., SYSTEM, root, or administrative accounts). This includes restricting access, limiting the scope of permissions, monitoring...",
+          "rank_score": 1.71,
+          "distance": 2,
+          "provenance": [
+            {
+              "confidence": "source",
+              "inferred": false,
+              "method": null,
+              "origin_node": "T1190",
+              "relationship_type": "MITIGATED_BY",
+              "source": "MITRE ATT&CK Enterprise",
+              "target_node": "M1026"
+            }
+          ]
+        },
+        {
+          "id": "M1030",
+          "name": "Network Segmentation",
+          "summary": "Network segmentation involves dividing a network into smaller, isolated segments to control and limit the flow of traffic between devices, systems, and applications. By segmenting networks, organizations can reduce the attack surface, restrict lateral...",
+          "rank_score": 1.71,
+          "distance": 2,
+          "provenance": [
+            {
+              "confidence": "source",
+              "inferred": false,
+              "method": null,
+              "origin_node": "T1190",
+              "relationship_type": "MITIGATED_BY",
+              "source": "MITRE ATT&CK Enterprise",
+              "target_node": "M1030"
+            }
+          ]
+        },
+        {
+          "id": "M1035",
+          "name": "Limit Access to Resource Over Network",
+          "summary": "Restrict access to network resources, such as file shares, remote systems, and services, to only those users, accounts, or systems with a legitimate business requirement. This can include employing technologies like network concentrators, RDP gateways, and...",
+          "rank_score": 1.71,
+          "distance": 2,
+          "provenance": [
+            {
+              "confidence": "source",
+              "inferred": false,
+              "method": null,
+              "origin_node": "T1190",
+              "relationship_type": "MITIGATED_BY",
+              "source": "MITRE ATT&CK Enterprise",
+              "target_node": "M1035"
+            }
+          ]
+        }
+      ]
+    },
+    "capec": [],
+    "cwes": [],
+    "cves": [],
+    "products": [],
+    "references": [],
+    "groups": [
+      {
+        "id": "intrusion-set--02b16bd6-ae88-417a-8a3f-02c5e166175a",
+        "name": "BlackByte",
+        "summary": "[BlackByte](https://attack.mitre.org/groups/G1043) is a ransomware threat actor operating since at least 2021. [BlackByte](https://attack.mitre.org/groups/G1043) is associated with several versions of ransomware also labeled [BlackByte...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1190",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "intrusion-set--02b16bd6-ae88-417a-8a3f-02c5e166175a"
+          }
+        ]
+      },
+      {
+        "id": "intrusion-set--18854f55-ac7c-4634-bd9a-352dd07613b7",
+        "name": "APT41",
+        "summary": "[APT41](https://attack.mitre.org/groups/G0096) is a threat group that researchers have assessed as Chinese state-sponsored espionage group that also conducts financially-motivated operations. Active since at least 2012,...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1190",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "intrusion-set--18854f55-ac7c-4634-bd9a-352dd07613b7"
+          }
+        ]
+      },
+      {
+        "id": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80",
+        "name": "APT39",
+        "summary": "[APT39](https://attack.mitre.org/groups/G0087) is one of several names for cyber espionage activity conducted by the Iranian Ministry of Intelligence and Security (MOIS) through the front company Rana Intelligence Computing since at least 2014....",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1190",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80"
+          }
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "id": "tool--9a2640c2-9f43-46fe-b13f-bde881e55555",
+        "name": "sqlmap",
+        "summary": "[sqlmap](https://attack.mitre.org/software/S0225) is an open source penetration testing tool that can be used to automate the process of detecting and exploiting SQL injection flaws. (Citation: sqlmap Introduction)",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1190",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "tool--9a2640c2-9f43-46fe-b13f-bde881e55555"
+          }
+        ]
+      },
+      {
+        "id": "tool--fbd727ea-c0dc-42a9-8448-9e12962d1ab5",
+        "name": "Havij",
+        "summary": "[Havij](https://attack.mitre.org/software/S0224) is an automatic SQL Injection tool distributed by the Iranian ITSecTeam security company. Havij has been used by penetration testers and adversaries. (Citation: Check Point Havij Analysis)",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1190",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "tool--fbd727ea-c0dc-42a9-8448-9e12962d1ab5"
+          }
+        ]
+      }
+    ],
+    "malware": [
+      {
+        "id": "malware--0c242cc5-58d3-4fe3-a866-b00a4b6fb817",
+        "name": "COATHANGER",
+        "summary": "[COATHANGER](https://attack.mitre.org/software/S1105) is a remote access tool (RAT) targeting FortiGate networking appliances. First used in 2023 in targeted intrusions against military and government entities in the Netherlands along with other victims,...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1190",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "malware--0c242cc5-58d3-4fe3-a866-b00a4b6fb817"
+          }
+        ]
+      },
+      {
+        "id": "malware--325fa466-4a2a-45a0-acc6-f6bed9b45ebe",
+        "name": "BOLDMOVE",
+        "summary": "[BOLDMOVE](https://attack.mitre.org/software/S1184) is a type of backdoor malware written in C linked to People’s Republic of China operations from 2022 through 2023. [BOLDMOVE](https://attack.mitre.org/software/S1184) includes both Windows and Linux...",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1190",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "malware--325fa466-4a2a-45a0-acc6-f6bed9b45ebe"
+          }
+        ]
+      },
+      {
+        "id": "malware--4fbd565b-bf55-4ac7-80b4-b183a7b64b9c",
+        "name": "Siloscape",
+        "summary": "[Siloscape](https://attack.mitre.org/software/S0623) is malware that targets Kubernetes clusters through Windows containers. [Siloscape](https://attack.mitre.org/software/S0623) was first observed in March 2021.(Citation: Unit 42 Siloscape Jun 2021)",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1190",
+            "relationship_type": "USES_TECHNIQUE",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "malware--4fbd565b-bf55-4ac7-80b4-b183a7b64b9c"
+          }
+        ]
+      }
+    ],
+    "detection_guidance": [
+      {
+        "id": "x-mitre-detection-strategy--dd8477c8-2aad-4db3-b810-fe0d2f605fa8",
+        "name": "Exploit Public-Facing Application – multi-signal correlation (request → error → post-exploit process/egress)",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1190",
+            "relationship_type": "DETECTED_BY",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "x-mitre-detection-strategy--dd8477c8-2aad-4db3-b810-fe0d2f605fa8"
+          }
+        ]
+      }
+    ],
+    "provenance": [
+      {
+        "category": "detection_guidance",
+        "confidence": "source",
+        "entity_id": "x-mitre-detection-strategy--dd8477c8-2aad-4db3-b810-fe0d2f605fa8",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "DETECTED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "x-mitre-detection-strategy--dd8477c8-2aad-4db3-b810-fe0d2f605fa8"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--02b16bd6-ae88-417a-8a3f-02c5e166175a",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--02b16bd6-ae88-417a-8a3f-02c5e166175a"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--18854f55-ac7c-4634-bd9a-352dd07613b7",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--18854f55-ac7c-4634-bd9a-352dd07613b7"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--6fe8a2a1-a1b0-4af8-953d-4babd329f8f8",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--6fe8a2a1-a1b0-4af8-953d-4babd329f8f8"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--899ce53f-13a0-479b-a0e4-67d46e241542",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--899ce53f-13a0-479b-a0e4-67d46e241542"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--9735c036-8ebe-47e9-9c77-b0ae656dab93",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--9735c036-8ebe-47e9-9c77-b0ae656dab93"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--a0cb9370-e39b-44d5-9f50-ef78e412b973",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--a0cb9370-e39b-44d5-9f50-ef78e412b973"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--b8137919-38cb-4db0-90f3-437be885faba",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--b8137919-38cb-4db0-90f3-437be885faba"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--c1aab4c9-4c34-4f4f-8541-d529e46a07f9",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--c1aab4c9-4c34-4f4f-8541-d529e46a07f9"
+      },
+      {
+        "category": "ids_label",
+        "confidence": null,
+        "entity_id": "Web Attack - Sql Injection",
+        "inferred": false,
+        "method": null,
+        "origin_node": "Web Attack - Sql Injection",
+        "relationship_type": "SELF",
+        "source": "TrustSecAI",
+        "target_node": "Web Attack - Sql Injection"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--0c242cc5-58d3-4fe3-a866-b00a4b6fb817",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--0c242cc5-58d3-4fe3-a866-b00a4b6fb817"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--325fa466-4a2a-45a0-acc6-f6bed9b45ebe",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--325fa466-4a2a-45a0-acc6-f6bed9b45ebe"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--4fbd565b-bf55-4ac7-80b4-b183a7b64b9c",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--4fbd565b-bf55-4ac7-80b4-b183a7b64b9c"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--cfc75b0d-e579-40ae-ad07-a1ce00d49a6c",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--cfc75b0d-e579-40ae-ad07-a1ce00d49a6c"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--e23d2777-b85d-44fc-861e-9149d399fbb9",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--e23d2777-b85d-44fc-861e-9149d399fbb9"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--e33e4603-afab-402d-b2a1-248d435b5fe0",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--e33e4603-afab-402d-b2a1-248d435b5fe0"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1016",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1016"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1026",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1026"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1030",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1030"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1035",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1035"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1037",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1037"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1048",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1048"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1050",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1050"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1051",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1051"
+      },
+      {
+        "category": "tactics",
+        "confidence": "source",
+        "entity_id": "TA0001",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "HAS_TACTIC",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "TA0001"
+      },
+      {
+        "category": "technique",
+        "confidence": "medium",
+        "entity_id": "T1190",
+        "inferred": false,
+        "method": null,
+        "origin_node": "Web Attack - Sql Injection",
+        "relationship_type": "DETECTED_AS",
+        "source": "TrustSecAI",
+        "target_node": "T1190"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--9a2640c2-9f43-46fe-b13f-bde881e55555",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--9a2640c2-9f43-46fe-b13f-bde881e55555"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--fbd727ea-c0dc-42a9-8448-9e12962d1ab5",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1190",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--fbd727ea-c0dc-42a9-8448-9e12962d1ab5"
+      }
+    ]
+  },
+  "evidence_conditions": [
+    "full_retrieval_context",
+    "missing_local_shap_context",
+    "classifier_confidence_unavailable",
+    "no_cve_context",
+    "no_capec_context",
+    "direct_graph_provenance"
+  ],
+  "provenance_type": "direct",
+  "source_artifacts": [
+    "artifacts/retrieval/Web_Attack___Sql_Injection.json"
+  ]
+}

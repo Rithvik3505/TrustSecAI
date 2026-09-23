@@ -1,0 +1,49 @@
+{
+  "results": [
+    {
+      "errors": "",
+      "label": "PortScan",
+      "latency_ms": 1440.639,
+      "nodes_retrieved": 62,
+      "relationships_traversed": 97,
+      "technique": "T1046",
+      "valid": true
+    },
+    {
+      "errors": "",
+      "label": "FTP-Patator",
+      "latency_ms": 406.414,
+      "nodes_retrieved": 35,
+      "relationships_traversed": 39,
+      "technique": "T1110",
+      "valid": true
+    },
+    {
+      "errors": "",
+      "label": "Bot",
+      "latency_ms": 84.006,
+      "nodes_retrieved": 29,
+      "relationships_traversed": 35,
+      "technique": "T1105",
+      "valid": true
+    },
+    {
+      "errors": "",
+      "label": "DDoS",
+      "latency_ms": 74.322,
+      "nodes_retrieved": 7,
+      "relationships_traversed": 7,
+      "technique": "T1498",
+      "valid": true
+    },
+    {
+      "errors": "",
+      "label": "Web Attack - Sql Injection",
+      "latency_ms": 88.325,
+      "nodes_retrieved": 27,
+      "relationships_traversed": 29,
+      "technique": "T1190",
+      "valid": true
+    }
+  ]
+}

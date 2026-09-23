@@ -1,0 +1,449 @@
+{
+  "demo_mode": "end_to_end_live_local",
+  "neo4j_uri": "bolt://127.0.0.1:7687",
+  "live_components": [
+    "classifier",
+    "feature_extraction",
+    "report_assembly",
+    "agreement_analysis",
+    "attack_chain_logic"
+  ],
+  "cached_components": [
+    "lora_text_generation_from_hpc_evaluation",
+    "graph_context_from_frozen_lora_prompt"
+  ],
+  "lora_generation_available": true,
+  "lora_generation_file": "artifacts\\evaluation\\lora_v1\\lora_generations_compact.jsonl",
+  "selected_lora_example_id": "trustsecai-gold-v1-00575",
+  "graph_context_mode": "live_neo4j_attack_chain",
+  "classifier_evidence": {
+    "ids_label": "Web Attack - Sql Injection",
+    "model_prediction": "ATTACK",
+    "model_confidence": 0.9477227926254272,
+    "attack_probability": 0.9477227926254272,
+    "benign_probability": 0.052277207374572754,
+    "confidence_band": "high",
+    "sample_id": "classifier-demo-005",
+    "source_file": "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "true_ids_label": "Web Attack - Sql Injection",
+    "binary_ground_truth": 1,
+    "binary_correct": true,
+    "feature_count": 78,
+    "model_path": "C:\\Users\\LENOVO\\WORK\\Projects\\TrustSecAI\\TrustSecAI\\models\\xgboost\\xgboost_model.joblib",
+    "sample_data_path": "C:\\Users\\LENOVO\\WORK\\Projects\\TrustSecAI\\TrustSecAI\\artifacts\\demo\\classifier_live_samples.csv",
+    "excluded_from_prediction": [
+      "label",
+      "binary_label",
+      "source_file",
+      "sample_id"
+    ],
+    "feature_overrides": {}
+  },
+  "shap_evidence": {
+    "has_real_shap": true,
+    "top_features": [
+      {
+        "feature": "Destination Port",
+        "value": 80.0,
+        "shap_value": 2.716888189315796,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 236.0,
+        "shap_value": 2.3629465103149414,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": -1.1524089574813843,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Bwd Packets/s",
+        "value": 20833.33333,
+        "shap_value": 0.7957030534744263,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Header Length",
+        "value": 32.0,
+        "shap_value": -0.5832650661468506,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Flow IAT Min",
+        "value": 48.0,
+        "shap_value": 0.3698025047779083,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "URG Flag Count",
+        "value": 1.0,
+        "shap_value": -0.3630054295063019,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Fwd Header Length",
+        "value": 32.0,
+        "shap_value": -0.35816332697868347,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Flow Packets/s",
+        "value": 41666.66667,
+        "shap_value": 0.33617299795150757,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "PSH Flag Count",
+        "value": 0.0,
+        "shap_value": -0.2870412766933441,
+        "direction": "supports_benign"
+      }
+    ],
+    "source": "frozen_lora_prompt_context",
+    "fallback_note": "Live SHAP unavailable; package `shap` is not installed."
+  },
+  "graph_context_summary": {
+    "technique": {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application"
+    },
+    "tactics": [
+      {
+        "id": "TA0001",
+        "name": "Initial Access"
+      }
+    ],
+    "mitigation_ids": [
+      "M1016",
+      "M1026",
+      "M1030",
+      "M1035",
+      "M1037",
+      "M1048",
+      "M1050",
+      "M1051"
+    ],
+    "capec_ids": [],
+    "cwe_ids": [],
+    "cve_ids": [],
+    "provenance_type": "direct",
+    "has_cve": false,
+    "context_mode": "cached_frozen_lora_context"
+  },
+  "llm_secondary_assessment": {
+    "ids_label": "Web Attack - Sql Injection",
+    "sample_id": 1448270,
+    "classifier_evidence": "The binary XGBoost classifier predicted ATTACK with 98.32% confidence; the IDS subtype used for retrieval is the real CICIDS label Web Attack - Sql Injection.",
+    "shap_evidence": [
+      {
+        "feature": "Destination Port",
+        "value": 80.0,
+        "shap_value": 2.7169,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 236.0,
+        "shap_value": 2.3629,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": -1.1524,
+        "direction": "supports_benign"
+      }
+    ],
+    "graph_interpretation": "Retrieved graph context maps the subtype to Exploit Public-Facing Application (T1190) under Initial Access (TA0001) as contextual intelligence, not proof of compromise.",
+    "limitations": [
+      "No CVE evidence is present in the supplied graph context.",
+      "ATT&CK group, tool, and malware entries are usage context, not attribution."
+    ],
+    "provenance_summary": [
+      "Derived context from MITRE ATT&CK Enterprise",
+      "Used only supplied classifier, SHAP, and graph context",
+      "Preserve the distinction between contextual intelligence and attribution"
+    ],
+    "recommended_actions": [
+      "Validate the sample against packet capture and session telemetry",
+      "Escalate if confirmed compromise; review post-exploit process/egress for additional detection",
+      "Preserve the limitation notes when sharing the assistant's output"
+    ],
+    "parse_ok": true,
+    "raw_output": "{\n  \"ids_label\": \"Web Attack - Sql Injection\",\n  \"sample_id\": 1448270,\n  \"classifier_evidence\": \"The binary XGBoost classifier predicted ATTACK with 98.32% confidence; the IDS subtype used for retrieval is the real CICIDS label Web Attack - Sql Injection.\",\n  \"shap_evidence\": [\n    {\n      \"feature\": \"Destination Port\",\n      \"value\": 80.0,\n      \"shap_value\": 2.7169,\n      \"direction\": \"supports_attack\"\n    },\n    {\n      \"feature\": \"Init_Win_bytes_backward\",\n      \"value\": 236.0,\n      \"shap_value\": 2.3629,\n      \"direction\": \"supports_attack\"\n    },\n    {\n      \"feature\": \"Bwd Packet Length Std\",\n      \"value\": 0.0,\n      \"shap_value\": -1.1524,\n      \"direction\": \"supports_benign\"\n    }\n  ],\n  \"graph_interpretation\": \"Retrieved graph context maps the subtype to Exploit Public-Facing Application (T1190) under Initial Access (TA0001) as contextual intelligence, not proof of compromise.\",\n  \"limitations\": [\n    \"No CVE evidence is present in the supplied graph context.\",\n    \"ATT&CK group, tool, and malware entries are usage context, not attribution.\"\n  ],\n  \"provenance_summary\": [\n    \"Derived context from MITRE ATT&CK Enterprise\",\n    \"Used only supplied classifier, SHAP, and graph context\",\n    \"Preserve the distinction between contextual intelligence and attribution\"\n  ],\n  \"recommended_actions\": [\n    \"Validate the sample against packet capture and session telemetry\",\n    \"Escalate if confirmed compromise; review post-exploit process/egress for additional detection\",\n    \"Preserve the limitation notes when sharing the assistant's output\"\n  ]\n}"
+  },
+  "agreement_result": {
+    "category": "agree_attack_high_confidence",
+    "classifier_prediction": "ATTACK",
+    "classifier_confidence": 0.9477227926254272,
+    "ids_label": "Web Attack - Sql Injection",
+    "rationale": "Classifier and LLM both support an attack-oriented assessment for Web Attack - Sql Injection with high classifier confidence."
+  },
+  "attack_chain_prediction": {
+    "mode": "graph",
+    "graph_available": true,
+    "seed": {
+      "ids_label": "Web Attack - Sql Injection",
+      "technique_id": "T1190",
+      "technique_name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access"
+    },
+    "candidate_next_steps": [
+      {
+        "rank": 3,
+        "technique_id": "T1078",
+        "technique_name": "Valid Accounts",
+        "tactic": "Initial Access",
+        "rationale": "Shares a tactic with the seed technique; use as a bounded defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "MITRE ATT&CK Enterprise",
+            "relationship_type": "HAS_TACTIC",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "T1190",
+            "target_node": "T1078"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "rank": 3,
+        "technique_id": "T1078.001",
+        "technique_name": "Default Accounts",
+        "tactic": "Initial Access",
+        "rationale": "Shares a tactic with the seed technique; use as a bounded defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "MITRE ATT&CK Enterprise",
+            "relationship_type": "HAS_TACTIC",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "T1190",
+            "target_node": "T1078.001"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "rank": 3,
+        "technique_id": "T1078.002",
+        "technique_name": "Domain Accounts",
+        "tactic": "Initial Access",
+        "rationale": "Shares a tactic with the seed technique; use as a bounded defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "MITRE ATT&CK Enterprise",
+            "relationship_type": "HAS_TACTIC",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "T1190",
+            "target_node": "T1078.002"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "rank": 3,
+        "technique_id": "T1078.003",
+        "technique_name": "Local Accounts",
+        "tactic": "Initial Access",
+        "rationale": "Shares a tactic with the seed technique; use as a bounded defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "MITRE ATT&CK Enterprise",
+            "relationship_type": "HAS_TACTIC",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "T1190",
+            "target_node": "T1078.003"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "rank": 3,
+        "technique_id": "T1078.004",
+        "technique_name": "Cloud Accounts",
+        "tactic": "Initial Access",
+        "rationale": "Shares a tactic with the seed technique; use as a bounded defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "MITRE ATT&CK Enterprise",
+            "relationship_type": "HAS_TACTIC",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "T1190",
+            "target_node": "T1078.004"
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "seed_technique": {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access"
+    },
+    "likely_next_tactics_techniques": [
+      {
+        "id": "T1078",
+        "technique": "Valid Accounts",
+        "tactic": "Initial Access"
+      },
+      {
+        "id": "T1078.001",
+        "technique": "Default Accounts",
+        "tactic": "Initial Access"
+      },
+      {
+        "id": "T1078.002",
+        "technique": "Domain Accounts",
+        "tactic": "Initial Access"
+      },
+      {
+        "id": "T1078.003",
+        "technique": "Local Accounts",
+        "tactic": "Initial Access"
+      },
+      {
+        "id": "T1078.004",
+        "technique": "Cloud Accounts",
+        "tactic": "Initial Access"
+      }
+    ],
+    "mitigations": [
+      {
+        "id": "M1030",
+        "name": "Network Segmentation",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1190",
+          "target_node": "M1030"
+        }
+      },
+      {
+        "id": "M1050",
+        "name": "Exploit Protection",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1190",
+          "target_node": "M1050"
+        }
+      },
+      {
+        "id": "M1048",
+        "name": "Application Isolation and Sandboxing",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1190",
+          "target_node": "M1048"
+        }
+      },
+      {
+        "id": "M1026",
+        "name": "Privileged Account Management",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1190",
+          "target_node": "M1026"
+        }
+      },
+      {
+        "id": "M1037",
+        "name": "Filter Network Traffic",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1190",
+          "target_node": "M1037"
+        }
+      },
+      {
+        "id": "M1016",
+        "name": "Vulnerability Scanning",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1190",
+          "target_node": "M1016"
+        }
+      },
+      {
+        "id": "M1035",
+        "name": "Limit Access to Resource Over Network",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1190",
+          "target_node": "M1035"
+        }
+      },
+      {
+        "id": "M1051",
+        "name": "Update Software",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1190",
+          "target_node": "M1051"
+        }
+      }
+    ],
+    "vulnerability_context": {
+      "capec": [],
+      "cwes": [],
+      "cves": []
+    },
+    "caveats": [
+      "This is a defensive hypothesis for prioritizing investigation, not an instruction sequence.",
+      "Graph traversal returns candidate investigation pivots; it does not prove compromise.",
+      "Group, tool, and malware context must not be treated as attribution.",
+      "No CVE evidence was reached from the graph traversal for this seed."
+    ],
+    "confidence": "medium"
+  },
+  "limitations": [
+    "Live demo runs classifier inference, response parsing, agreement analysis, attack-chain logic, and report assembly.",
+    "LoRA text generation is cached from HPC compact evaluation outputs and is not executed locally.",
+    "Graph context in the report is contextual intelligence, not proof of compromise or attribution."
+  ],
+  "markdown_report": "# TrustSecAI Security Assessment Report\n\n## Executive Summary\n\nThe classifier identified Web Attack - Sql Injection with 94.77% confidence and prediction ATTACK. SHAP evidence is led by Destination Port, Init_Win_bytes_backward, and graph context maps the behavior to T1190 Exploit Public-Facing Application as contextual intelligence. No CVE or asset exposure evidence is present, so this is a triage assessment rather than confirmed compromise.\n\n## Incident Summary\n\n- IDS label: `Web Attack - Sql Injection`\n- Binary classifier prediction: `ATTACK`\n- Classifier confidence: `94.77%`\n- Sample ID: `classifier-demo-005`\n\n## Classifier And SHAP Evidence\n\n- Destination Port = 80.0, SHAP +2.7169, supports attack\n- Init_Win_bytes_backward = 236.0, SHAP +2.3629, supports attack\n- Bwd Packet Length Std = 0.0, SHAP -1.1524, supports benign\n- Bwd Packets/s = 20833.33333, SHAP +0.7957, supports attack\n- Bwd Header Length = 32.0, SHAP -0.5833, supports benign\n\n## Graph Context\n\n- Technique: `T1190` Exploit Public-Facing Application\n- Tactics: TA0001 Initial Access\n- Mitigations: M1016, M1026, M1030, M1035, M1037, M1048, M1050, M1051\n\nGraph context is contextual intelligence and does not prove compromise or attribution.\n\n## LLM Secondary Assessment\n\n- LLM output parsed successfully.\n- Graph interpretation: Retrieved graph context maps the subtype to Exploit Public-Facing Application (T1190) under Initial Access (TA0001) as contextual intelligence, not proof of compromise.\n\n### Recommended Actions\n\n- Validate the sample against packet capture and session telemetry\n- Escalate if confirmed compromise; review post-exploit process/egress for additional detection\n- Preserve the limitation notes when sharing the assistant's output\n\n### LLM Limitations\n\n- No CVE evidence is present in the supplied graph context.\n- ATT&CK group, tool, and malware entries are usage context, not attribution.\n\n## Classifier vs LLM Agreement\n\n- Category: `agree_attack_high_confidence`\n- Rationale: Classifier and LLM both support an attack-oriented assessment for Web Attack - Sql Injection with high classifier confidence.\n\n## Defensive Attack Chain Hypothesis\n\n- Attack-chain mode: graph-backed Neo4j traversal\n- Seed technique: `T1190` Exploit Public-Facing Application\n- Confidence: `medium`\n\n### Likely Next Tactics/Techniques\n\n- Initial Access: T1078 Valid Accounts\n- Initial Access: T1078.001 Default Accounts\n- Initial Access: T1078.002 Domain Accounts\n- Initial Access: T1078.003 Local Accounts\n- Initial Access: T1078.004 Cloud Accounts\n\n### Chain Mitigations\n\n- M1030 Network Segmentation\n- M1050 Exploit Protection\n- M1048 Application Isolation and Sandboxing\n- M1026 Privileged Account Management\n- M1037 Filter Network Traffic\n- M1016 Vulnerability Scanning\n- M1035 Limit Access to Resource Over Network\n- M1051 Update Software\n\n### Vulnerability Context\n\n- CAPEC: none reached\n- CWE: none reached\n- CVE: none reached\n\n### Caveats\n\n- This is a defensive hypothesis for prioritizing investigation, not an instruction sequence.\n- Graph traversal returns candidate investigation pivots; it does not prove compromise.\n- Group, tool, and malware context must not be treated as attribution.\n- No CVE evidence was reached from the graph traversal for this seed.\n\n## Overall Limitations\n\n- Live demo runs classifier inference, response parsing, agreement analysis, attack-chain logic, and report assembly.\n- LoRA text generation is cached from HPC compact evaluation outputs and is not executed locally.\n- Graph context in the report is contextual intelligence, not proof of compromise or attribution.\n"
+}

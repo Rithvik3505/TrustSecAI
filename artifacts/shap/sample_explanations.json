@@ -1,0 +1,1222 @@
+[
+  {
+    "sample_id": 2035034,
+    "true_label": 1,
+    "multiclass_label": "DoS Hulk",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Wednesday-workingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 1894.680443,
+        "shap_value": 0.06713769190858283
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 1564.377904,
+        "shap_value": 0.054566737271507376
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 1449.375,
+        "shap_value": 0.05144668295505236
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 2447278.225,
+        "shap_value": 0.049834943131274456
+      },
+      {
+        "feature": "Bwd Packet Length Max",
+        "value": 4344.0,
+        "shap_value": 0.039337821467566245
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 4344.0,
+        "shap_value": 0.032002414632844346
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 235.0,
+        "shap_value": 0.021857600148097525
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 11595.0,
+        "shap_value": 0.0214693945011066
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 921.7692308,
+        "shap_value": 0.018961943686473155
+      },
+      {
+        "feature": "Destination Port",
+        "value": 80.0,
+        "shap_value": 0.01590314774082566
+      }
+    ]
+  },
+  {
+    "sample_id": 2081168,
+    "true_label": 1,
+    "multiclass_label": "DoS Hulk",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Wednesday-workingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Packet Length Std",
+        "value": 2121.41236,
+        "shap_value": 0.08522703976224465
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 4500390.4,
+        "shap_value": 0.07257761251736472
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 2537.820147,
+        "shap_value": 0.07105385534807428
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 1932.5,
+        "shap_value": 0.06866082456621202
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 5792.0,
+        "shap_value": 0.050676061970239654
+      },
+      {
+        "feature": "Bwd Packet Length Max",
+        "value": 5792.0,
+        "shap_value": 0.03897528235673156
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 1932.5,
+        "shap_value": 0.029991516752495343
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 1324.666667,
+        "shap_value": 0.029844965268247273
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 235.0,
+        "shap_value": 0.02444318216763252
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 11595.0,
+        "shap_value": 0.021085819317712966
+      }
+    ]
+  },
+  {
+    "sample_id": 179193,
+    "true_label": 1,
+    "multiclass_label": "DDoS",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 2901.75,
+        "shap_value": 0.06539080266465595
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 5795.50069,
+        "shap_value": 0.06011833677368502
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 10300000.0,
+        "shap_value": 0.05974017236781893
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 3214.167532,
+        "shap_value": 0.0569380122676999
+      },
+      {
+        "feature": "Bwd Packet Length Max",
+        "value": 11595.0,
+        "shap_value": 0.03716411466509285
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 11595.0,
+        "shap_value": 0.035633414033503494
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 2901.75,
+        "shap_value": 0.01939296729061767
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 11607.0,
+        "shap_value": 0.018910778106259116
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 972.4166667,
+        "shap_value": 0.01836987132228675
+      },
+      {
+        "feature": "Destination Port",
+        "value": 80.0,
+        "shap_value": 0.016614413537585727
+      }
+    ]
+  },
+  {
+    "sample_id": 2062166,
+    "true_label": 1,
+    "multiclass_label": "DoS Hulk",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Wednesday-workingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 4095.56617,
+        "shap_value": 0.07571348247314505
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 2562.056506,
+        "shap_value": 0.06547959371470531
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 2898.75,
+        "shap_value": 0.0631813359771568
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 6564133.538,
+        "shap_value": 0.05640761283479977
+      },
+      {
+        "feature": "Bwd Packet Length Max",
+        "value": 8688.0,
+        "shap_value": 0.03862587572826631
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 8688.0,
+        "shap_value": 0.03785382723429173
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 2898.75,
+        "shap_value": 0.022326877555582245
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 235.0,
+        "shap_value": 0.019921909903114356
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 1082.818182,
+        "shap_value": 0.019897703663073835
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 11595.0,
+        "shap_value": 0.01903807964788779
+      }
+    ]
+  },
+  {
+    "sample_id": 138828,
+    "true_label": 1,
+    "multiclass_label": "DDoS",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Max Packet Length",
+        "value": 6.0,
+        "shap_value": 0.05906862917395368
+      },
+      {
+        "feature": "Destination Port",
+        "value": 80.0,
+        "shap_value": 0.04350660139419645
+      },
+      {
+        "feature": "Fwd Packet Length Max",
+        "value": 6.0,
+        "shap_value": 0.04048477420478886
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 7.2,
+        "shap_value": 0.036355977744000775
+      },
+      {
+        "feature": "Subflow Fwd Bytes",
+        "value": 30.0,
+        "shap_value": 0.03607117869218642
+      },
+      {
+        "feature": "Fwd Packet Length Mean",
+        "value": 6.0,
+        "shap_value": 0.030124646765875746
+      },
+      {
+        "feature": "Avg Fwd Segment Size",
+        "value": 6.0,
+        "shap_value": 0.029046180791358484
+      },
+      {
+        "feature": "Subflow Fwd Packets",
+        "value": 5.0,
+        "shap_value": 0.026453543642047488
+      },
+      {
+        "feature": "Total Fwd Packets",
+        "value": 5.0,
+        "shap_value": 0.0237307346621309
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 0.0,
+        "shap_value": 0.01833380230011655
+      }
+    ]
+  },
+  {
+    "sample_id": 2037178,
+    "true_label": 1,
+    "multiclass_label": "DoS Hulk",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Wednesday-workingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 3170.403917,
+        "shap_value": 0.07331496003284523
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 2242.289379,
+        "shap_value": 0.06366643856049935
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 2319.0,
+        "shap_value": 0.0629746751843462
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 5027861.659,
+        "shap_value": 0.057191578993345905
+      },
+      {
+        "feature": "Bwd Packet Length Max",
+        "value": 5792.0,
+        "shap_value": 0.03746653600791865
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 5792.0,
+        "shap_value": 0.03286678226404288
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 2319.0,
+        "shap_value": 0.022659149790699308
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 235.0,
+        "shap_value": 0.019675227551369388
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 11595.0,
+        "shap_value": 0.018656404850152596
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 1087.363636,
+        "shap_value": 0.018513350249424167
+      }
+    ]
+  },
+  {
+    "sample_id": 2026895,
+    "true_label": 1,
+    "multiclass_label": "DoS Hulk",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Wednesday-workingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 1932.5,
+        "shap_value": 0.06662988016423807
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 1424.899385,
+        "shap_value": 0.05930721687600862
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 1754.831473,
+        "shap_value": 0.05751921189513299
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 2030338.257,
+        "shap_value": 0.05172227822871025
+      },
+      {
+        "feature": "Bwd Packet Length Max",
+        "value": 4344.0,
+        "shap_value": 0.03738281519453491
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 4344.0,
+        "shap_value": 0.031750252331502735
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 11595.0,
+        "shap_value": 0.024663436428364112
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 1932.5,
+        "shap_value": 0.024572667159447198
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 235.0,
+        "shap_value": 0.019397612208511623
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 852.4285714,
+        "shap_value": 0.017577806581092432
+      }
+    ]
+  },
+  {
+    "sample_id": 2007401,
+    "true_label": 1,
+    "multiclass_label": "DoS Hulk",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Wednesday-workingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Packet Length Std",
+        "value": 1621.980627,
+        "shap_value": 0.08585826742228714
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 1932.5,
+        "shap_value": 0.07557450146732744
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 2630821.156,
+        "shap_value": 0.07502109831282412
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 1754.831473,
+        "shap_value": 0.061776757797709324
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 4344.0,
+        "shap_value": 0.04388468467459755
+      },
+      {
+        "feature": "Bwd Packet Length Max",
+        "value": 4344.0,
+        "shap_value": 0.03758788940225535
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 1326.0,
+        "shap_value": 0.03635231539538976
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 1932.5,
+        "shap_value": 0.030937225634111575
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 11595.0,
+        "shap_value": 0.0280052936240211
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 235.0,
+        "shap_value": 0.02317115844099724
+      }
+    ]
+  },
+  {
+    "sample_id": 185663,
+    "true_label": 1,
+    "multiclass_label": "DDoS",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Max Packet Length",
+        "value": 6.0,
+        "shap_value": 0.05855110335397595
+      },
+      {
+        "feature": "Destination Port",
+        "value": 80.0,
+        "shap_value": 0.044354000448952935
+      },
+      {
+        "feature": "Fwd Packet Length Max",
+        "value": 6.0,
+        "shap_value": 0.04211282940306466
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 7.2,
+        "shap_value": 0.033880967076473104
+      },
+      {
+        "feature": "Subflow Fwd Bytes",
+        "value": 30.0,
+        "shap_value": 0.032662695391752594
+      },
+      {
+        "feature": "Fwd Packet Length Mean",
+        "value": 6.0,
+        "shap_value": 0.030840135200972518
+      },
+      {
+        "feature": "Avg Fwd Segment Size",
+        "value": 6.0,
+        "shap_value": 0.029513896560768804
+      },
+      {
+        "feature": "Total Fwd Packets",
+        "value": 5.0,
+        "shap_value": 0.02097486840150128
+      },
+      {
+        "feature": "Subflow Fwd Packets",
+        "value": 5.0,
+        "shap_value": 0.0201168878173304
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 0.0,
+        "shap_value": 0.017939342893640464
+      }
+    ]
+  },
+  {
+    "sample_id": 2110354,
+    "true_label": 1,
+    "multiclass_label": "DoS Hulk",
+    "prediction": 1,
+    "prediction_name": "ATTACK",
+    "confidence": 1.0,
+    "source_file": "Wednesday-workingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 1932.5,
+        "shap_value": 0.06678338549946426
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 1424.695266,
+        "shap_value": 0.05894236856451731
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 1754.831473,
+        "shap_value": 0.058245378023115135
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 2029756.6,
+        "shap_value": 0.051182729903990885
+      },
+      {
+        "feature": "Bwd Packet Length Max",
+        "value": 4344.0,
+        "shap_value": 0.036722109049927044
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 4344.0,
+        "shap_value": 0.031021252122728393
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 1932.5,
+        "shap_value": 0.024159113540621013
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 11595.0,
+        "shap_value": 0.02404706150217693
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 235.0,
+        "shap_value": 0.019287361204237196
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 853.0714286,
+        "shap_value": 0.017187792675384304
+      }
+    ]
+  },
+  {
+    "sample_id": 1435999,
+    "true_label": 0,
+    "multiclass_label": "BENIGN",
+    "prediction": 0,
+    "prediction_name": "BENIGN",
+    "confidence": 1.0,
+    "source_file": "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Destination Port",
+        "value": 53350.0,
+        "shap_value": -0.06475233620038522
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": -1.0,
+        "shap_value": -0.03210402578135749
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 31.0,
+        "shap_value": -0.02817219207166627
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 16.33333333,
+        "shap_value": -0.02427794701595965
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 0.0,
+        "shap_value": -0.024270427205017164
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 0.0,
+        "shap_value": -0.0213384042660948
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 156.25,
+        "shap_value": -0.021313500952156013
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": -0.01745699586337541
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 12.5,
+        "shap_value": -0.01740314701586875
+      },
+      {
+        "feature": "Subflow Bwd Bytes",
+        "value": 0.0,
+        "shap_value": -0.017078981051312794
+      }
+    ]
+  },
+  {
+    "sample_id": 2435282,
+    "true_label": 0,
+    "multiclass_label": "BENIGN",
+    "prediction": 0,
+    "prediction_name": "BENIGN",
+    "confidence": 1.0,
+    "source_file": "Wednesday-workingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Destination Port",
+        "value": 443.0,
+        "shap_value": -0.06961912831617012
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 14600.0,
+        "shap_value": -0.056629728137775136
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 0.0,
+        "shap_value": -0.028813104072636254
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 0.0,
+        "shap_value": -0.024301520779691332
+      },
+      {
+        "feature": "Subflow Bwd Bytes",
+        "value": 0.0,
+        "shap_value": -0.019172745152754578
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 3.0,
+        "shap_value": -0.0191087451315814
+      },
+      {
+        "feature": "Bwd Header Length",
+        "value": 32.0,
+        "shap_value": -0.01779146032330142
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": -0.01698934665275663
+      },
+      {
+        "feature": "Fwd IAT Min",
+        "value": 341545.0,
+        "shap_value": -0.016362180417191053
+      },
+      {
+        "feature": "Flow IAT Mean",
+        "value": 170772.5,
+        "shap_value": -0.014829362966889316
+      }
+    ]
+  },
+  {
+    "sample_id": 854964,
+    "true_label": 0,
+    "multiclass_label": "BENIGN",
+    "prediction": 0,
+    "prediction_name": "BENIGN",
+    "confidence": 1.0,
+    "source_file": "Monday-WorkingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Destination Port",
+        "value": 55104.0,
+        "shap_value": -0.08746118838526822
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 38.0,
+        "shap_value": -0.03442257847061476
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 0.0,
+        "shap_value": -0.028978508711211787
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 394.8,
+        "shap_value": -0.026905326412338268
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 6.0,
+        "shap_value": -0.024622217144448292
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 20.5,
+        "shap_value": -0.024181874060156684
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 19.8695747312,
+        "shap_value": -0.0215986793443394
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 6.0,
+        "shap_value": -0.019151746428108424
+      },
+      {
+        "feature": "Fwd Packet Length Max",
+        "value": 38.0,
+        "shap_value": -0.018319395783185113
+      },
+      {
+        "feature": "Subflow Bwd Bytes",
+        "value": 6.0,
+        "shap_value": -0.01828423227859924
+      }
+    ]
+  },
+  {
+    "sample_id": 1292198,
+    "true_label": 0,
+    "multiclass_label": "BENIGN",
+    "prediction": 0,
+    "prediction_name": "BENIGN",
+    "confidence": 1.0,
+    "source_file": "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Bwd Header Length",
+        "value": 40.0,
+        "shap_value": -0.051198593760327024
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 12.0,
+        "shap_value": -0.04470542690875107
+      },
+      {
+        "feature": "Subflow Bwd Bytes",
+        "value": 12.0,
+        "shap_value": -0.03812866021675605
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 4.8,
+        "shap_value": -0.030137224333546906
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 2.19089023,
+        "shap_value": -0.029431990762520576
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 0.0,
+        "shap_value": -0.028803081608008024
+      },
+      {
+        "feature": "Fwd Header Length.1",
+        "value": 48.0,
+        "shap_value": -0.023420936659045915
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 6.0,
+        "shap_value": -0.020368177645650652
+      },
+      {
+        "feature": "Fwd IAT Max",
+        "value": 1.0,
+        "shap_value": -0.019209485991700484
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": -0.018535546506819583
+      }
+    ]
+  },
+  {
+    "sample_id": 1906958,
+    "true_label": 0,
+    "multiclass_label": "BENIGN",
+    "prediction": 0,
+    "prediction_name": "BENIGN",
+    "confidence": 1.0,
+    "source_file": "Tuesday-WorkingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 46.0,
+        "shap_value": -0.03449937925535514
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": -1.0,
+        "shap_value": -0.03150003338384742
+      },
+      {
+        "feature": "Subflow Bwd Bytes",
+        "value": 46.0,
+        "shap_value": -0.02940812272138069
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 23.0,
+        "shap_value": -0.02791134210728825
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 28.75,
+        "shap_value": -0.026518597682885215
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 23.0,
+        "shap_value": -0.02608765308304519
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 23.0,
+        "shap_value": -0.023618823285988275
+      },
+      {
+        "feature": "Destination Port",
+        "value": 53.0,
+        "shap_value": 0.020178928061351926
+      },
+      {
+        "feature": "Packet Length Mean",
+        "value": 23.0,
+        "shap_value": -0.019956366028483136
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": -0.019912266780604978
+      }
+    ]
+  },
+  {
+    "sample_id": 592957,
+    "true_label": 0,
+    "multiclass_label": "BENIGN",
+    "prediction": 0,
+    "prediction_name": "BENIGN",
+    "confidence": 1.0,
+    "source_file": "Friday-WorkingHours-Morning.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Destination Port",
+        "value": 443.0,
+        "shap_value": -0.04946036652105367
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 1545.0,
+        "shap_value": -0.028817753019227694
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 118.0,
+        "shap_value": -0.02852831019198563
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 303.7857143,
+        "shap_value": -0.028144085712181254
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 4253.0,
+        "shap_value": -0.02547471985910136
+      },
+      {
+        "feature": "Subflow Bwd Packets",
+        "value": 14.0,
+        "shap_value": -0.02325556870996097
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 168.8787879,
+        "shap_value": -0.022865846136979152
+      },
+      {
+        "feature": "Total Backward Packets",
+        "value": 14.0,
+        "shap_value": -0.021410282433841448
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 303.7857143,
+        "shap_value": -0.0201296000371688
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 545.1842566,
+        "shap_value": -0.01890753049212499
+      }
+    ]
+  },
+  {
+    "sample_id": 801759,
+    "true_label": 0,
+    "multiclass_label": "BENIGN",
+    "prediction": 0,
+    "prediction_name": "BENIGN",
+    "confidence": 1.0,
+    "source_file": "Monday-WorkingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 204.0,
+        "shap_value": -0.03739074402105176
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 204.0,
+        "shap_value": -0.033553665641217416
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": -1.0,
+        "shap_value": -0.03323807048173563
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 204.0,
+        "shap_value": -0.027553350205962352
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 146.0,
+        "shap_value": -0.02666997099296165
+      },
+      {
+        "feature": "Subflow Bwd Bytes",
+        "value": 204.0,
+        "shap_value": -0.02630947655132924
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": -0.020442695598361975
+      },
+      {
+        "feature": "Packet Length Mean",
+        "value": 97.3333333333,
+        "shap_value": -0.02023216443902766
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 204.0,
+        "shap_value": -0.019660280750797
+      },
+      {
+        "feature": "Bwd Packet Length Max",
+        "value": 204.0,
+        "shap_value": -0.01957043665515153
+      }
+    ]
+  },
+  {
+    "sample_id": 1504338,
+    "true_label": 0,
+    "multiclass_label": "BENIGN",
+    "prediction": 0,
+    "prediction_name": "BENIGN",
+    "confidence": 1.0,
+    "source_file": "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": -1.0,
+        "shap_value": -0.039211036263107825
+      },
+      {
+        "feature": "Fwd Packet Length Max",
+        "value": 1472.0,
+        "shap_value": -0.03234546905348582
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 578.0,
+        "shap_value": -0.03217258620150646
+      },
+      {
+        "feature": "Subflow Bwd Bytes",
+        "value": 578.0,
+        "shap_value": -0.027580309864923016
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": -0.027046196704142954
+      },
+      {
+        "feature": "Max Packet Length",
+        "value": 1472.0,
+        "shap_value": -0.02650625785678315
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 289.0,
+        "shap_value": -0.025558498985399844
+      },
+      {
+        "feature": "Avg Fwd Segment Size",
+        "value": 1472.0,
+        "shap_value": -0.017662433904085895
+      },
+      {
+        "feature": "Bwd Packet Length Min",
+        "value": 289.0,
+        "shap_value": -0.017597415293706717
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 419846.7,
+        "shap_value": -0.017437950336825127
+      }
+    ]
+  },
+  {
+    "sample_id": 723980,
+    "true_label": 0,
+    "multiclass_label": "BENIGN",
+    "prediction": 0,
+    "prediction_name": "BENIGN",
+    "confidence": 1.0,
+    "source_file": "Monday-WorkingHours.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 368.0,
+        "shap_value": -0.047160079509054716
+      },
+      {
+        "feature": "Fwd Header Length",
+        "value": 20.0,
+        "shap_value": -0.04145190938865378
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 9.0,
+        "shap_value": -0.03707723685470199
+      },
+      {
+        "feature": "Fwd Header Length.1",
+        "value": 20.0,
+        "shap_value": -0.03533266448214685
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 0.0,
+        "shap_value": -0.03262335116546928
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 0.0,
+        "shap_value": -0.02992062122901813
+      },
+      {
+        "feature": "PSH Flag Count",
+        "value": 0.0,
+        "shap_value": -0.026663773516216276
+      },
+      {
+        "feature": "ACK Flag Count",
+        "value": 1.0,
+        "shap_value": -0.02657340569069098
+      },
+      {
+        "feature": "Destination Port",
+        "value": 80.0,
+        "shap_value": 0.025816760315637798
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 6.0,
+        "shap_value": -0.025712305848842366
+      }
+    ]
+  },
+  {
+    "sample_id": 247140,
+    "true_label": 0,
+    "multiclass_label": "BENIGN",
+    "prediction": 0,
+    "prediction_name": "BENIGN",
+    "confidence": 1.0,
+    "source_file": "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+    "top_features": [
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 56.0,
+        "shap_value": -0.037233394980363245
+      },
+      {
+        "feature": "URG Flag Count",
+        "value": 1.0,
+        "shap_value": -0.03223948198448478
+      },
+      {
+        "feature": "Packet Length Std",
+        "value": 0.0,
+        "shap_value": -0.026321723793705586
+      },
+      {
+        "feature": "Total Length of Bwd Packets",
+        "value": 6.0,
+        "shap_value": -0.025026034977373605
+      },
+      {
+        "feature": "Avg Bwd Segment Size",
+        "value": 6.0,
+        "shap_value": -0.024153782653672542
+      },
+      {
+        "feature": "Average Packet Size",
+        "value": 8.0,
+        "shap_value": -0.02393822396314703
+      },
+      {
+        "feature": "Destination Port",
+        "value": 80.0,
+        "shap_value": 0.022441052823610707
+      },
+      {
+        "feature": "Packet Length Variance",
+        "value": 0.0,
+        "shap_value": -0.021109818756472054
+      },
+      {
+        "feature": "Subflow Bwd Bytes",
+        "value": 6.0,
+        "shap_value": -0.019258403371232066
+      },
+      {
+        "feature": "Fwd Header Length.1",
+        "value": 40.0,
+        "shap_value": -0.019211192240867214
+      }
+    ]
+  }
+]

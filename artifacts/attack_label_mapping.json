@@ -1,0 +1,86 @@
+{
+  "Bot": {
+    "attack_id": "T1105",
+    "attack_name": "Ingress Tool Transfer",
+    "confidence": "low",
+    "rationale": "Bot traffic may involve command/control or tool transfer; mapping requires more incident context."
+  },
+  "DDoS": {
+    "attack_id": "T1498",
+    "attack_name": "Network Denial of Service",
+    "confidence": "high",
+    "rationale": "Distributed denial-of-service traffic aligns with network denial-of-service impact."
+  },
+  "DoS GoldenEye": {
+    "attack_id": "T1499",
+    "attack_name": "Endpoint Denial of Service",
+    "confidence": "medium",
+    "rationale": "GoldenEye is represented as a DoS scenario; mapped conservatively to endpoint denial of service."
+  },
+  "DoS Hulk": {
+    "attack_id": "T1499",
+    "attack_name": "Endpoint Denial of Service",
+    "confidence": "medium",
+    "rationale": "CICIDS DoS Hulk is a denial-of-service scenario; exact ATT&CK sub-technique depends on target/service context."
+  },
+  "DoS Slowhttptest": {
+    "attack_id": "T1499",
+    "attack_name": "Endpoint Denial of Service",
+    "confidence": "medium",
+    "rationale": "Slow HTTP DoS behavior maps to service/resource exhaustion under endpoint denial of service."
+  },
+  "DoS slowloris": {
+    "attack_id": "T1499",
+    "attack_name": "Endpoint Denial of Service",
+    "confidence": "medium",
+    "rationale": "Slowloris is a DoS scenario; mapped conservatively to endpoint denial of service."
+  },
+  "FTP-Patator": {
+    "attack_id": "T1110",
+    "attack_name": "Brute Force",
+    "confidence": "high",
+    "rationale": "FTP-Patator is a password brute-force attack against FTP credentials."
+  },
+  "Heartbleed": {
+    "attack_id": "T1190",
+    "attack_name": "Exploit Public-Facing Application",
+    "confidence": "medium",
+    "rationale": "Heartbleed exploitation targets a vulnerable exposed service."
+  },
+  "Infiltration": {
+    "attack_id": "T1190",
+    "attack_name": "Exploit Public-Facing Application",
+    "confidence": "low",
+    "rationale": "The CICIDS label is broad; mapped only as an initial placeholder for later contextual refinement."
+  },
+  "PortScan": {
+    "attack_id": "T1046",
+    "attack_name": "Network Service Discovery",
+    "confidence": "high",
+    "rationale": "Port scanning aligns directly with network service discovery behavior."
+  },
+  "SSH-Patator": {
+    "attack_id": "T1110",
+    "attack_name": "Brute Force",
+    "confidence": "high",
+    "rationale": "SSH-Patator is a password brute-force attack against SSH credentials."
+  },
+  "Web Attack - Brute Force": {
+    "attack_id": "T1110",
+    "attack_name": "Brute Force",
+    "confidence": "high",
+    "rationale": "The label explicitly identifies brute-force web authentication behavior."
+  },
+  "Web Attack - Sql Injection": {
+    "attack_id": "T1190",
+    "attack_name": "Exploit Public-Facing Application",
+    "confidence": "medium",
+    "rationale": "SQL injection commonly exploits a public-facing web application, but exact ATT&CK mapping depends on deployment context."
+  },
+  "Web Attack - XSS": {
+    "attack_id": "T1189",
+    "attack_name": "Drive-by Compromise",
+    "confidence": "low",
+    "rationale": "XSS is an application attack pattern; ATT&CK mapping is context-dependent and should be refined during GraphRAG mapping."
+  }
+}

@@ -1,0 +1,79 @@
+feature,dtype,missing_count,non_finite_count,source_dtype
+Destination Port,int64,0,0,int64
+Flow Duration,int64,0,0,int64
+Total Fwd Packets,int64,0,0,int64
+Total Backward Packets,int64,0,0,int64
+Total Length of Fwd Packets,int64,0,0,int64
+Total Length of Bwd Packets,int64,0,0,int64
+Fwd Packet Length Max,int64,0,0,int64
+Fwd Packet Length Min,int64,0,0,int64
+Fwd Packet Length Mean,float64,0,0,float64
+Fwd Packet Length Std,float64,0,0,float64
+Bwd Packet Length Max,int64,0,0,int64
+Bwd Packet Length Min,int64,0,0,int64
+Bwd Packet Length Mean,float64,0,0,float64
+Bwd Packet Length Std,float64,0,0,float64
+Flow Bytes/s,float64,2867,1509,float64
+Flow Packets/s,float64,2867,2867,float64
+Flow IAT Mean,float64,0,0,float64
+Flow IAT Std,float64,0,0,float64
+Flow IAT Max,int64,0,0,int64
+Flow IAT Min,int64,0,0,int64
+Fwd IAT Total,int64,0,0,int64
+Fwd IAT Mean,float64,0,0,float64
+Fwd IAT Std,float64,0,0,float64
+Fwd IAT Max,int64,0,0,int64
+Fwd IAT Min,int64,0,0,int64
+Bwd IAT Total,int64,0,0,int64
+Bwd IAT Mean,float64,0,0,float64
+Bwd IAT Std,float64,0,0,float64
+Bwd IAT Max,int64,0,0,int64
+Bwd IAT Min,int64,0,0,int64
+Fwd PSH Flags,int64,0,0,int64
+Bwd PSH Flags,int64,0,0,int64
+Fwd URG Flags,int64,0,0,int64
+Bwd URG Flags,int64,0,0,int64
+Fwd Header Length,int64,0,0,int64
+Bwd Header Length,int64,0,0,int64
+Fwd Packets/s,float64,0,0,float64
+Bwd Packets/s,float64,0,0,float64
+Min Packet Length,int64,0,0,int64
+Max Packet Length,int64,0,0,int64
+Packet Length Mean,float64,0,0,float64
+Packet Length Std,float64,0,0,float64
+Packet Length Variance,float64,0,0,float64
+FIN Flag Count,int64,0,0,int64
+SYN Flag Count,int64,0,0,int64
+RST Flag Count,int64,0,0,int64
+PSH Flag Count,int64,0,0,int64
+ACK Flag Count,int64,0,0,int64
+URG Flag Count,int64,0,0,int64
+CWE Flag Count,int64,0,0,int64
+ECE Flag Count,int64,0,0,int64
+Down/Up Ratio,int64,0,0,int64
+Average Packet Size,float64,0,0,float64
+Avg Fwd Segment Size,float64,0,0,float64
+Avg Bwd Segment Size,float64,0,0,float64
+Fwd Header Length.1,int64,0,0,int64
+Fwd Avg Bytes/Bulk,int64,0,0,int64
+Fwd Avg Packets/Bulk,int64,0,0,int64
+Fwd Avg Bulk Rate,int64,0,0,int64
+Bwd Avg Bytes/Bulk,int64,0,0,int64
+Bwd Avg Packets/Bulk,int64,0,0,int64
+Bwd Avg Bulk Rate,int64,0,0,int64
+Subflow Fwd Packets,int64,0,0,int64
+Subflow Fwd Bytes,int64,0,0,int64
+Subflow Bwd Packets,int64,0,0,int64
+Subflow Bwd Bytes,int64,0,0,int64
+Init_Win_bytes_forward,int64,0,0,int64
+Init_Win_bytes_backward,int64,0,0,int64
+act_data_pkt_fwd,int64,0,0,int64
+min_seg_size_forward,int64,0,0,int64
+Active Mean,float64,0,0,float64
+Active Std,float64,0,0,float64
+Active Max,int64,0,0,int64
+Active Min,int64,0,0,int64
+Idle Mean,float64,0,0,float64
+Idle Std,float64,0,0,float64
+Idle Max,int64,0,0,int64
+Idle Min,int64,0,0,int64

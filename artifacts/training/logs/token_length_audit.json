@@ -1,0 +1,656 @@
+{
+  "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+  "max_seq_length": 2048,
+  "splits": {
+    "train": {
+      "count": 338,
+      "min_tokens": 3511,
+      "max_tokens": 6110,
+      "mean_tokens": 4822.21,
+      "median_tokens": 4894,
+      "p90": 5485,
+      "p95": 5546,
+      "p99": 6107,
+      "above_max_seq_length": 338,
+      "above_max_seq_length_pct": 100.0,
+      "longest_20": [
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00228",
+          "base_context_id": "evx-portscan-332419",
+          "sample_id": 332419,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6110
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00198",
+          "base_context_id": "evx-portscan-316005",
+          "sample_id": 316005,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6109
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00321",
+          "base_context_id": "evx-portscan-370983",
+          "sample_id": 370983,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6108
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00338",
+          "base_context_id": "evx-portscan-386272",
+          "sample_id": 386272,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6107
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00308",
+          "base_context_id": "evx-portscan-365332",
+          "sample_id": 365332,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6106
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00270",
+          "base_context_id": "evx-portscan-343456",
+          "sample_id": 343456,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6103
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00245",
+          "base_context_id": "evx-portscan-336318",
+          "sample_id": 336318,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6101
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00216",
+          "base_context_id": "evx-portscan-326038",
+          "sample_id": 326038,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6101
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00230",
+          "base_context_id": "evx-portscan-332419",
+          "sample_id": 332419,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5555
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00201",
+          "base_context_id": "evx-portscan-316005",
+          "sample_id": 316005,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5554
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00304",
+          "base_context_id": "evx-portscan-365332",
+          "sample_id": 365332,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5551
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00346",
+          "base_context_id": "evx-portscan-405688",
+          "sample_id": 405688,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5551
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00261",
+          "base_context_id": "evx-portscan-341280",
+          "sample_id": 341280,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5551
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00227",
+          "base_context_id": "evx-portscan-332419",
+          "sample_id": 332419,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "PortScan",
+          "token_count": 5551
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00200",
+          "base_context_id": "evx-portscan-316005",
+          "sample_id": 316005,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "PortScan",
+          "token_count": 5550
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00325",
+          "base_context_id": "evx-portscan-377326",
+          "sample_id": 377326,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "PortScan",
+          "token_count": 5549
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00298",
+          "base_context_id": "evx-portscan-364985",
+          "sample_id": 364985,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5548
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00239",
+          "base_context_id": "evx-portscan-336318",
+          "sample_id": 336318,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5546
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00319",
+          "base_context_id": "evx-portscan-370983",
+          "sample_id": 370983,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "PortScan",
+          "token_count": 5545
+        },
+        {
+          "split": "train",
+          "example_id": "trustsecai-gold-v1-00348",
+          "base_context_id": "evx-portscan-405688",
+          "sample_id": 405688,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "PortScan",
+          "token_count": 5541
+        }
+      ],
+      "long_task_distribution": {
+        "soc_incident_assessment": 51,
+        "attack_mapping": 44,
+        "threat_hunting_followup": 39,
+        "executive_summary": 35,
+        "mitigation_detection": 38,
+        "vulnerability_context": 47,
+        "multi_turn_analyst_interaction": 49,
+        "uncertainty_evidence_gap": 35
+      },
+      "long_label_distribution": {
+        "Bot": 90,
+        "PortScan": 56,
+        "FTP-Patator": 65,
+        "Web Attack - Sql Injection": 69,
+        "DDoS": 58
+      }
+    },
+    "validation": {
+      "count": 78,
+      "min_tokens": 3528,
+      "max_tokens": 5548,
+      "mean_tokens": 4858.85,
+      "median_tokens": 5011,
+      "p90": 5421,
+      "p95": 5471,
+      "p99": 5540,
+      "above_max_seq_length": 78,
+      "above_max_seq_length_pct": 100.0,
+      "longest_20": [
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00291",
+          "base_context_id": "evx-portscan-359180",
+          "sample_id": 359180,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5548
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00193",
+          "base_context_id": "evx-portscan-313231",
+          "sample_id": 313231,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "PortScan",
+          "token_count": 5540
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00278",
+          "base_context_id": "evx-portscan-353325",
+          "sample_id": 353325,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "PortScan",
+          "token_count": 5539
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00196",
+          "base_context_id": "evx-portscan-313231",
+          "sample_id": 313231,
+          "task_type": "mitigation_detection",
+          "ids_label": "PortScan",
+          "token_count": 5482
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00825",
+          "base_context_id": "evx-ftp_patator-1576044",
+          "sample_id": 1576044,
+          "task_type": "vulnerability_context",
+          "ids_label": "FTP-Patator",
+          "token_count": 5471
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00277",
+          "base_context_id": "evx-portscan-353325",
+          "sample_id": 353325,
+          "task_type": "threat_hunting_followup",
+          "ids_label": "PortScan",
+          "token_count": 5434
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00192",
+          "base_context_id": "evx-portscan-313231",
+          "sample_id": 313231,
+          "task_type": "attack_mapping",
+          "ids_label": "PortScan",
+          "token_count": 5434
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00292",
+          "base_context_id": "evx-portscan-359180",
+          "sample_id": 359180,
+          "task_type": "executive_summary",
+          "ids_label": "PortScan",
+          "token_count": 5422
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00275",
+          "base_context_id": "evx-portscan-353325",
+          "sample_id": 353325,
+          "task_type": "executive_summary",
+          "ids_label": "PortScan",
+          "token_count": 5421
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00235",
+          "base_context_id": "evx-portscan-334467",
+          "sample_id": 334467,
+          "task_type": "executive_summary",
+          "ids_label": "PortScan",
+          "token_count": 5421
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00773",
+          "base_context_id": "evx-ftp_patator-1557381",
+          "sample_id": 1557381,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "FTP-Patator",
+          "token_count": 5194
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00772",
+          "base_context_id": "evx-ftp_patator-1557381",
+          "sample_id": 1557381,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "FTP-Patator",
+          "token_count": 5188
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00824",
+          "base_context_id": "evx-ftp_patator-1576044",
+          "sample_id": 1576044,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "FTP-Patator",
+          "token_count": 5187
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00697",
+          "base_context_id": "evx-ftp_patator-1541148",
+          "sample_id": 1541148,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "FTP-Patator",
+          "token_count": 5182
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00723",
+          "base_context_id": "evx-ftp_patator-1546250",
+          "sample_id": 1546250,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "FTP-Patator",
+          "token_count": 5181
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00826",
+          "base_context_id": "evx-ftp_patator-1576044",
+          "sample_id": 1576044,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "FTP-Patator",
+          "token_count": 5181
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00728",
+          "base_context_id": "evx-ftp_patator-1546250",
+          "sample_id": 1546250,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "FTP-Patator",
+          "token_count": 5179
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00694",
+          "base_context_id": "evx-ftp_patator-1541148",
+          "sample_id": 1541148,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "FTP-Patator",
+          "token_count": 5176
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00771",
+          "base_context_id": "evx-ftp_patator-1557381",
+          "sample_id": 1557381,
+          "task_type": "uncertainty_evidence_gap",
+          "ids_label": "FTP-Patator",
+          "token_count": 5132
+        },
+        {
+          "split": "validation",
+          "example_id": "trustsecai-gold-v1-00777",
+          "base_context_id": "evx-ftp_patator-1557381",
+          "sample_id": 1557381,
+          "task_type": "mitigation_detection",
+          "ids_label": "FTP-Patator",
+          "token_count": 5126
+        }
+      ],
+      "long_task_distribution": {
+        "soc_incident_assessment": 16,
+        "vulnerability_context": 6,
+        "uncertainty_evidence_gap": 11,
+        "executive_summary": 11,
+        "threat_hunting_followup": 10,
+        "multi_turn_analyst_interaction": 10,
+        "attack_mapping": 7,
+        "mitigation_detection": 7
+      },
+      "long_label_distribution": {
+        "Bot": 8,
+        "Web Attack - Sql Injection": 28,
+        "FTP-Patator": 22,
+        "PortScan": 9,
+        "DDoS": 11
+      }
+    },
+    "test": {
+      "count": 76,
+      "min_tokens": 3514,
+      "max_tokens": 6105,
+      "mean_tokens": 4901.66,
+      "median_tokens": 4898,
+      "p90": 5491,
+      "p95": 5547,
+      "p99": 6102,
+      "above_max_seq_length": 76,
+      "above_max_seq_length_pct": 100.0,
+      "longest_20": [
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00311",
+          "base_context_id": "evx-portscan-368127",
+          "sample_id": 368127,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6105
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00181",
+          "base_context_id": "evx-portscan-308785",
+          "sample_id": 308785,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6102
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00223",
+          "base_context_id": "evx-portscan-331395",
+          "sample_id": 331395,
+          "task_type": "vulnerability_context",
+          "ids_label": "PortScan",
+          "token_count": 6102
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00313",
+          "base_context_id": "evx-portscan-368127",
+          "sample_id": 368127,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5550
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00176",
+          "base_context_id": "evx-portscan-308785",
+          "sample_id": 308785,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5547
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00224",
+          "base_context_id": "evx-portscan-331395",
+          "sample_id": 331395,
+          "task_type": "multi_turn_analyst_interaction",
+          "ids_label": "PortScan",
+          "token_count": 5547
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00178",
+          "base_context_id": "evx-portscan-308785",
+          "sample_id": 308785,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "PortScan",
+          "token_count": 5539
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00257",
+          "base_context_id": "evx-portscan-340424",
+          "sample_id": 340424,
+          "task_type": "uncertainty_evidence_gap",
+          "ids_label": "PortScan",
+          "token_count": 5491
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00314",
+          "base_context_id": "evx-portscan-368127",
+          "sample_id": 368127,
+          "task_type": "mitigation_detection",
+          "ids_label": "PortScan",
+          "token_count": 5482
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00259",
+          "base_context_id": "evx-portscan-340424",
+          "sample_id": 340424,
+          "task_type": "mitigation_detection",
+          "ids_label": "PortScan",
+          "token_count": 5480
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00812",
+          "base_context_id": "evx-ftp_patator-1562929",
+          "sample_id": 1562929,
+          "task_type": "vulnerability_context",
+          "ids_label": "FTP-Patator",
+          "token_count": 5474
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00312",
+          "base_context_id": "evx-portscan-368127",
+          "sample_id": 368127,
+          "task_type": "threat_hunting_followup",
+          "ids_label": "PortScan",
+          "token_count": 5437
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00177",
+          "base_context_id": "evx-portscan-308785",
+          "sample_id": 308785,
+          "task_type": "threat_hunting_followup",
+          "ids_label": "PortScan",
+          "token_count": 5434
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00180",
+          "base_context_id": "evx-portscan-308785",
+          "sample_id": 308785,
+          "task_type": "attack_mapping",
+          "ids_label": "PortScan",
+          "token_count": 5431
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00222",
+          "base_context_id": "evx-portscan-331395",
+          "sample_id": 331395,
+          "task_type": "executive_summary",
+          "ids_label": "PortScan",
+          "token_count": 5421
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00701",
+          "base_context_id": "evx-ftp_patator-1541323",
+          "sample_id": 1541323,
+          "task_type": "soc_incident_assessment",
+          "ids_label": "FTP-Patator",
+          "token_count": 5178
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00811",
+          "base_context_id": "evx-ftp_patator-1562929",
+          "sample_id": 1562929,
+          "task_type": "mitigation_detection",
+          "ids_label": "FTP-Patator",
+          "token_count": 5122
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00706",
+          "base_context_id": "evx-ftp_patator-1541323",
+          "sample_id": 1541323,
+          "task_type": "uncertainty_evidence_gap",
+          "ids_label": "FTP-Patator",
+          "token_count": 5116
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00705",
+          "base_context_id": "evx-ftp_patator-1541323",
+          "sample_id": 1541323,
+          "task_type": "mitigation_detection",
+          "ids_label": "FTP-Patator",
+          "token_count": 5110
+        },
+        {
+          "split": "test",
+          "example_id": "trustsecai-gold-v1-00807",
+          "base_context_id": "evx-ftp_patator-1562929",
+          "sample_id": 1562929,
+          "task_type": "threat_hunting_followup",
+          "ids_label": "FTP-Patator",
+          "token_count": 5074
+        }
+      ],
+      "long_task_distribution": {
+        "mitigation_detection": 10,
+        "soc_incident_assessment": 14,
+        "uncertainty_evidence_gap": 8,
+        "vulnerability_context": 13,
+        "attack_mapping": 7,
+        "multi_turn_analyst_interaction": 8,
+        "threat_hunting_followup": 9,
+        "executive_summary": 7
+      },
+      "long_label_distribution": {
+        "Web Attack - Sql Injection": 22,
+        "Bot": 24,
+        "FTP-Patator": 8,
+        "PortScan": 14,
+        "DDoS": 8
+      }
+    }
+  },
+  "overall_long_task_distribution": {
+    "soc_incident_assessment": 81,
+    "attack_mapping": 58,
+    "threat_hunting_followup": 58,
+    "executive_summary": 53,
+    "mitigation_detection": 55,
+    "vulnerability_context": 66,
+    "multi_turn_analyst_interaction": 67,
+    "uncertainty_evidence_gap": 54
+  },
+  "overall_long_label_distribution": {
+    "Bot": 122,
+    "PortScan": 79,
+    "FTP-Patator": 95,
+    "Web Attack - Sql Injection": 119,
+    "DDoS": 77
+  }
+}

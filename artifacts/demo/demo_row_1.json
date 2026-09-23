@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "example_id": "trustsecai-gold-v1-00575",
+    "base_context_id": "evx-web_attack___sql_injection-1448270",
+    "sample_id": 1448270,
+    "ids_label": "Web Attack - Sql Injection",
+    "model_prediction": "ATTACK",
+    "model_confidence": 0.9832102060317993,
+    "confidence_band": "high",
+    "task_type": "mitigation_detection",
+    "task_variant": "control_followup",
+    "difficulty": "hard",
+    "provenance_type": "direct",
+    "has_real_shap": true,
+    "has_cve": false,
+    "source_file": "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "source_artifact_refs": [
+      "artifacts/gold_candidates/evidence_expansion/gold_v1_source_contexts.jsonl",
+      "artifacts/gold_candidates/evidence_expansion/model_predictions.jsonl",
+      "artifacts/gold_candidates/evidence_expansion/local_shap_expanded.jsonl",
+      "artifacts/retrieval/Web_Attack___Sql_Injection.json"
+    ],
+    "review_status": "approved",
+    "review_source": "assistant_review_workbook",
+    "review_decision": "approve",
+    "split": "test"
+  },
+  "classifier_evidence": {
+    "ids_label": "Web Attack - Sql Injection",
+    "model_prediction": "ATTACK",
+    "model_confidence": 0.9832102060317993,
+    "confidence_band": "high",
+    "sample_id": 1448270,
+    "source_file": "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "ids_subtype_basis": "real_cicids_ground_truth_label",
+    "ids_label_ground_truth": "Web Attack - Sql Injection"
+  },
+  "sample": {
+    "sample_id": 1448270,
+    "source_file": "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "selected_feature_values": {
+      "Destination Port": 80.0,
+      "Flow Duration": 48.0,
+      "Total Fwd Packets": 1.0,
+      "Total Backward Packets": 1.0,
+      "Total Length of Fwd Packets": 0.0,
+      "Total Length of Bwd Packets": 0.0,
+      "Fwd Packet Length Max": 0.0,
+      "Fwd Packet Length Min": 0.0,
+      "Fwd Packet Length Mean": 0.0,
+      "Fwd Packet Length Std": 0.0,
+      "Bwd Packet Length Max": 0.0,
+      "Bwd Packet Length Min": 0.0
+    }
+  },
+  "shap_evidence": {
+    "has_real_shap": true,
+    "top_features": [
+      {
+        "feature": "Destination Port",
+        "value": 80.0,
+        "shap_value": 2.716888189315796,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 236.0,
+        "shap_value": 2.3629465103149414,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": -1.1524089574813843,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Bwd Packets/s",
+        "value": 20833.33333,
+        "shap_value": 0.7957030534744263,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Header Length",
+        "value": 32.0,
+        "shap_value": -0.5832650661468506,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Flow IAT Min",
+        "value": 48.0,
+        "shap_value": 0.3698025047779083,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "URG Flag Count",
+        "value": 1.0,
+        "shap_value": -0.3630054295063019,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Fwd Header Length",
+        "value": 32.0,
+        "shap_value": -0.35816332697868347,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Flow Packets/s",
+        "value": 41666.66667,
+        "shap_value": 0.33617299795150757,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "PSH Flag Count",
+        "value": 0.0,
+        "shap_value": -0.2870412766933441,
+        "direction": "supports_benign"
+      }
+    ]
+  },
+  "graph_context_summary": {
+    "technique": {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application"
+    },
+    "tactics": [
+      {
+        "id": "TA0001",
+        "name": "Initial Access"
+      }
+    ],
+    "mitigation_ids": [
+      "M1016",
+      "M1026",
+      "M1030",
+      "M1035",
+      "M1037",
+      "M1048",
+      "M1050",
+      "M1051"
+    ],
+    "capec_ids": [],
+    "cwe_ids": [],
+    "cve_ids": [],
+    "provenance_type": "direct",
+    "has_cve": false
+  },
+  "llm_secondary_assessment": {
+    "ids_label": "Web Attack - Sql Injection",
+    "sample_id": 1448270,
+    "classifier_evidence": "The binary XGBoost classifier predicted ATTACK with 98.32% confidence; the IDS subtype used for retrieval is the real CICIDS label Web Attack - Sql Injection.",
+    "shap_evidence": [
+      {
+        "feature": "Destination Port",
+        "value": 80.0,
+        "shap_value": 2.7169,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 236.0,
+        "shap_value": 2.3629,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 0.0,
+        "shap_value": -1.1524,
+        "direction": "supports_benign"
+      }
+    ],
+    "graph_interpretation": "Retrieved graph context maps the subtype to Exploit Public-Facing Application (T1190) under Initial Access (TA0001) as contextual intelligence, not proof of compromise.",
+    "limitations": [
+      "No CVE evidence is present in the supplied graph context.",
+      "ATT&CK group, tool, and malware entries are usage context, not attribution."
+    ],
+    "provenance_summary": [
+      "Derived context from MITRE ATT&CK Enterprise",
+      "Used only supplied classifier, SHAP, and graph context",
+      "Preserve the distinction between contextual intelligence and attribution"
+    ],
+    "recommended_actions": [
+      "Validate the sample against packet capture and session telemetry",
+      "Escalate if confirmed compromise; review post-exploit process/egress for additional detection",
+      "Preserve the limitation notes when sharing the assistant's output"
+    ],
+    "parse_ok": true,
+    "raw_output": "{\n  \"ids_label\": \"Web Attack - Sql Injection\",\n  \"sample_id\": 1448270,\n  \"classifier_evidence\": \"The binary XGBoost classifier predicted ATTACK with 98.32% confidence; the IDS subtype used for retrieval is the real CICIDS label Web Attack - Sql Injection.\",\n  \"shap_evidence\": [\n    {\n      \"feature\": \"Destination Port\",\n      \"value\": 80.0,\n      \"shap_value\": 2.7169,\n      \"direction\": \"supports_attack\"\n    },\n    {\n      \"feature\": \"Init_Win_bytes_backward\",\n      \"value\": 236.0,\n      \"shap_value\": 2.3629,\n      \"direction\": \"supports_attack\"\n    },\n    {\n      \"feature\": \"Bwd Packet Length Std\",\n      \"value\": 0.0,\n      \"shap_value\": -1.1524,\n      \"direction\": \"supports_benign\"\n    }\n  ],\n  \"graph_interpretation\": \"Retrieved graph context maps the subtype to Exploit Public-Facing Application (T1190) under Initial Access (TA0001) as contextual intelligence, not proof of compromise.\",\n  \"limitations\": [\n    \"No CVE evidence is present in the supplied graph context.\",\n    \"ATT&CK group, tool, and malware entries are usage context, not attribution.\"\n  ],\n  \"provenance_summary\": [\n    \"Derived context from MITRE ATT&CK Enterprise\",\n    \"Used only supplied classifier, SHAP, and graph context\",\n    \"Preserve the distinction between contextual intelligence and attribution\"\n  ],\n  \"recommended_actions\": [\n    \"Validate the sample against packet capture and session telemetry\",\n    \"Escalate if confirmed compromise; review post-exploit process/egress for additional detection\",\n    \"Preserve the limitation notes when sharing the assistant's output\"\n  ]\n}"
+  },
+  "agreement_result": {
+    "category": "agree_attack_high_confidence",
+    "classifier_prediction": "ATTACK",
+    "classifier_confidence": 0.9832102060317993,
+    "ids_label": "Web Attack - Sql Injection",
+    "rationale": "Classifier and LLM both support an attack-oriented assessment for Web Attack - Sql Injection with high classifier confidence."
+  },
+  "attack_chain_prediction": {
+    "seed_technique": {
+      "id": "T1190",
+      "name": "Exploit Public-Facing Application",
+      "tactic": "Initial Access"
+    },
+    "likely_next_tactics_techniques": [
+      {
+        "tactic": "Execution",
+        "technique": "Command and Scripting Interpreter",
+        "id": "T1059"
+      },
+      {
+        "tactic": "Credential Access",
+        "technique": "Credentials from Web Applications",
+        "id": "candidate"
+      },
+      {
+        "tactic": "Exfiltration",
+        "technique": "Exfiltration Over Web Service",
+        "id": "T1567"
+      }
+    ],
+    "mitigations": [
+      "M1016 Vulnerability Scanning",
+      "M1030 Network Segmentation",
+      "M1035 Limit Access to Resource Over Network"
+    ],
+    "caveats": [
+      "This is a defensive hypothesis for prioritizing investigation, not an instruction sequence.",
+      "Graph context and ATT&CK mappings provide contextual intelligence, not proof of attacker behavior.",
+      "No CVE evidence is present in the supplied context."
+    ],
+    "confidence": "medium"
+  },
+  "limitations": [
+    "Offline demo uses frozen LoRA compact evaluation output; it does not run live inference.",
+    "Agreement and attack-chain modules are deterministic scaffolding for the final demo.",
+    "Unsafe-attribution evaluation flags are known to be overbroad and require human interpretation."
+  ],
+  "markdown_report": "# TrustSecAI Security Assessment Report\n\n## Executive Summary\n\nThe classifier identified Web Attack - Sql Injection with 98.32% confidence and prediction ATTACK. SHAP evidence is led by Destination Port, Init_Win_bytes_backward, and graph context maps the behavior to T1190 Exploit Public-Facing Application as contextual intelligence. No CVE or asset exposure evidence is present, so this is a triage assessment rather than confirmed compromise.\n\n## Incident Summary\n\n- IDS label: `Web Attack - Sql Injection`\n- Binary classifier prediction: `ATTACK`\n- Classifier confidence: `98.32%`\n- Sample ID: `1448270`\n\n## Classifier And SHAP Evidence\n\n- Destination Port = 80.0, SHAP +2.7169, supports attack\n- Init_Win_bytes_backward = 236.0, SHAP +2.3629, supports attack\n- Bwd Packet Length Std = 0.0, SHAP -1.1524, supports benign\n- Bwd Packets/s = 20833.33333, SHAP +0.7957, supports attack\n- Bwd Header Length = 32.0, SHAP -0.5833, supports benign\n\n## Graph Context\n\n- Technique: `T1190` Exploit Public-Facing Application\n- Tactics: TA0001 Initial Access\n- Mitigations: M1016, M1026, M1030, M1035, M1037, M1048, M1050, M1051\n\nGraph context is contextual intelligence and does not prove compromise or attribution.\n\n## LLM Secondary Assessment\n\n- LLM output parsed successfully.\n- Graph interpretation: Retrieved graph context maps the subtype to Exploit Public-Facing Application (T1190) under Initial Access (TA0001) as contextual intelligence, not proof of compromise.\n\n### Recommended Actions\n\n- Validate the sample against packet capture and session telemetry\n- Escalate if confirmed compromise; review post-exploit process/egress for additional detection\n- Preserve the limitation notes when sharing the assistant's output\n\n### LLM Limitations\n\n- No CVE evidence is present in the supplied graph context.\n- ATT&CK group, tool, and malware entries are usage context, not attribution.\n\n## Classifier vs LLM Agreement\n\n- Category: `agree_attack_high_confidence`\n- Rationale: Classifier and LLM both support an attack-oriented assessment for Web Attack - Sql Injection with high classifier confidence.\n\n## Defensive Attack Chain Hypothesis\n\n- Seed technique: `T1190` Exploit Public-Facing Application\n- Confidence: `medium`\n\n### Likely Next Tactics/Techniques\n\n- Execution: T1059 Command and Scripting Interpreter\n- Credential Access: candidate credentials from web applications\n- Exfiltration: T1567 Exfiltration Over Web Service\n\n### Chain Mitigations\n\n- M1016 Vulnerability Scanning\n- M1030 Network Segmentation\n- M1035 Limit Access to Resource Over Network\n\n### Caveats\n\n- This is a defensive hypothesis for prioritizing investigation, not an instruction sequence.\n- Graph context and ATT&CK mappings provide contextual intelligence, not proof of attacker behavior.\n- No CVE evidence is present in the supplied context.\n\n## Overall Limitations\n\n- Offline demo uses frozen LoRA compact evaluation output; it does not run live inference.\n- Agreement and attack-chain modules are deterministic scaffolding for the final demo.\n- Unsafe-attribution evaluation flags are known to be overbroad and require human interpretation.\n"
+}

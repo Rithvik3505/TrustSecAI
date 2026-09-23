@@ -1,0 +1,1386 @@
+{
+  "attack": {
+    "mitigations": [
+      {
+        "distance": 2,
+        "id": "M1031",
+        "name": "Network Intrusion Prevention",
+        "properties": {
+          "attack_id": "M1031",
+          "created": "2019-06-10T20:46:02.263Z",
+          "deprecated": false,
+          "description": "Use intrusion detection signatures to block traffic at network boundaries.",
+          "modified": "2024-10-17T18:54:36.723Z",
+          "name": "Network Intrusion Prevention",
+          "revoked": false,
+          "source": "MITRE ATT&CK Enterprise",
+          "url": "https://attack.mitre.org/mitigations/M1031"
+        },
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1105",
+            "relationship_type": "MITIGATED_BY",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "M1031"
+          }
+        ],
+        "rank_score": 1.71
+      },
+      {
+        "distance": 2,
+        "id": "M1037",
+        "name": "Filter Network Traffic",
+        "properties": {
+          "attack_id": "M1037",
+          "created": "2019-06-11T16:33:55.337Z",
+          "deprecated": false,
+          "description": "Employ network appliances and endpoint software to filter ingress, egress, and lateral network traffic. This includes protocol-based filtering, enforcing firewall rules, and blocking or restricting traffic based on predefined conditions to limit adversary movement and data exfiltration. This mitigation can be implemented through the following measures:\n\nIngress Traffic Filtering:\n\n- Use Case: Configure network firewalls to allow traffic only from authorized IP addresses to public-facing servers.\n- Implementation: Limit SSH (port 22) and RDP (port 3389) traffic to specific IP ranges.\n\nEgress Traffic Filtering:\n\n- Use Case: Use firewalls or endpoint security software to block unauthorized outbound traffic to prevent data exfiltration and command-and-control (C2) communications.\n- Implementation: Block outbound traffic to known malicious IPs or regions where communication is unexpected.\n\nProtocol-Based Filtering:\n\n- Use Case: Restrict the use of specific protocols that are commonly abused by adversaries, such as SMB, RPC, or Telnet, based on business needs.\n- Implementation: Disable SMBv1 on endpoints to prevent exploits like EternalBlue.\n\nNetwork Segmentation:\n\n- Use Case: Create network segments for critical systems and restrict communication between segments unless explicitly authorized.\n- Implementation: Implement VLANs to isolate IoT devices or guest networks from core business systems.\n\nApplication Layer Filtering:\n\n- Use Case: Use proxy servers or Web Application Firewalls (WAFs) to inspect and block malicious HTTP/S traffic.\n- Implementation: Configure a WAF to block SQL injection attempts or other web application exploitation techniques.",
+          "modified": "2026-05-12T15:12:00.730Z",
+          "name": "Filter Network Traffic",
+          "revoked": false,
+          "source": "MITRE ATT&CK Enterprise",
+          "url": "https://attack.mitre.org/mitigations/M1037"
+        },
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1105",
+            "relationship_type": "MITIGATED_BY",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "M1037"
+          }
+        ],
+        "rank_score": 1.71
+      }
+    ],
+    "tactics": [
+      {
+        "distance": 2,
+        "id": "TA0011",
+        "name": "Command and Control",
+        "properties": {
+          "attack_id": "TA0011",
+          "created": "2018-10-17T00:14:20.652Z",
+          "deprecated": false,
+          "description": "The adversary is trying to communicate with compromised systems to control them.\n\nCommand and Control consists of techniques that adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection. There are many ways an adversary can establish command and control with various levels of stealth depending on the victim\u2019s network structure and defenses.",
+          "modified": "2025-04-25T14:45:36.561Z",
+          "name": "Command and Control",
+          "revoked": false,
+          "short_name": "command-and-control",
+          "source": "MITRE ATT&CK Enterprise",
+          "url": "https://attack.mitre.org/tactics/TA0011"
+        },
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1105",
+            "relationship_type": "HAS_TACTIC",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "TA0011"
+          }
+        ],
+        "rank_score": 1.71
+      }
+    ],
+    "technique": {
+      "distance": 1,
+      "id": "T1105",
+      "name": "Ingress Tool Transfer",
+      "properties": {
+        "attack_id": "T1105",
+        "created": "2017-05-31T21:31:16.408Z",
+        "deprecated": false,
+        "description": "Adversaries may transfer tools or other files from an external system into a compromised environment. Tools or files may be copied from an external adversary-controlled system to the victim network through the command and control channel or through alternate protocols such as [ftp](https://attack.mitre.org/software/S0095). Once present, adversaries may also transfer/spread tools between victim devices within a compromised environment (i.e. [Lateral Tool Transfer](https://attack.mitre.org/techniques/T1570)). \n\nOn Windows, adversaries may use various utilities to download tools, such as `copy`, `finger`, [certutil](https://attack.mitre.org/software/S0160), and [PowerShell](https://attack.mitre.org/techniques/T1059/001) commands such as <code>IEX(New-Object Net.WebClient).downloadString()</code> and <code>Invoke-WebRequest</code>. On Linux and macOS systems, a variety of utilities also exist, such as `curl`, `scp`, `sftp`, `tftp`, `rsync`, `finger`, and `wget`.(Citation: t1105_lolbas)  A number of these tools, such as `wget`, `curl`, and `scp`, also exist on ESXi. After downloading a file, a threat actor may attempt to verify its integrity by checking its hash value (e.g., via `certutil -hashfile`).(Citation: Google Cloud Threat Intelligence COSCMICENERGY 2023)\n\nAdversaries may also abuse installers and package managers, such as `yum` or `winget`, to download tools to victim hosts. Adversaries have also abused file application features, such as the Windows `search-ms` protocol handler, to deliver malicious files to victims through remote file searches invoked by [User Execution](https://attack.mitre.org/techniques/T1204) (typically after interacting with [Phishing](https://attack.mitre.org/techniques/T1566) lures).(Citation: T1105: Trellix_search-ms)\n\nFiles can also be transferred using various [Web Service](https://attack.mitre.org/techniques/T1102)s as well as native or otherwise present tools on the victim system.(Citation: PTSecurity Cobalt Dec 2016) In some cases, adversaries may be able to leverage services that sync between a web-based and an on-premises client, such as Dropbox or OneDrive, to transfer files onto victim systems. For example, by compromising a cloud account and logging into the service's web portal, an adversary may be able to trigger an automatic syncing process that transfers the file onto the victim's machine.(Citation: Dropbox Malware Sync)",
+        "modified": "2026-05-12T15:12:00.723Z",
+        "name": "Ingress Tool Transfer",
+        "platforms": [
+          "ESXi",
+          "Linux",
+          "macOS",
+          "Network Devices",
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/techniques/T1105"
+      },
+      "provenance": [
+        {
+          "confidence": "low",
+          "inferred": false,
+          "method": null,
+          "origin_node": "Bot",
+          "relationship_type": "DETECTED_AS",
+          "source": "TrustSecAI",
+          "target_node": "T1105"
+        }
+      ],
+      "rank_score": 1.23
+    }
+  },
+  "capec": [],
+  "classifier": {
+    "confidence": null
+  },
+  "cves": [],
+  "cwes": [],
+  "detection_guidance": [
+    {
+      "distance": 2,
+      "id": "x-mitre-detection-strategy--67677c4c-5778-49eb-ae74-1920645b8554",
+      "name": "Detect Ingress Tool Transfers via Behavioral Chain",
+      "properties": {
+        "analytic_refs": [
+          "x-mitre-analytic--f20d9241-84cc-4393-b2fb-798241da73fa",
+          "x-mitre-analytic--62d55c57-54a3-4c6f-8d0d-2684fa26c347",
+          "x-mitre-analytic--56552a3e-9934-4809-97a4-67d62f29478c",
+          "x-mitre-analytic--fac5b2df-a58d-424e-a351-7d7ca05260e8",
+          "x-mitre-analytic--c93951a7-7f78-40cf-a891-30d6c6a9bee6"
+        ],
+        "attack_id": "DET0060",
+        "created": "2025-10-21T15:10:28.402Z",
+        "deprecated": false,
+        "modified": "2026-05-12T16:34:50.679Z",
+        "name": "Detect Ingress Tool Transfers via Behavioral Chain",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0060"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "DETECTED_BY",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "x-mitre-detection-strategy--67677c4c-5778-49eb-ae74-1920645b8554"
+        }
+      ],
+      "rank_score": 1.71
+    }
+  ],
+  "groups": [
+    {
+      "distance": 2,
+      "id": "intrusion-set--00f67a77-86a4-4adf-be26-1a54fc713340",
+      "name": "APT38",
+      "properties": {
+        "aliases": [
+          "APT38",
+          "NICKEL GLADSTONE",
+          "BeagleBoyz",
+          "Bluenoroff",
+          "Stardust Chollima",
+          "Sapphire Sleet",
+          "COPERNICIUM"
+        ],
+        "attack_id": "G0082",
+        "created": "2019-01-29T21:27:24.793Z",
+        "deprecated": false,
+        "description": "[APT38](https://attack.mitre.org/groups/G0082) is a North Korean state-sponsored threat group that specializes in financial cyber operations; it has been attributed to the Reconnaissance General Bureau.(Citation: CISA AA20-239A BeagleBoyz August 2020) Active since at least 2014, [APT38](https://attack.mitre.org/groups/G0082) has targeted banks, financial institutions, casinos, cryptocurrency exchanges, SWIFT system endpoints, and ATMs in at least 38 countries worldwide. Significant operations include the 2016 Bank of Bangladesh heist, during which [APT38](https://attack.mitre.org/groups/G0082) stole $81 million, as well as attacks against Bancomext (Citation: FireEye APT38 Oct 2018) and Banco de Chile (Citation: FireEye APT38 Oct 2018); some of their attacks have been destructive.(Citation: CISA AA20-239A BeagleBoyz August 2020)(Citation: FireEye APT38 Oct 2018)(Citation: DOJ North Korea Indictment Feb 2021)(Citation: Kaspersky Lazarus Under The Hood Blog 2017)\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters or subgroups.",
+        "modified": "2025-11-13T19:21:05.133Z",
+        "name": "APT38",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/groups/G0082"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "intrusion-set--00f67a77-86a4-4adf-be26-1a54fc713340"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "intrusion-set--0bbdf25b-30ff-4894-a1cd-49260d0dd2d9",
+      "name": "APT3",
+      "properties": {
+        "aliases": [
+          "APT3",
+          "Gothic Panda",
+          "Pirpi",
+          "UPS Team",
+          "Buckeye",
+          "Threat Group-0110",
+          "TG-0110"
+        ],
+        "attack_id": "G0022",
+        "created": "2017-05-31T21:31:55.853Z",
+        "deprecated": false,
+        "description": "[APT3](https://attack.mitre.org/groups/G0022) is a China-based threat group that researchers have attributed to China's Ministry of State Security.(Citation: FireEye Clandestine Wolf)(Citation: Recorded Future APT3 May 2017) This group is responsible for the campaigns known as Operation Clandestine Fox, Operation Clandestine Wolf, and Operation Double Tap.(Citation: FireEye Clandestine Wolf)(Citation: FireEye Operation Double Tap) As of June 2015, the group appears to have shifted from targeting primarily US victims to primarily political organizations in Hong Kong.(Citation: Symantec Buckeye)",
+        "modified": "2026-01-20T15:46:53.916Z",
+        "name": "APT3",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/groups/G0022"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "intrusion-set--0bbdf25b-30ff-4894-a1cd-49260d0dd2d9"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e",
+      "name": "APT32",
+      "properties": {
+        "aliases": [
+          "APT32",
+          "SeaLotus",
+          "OceanLotus",
+          "APT-C-00",
+          "Canvas Cyclone",
+          "BISMUTH"
+        ],
+        "attack_id": "G0050",
+        "created": "2017-12-14T16:46:06.044Z",
+        "deprecated": false,
+        "description": "[APT32](https://attack.mitre.org/groups/G0050) is a suspected Vietnam-based threat group that has been active since at least 2014. The group has targeted multiple private sector industries as well as foreign governments, dissidents, and journalists with a strong focus on Southeast Asian countries like Vietnam, the Philippines, Laos, and Cambodia. They have extensively used strategic web compromises to compromise victims.(Citation: FireEye APT32 May 2017)(Citation: Volexity OceanLotus Nov 2017)(Citation: ESET OceanLotus)",
+        "modified": "2024-04-17T22:07:49.430Z",
+        "name": "APT32",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/groups/G0050"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "intrusion-set--38fd6a28-3353-4f2b-bb2b-459fecd5c648",
+      "name": "APT18",
+      "properties": {
+        "aliases": [
+          "APT18",
+          "TG-0416",
+          "Dynamite Panda",
+          "Threat Group-0416"
+        ],
+        "attack_id": "G0026",
+        "created": "2017-05-31T21:31:57.733Z",
+        "deprecated": false,
+        "description": "[APT18](https://attack.mitre.org/groups/G0026) is a threat group that has operated since at least 2009 and has targeted a range of industries, including technology, manufacturing, human rights groups, government, and medical. (Citation: Dell Lateral Movement)",
+        "modified": "2024-04-11T03:03:44.056Z",
+        "name": "APT18",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/groups/G0026"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "intrusion-set--38fd6a28-3353-4f2b-bb2b-459fecd5c648"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80",
+      "name": "APT39",
+      "properties": {
+        "aliases": [
+          "APT39",
+          "ITG07",
+          "Chafer",
+          "Remix Kitten"
+        ],
+        "attack_id": "G0087",
+        "created": "2019-02-19T16:01:38.585Z",
+        "deprecated": false,
+        "description": "[APT39](https://attack.mitre.org/groups/G0087) is one of several names for cyber espionage activity conducted by the Iranian Ministry of Intelligence and Security (MOIS) through the front company Rana Intelligence Computing since at least 2014. [APT39](https://attack.mitre.org/groups/G0087) has primarily targeted the travel, hospitality, academic, and telecommunications industries in Iran and across Asia, Africa, Europe, and North America to track individuals and entities considered to be a threat by the MOIS.(Citation: FireEye APT39 Jan 2019)(Citation: Symantec Chafer Dec 2015)(Citation: FBI FLASH APT39 September 2020)(Citation: Dept. of Treasury Iran Sanctions September 2020)(Citation: DOJ Iran Indictments September 2020)",
+        "modified": "2024-04-11T02:59:52.392Z",
+        "name": "APT39",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/groups/G0087"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "intrusion-set--4a2ce82e-1a74-468a-a6fb-bbead541383c",
+      "name": "APT37",
+      "properties": {
+        "aliases": [
+          "APT37",
+          "InkySquid",
+          "ScarCruft",
+          "Reaper",
+          "Group123",
+          "TEMP.Reaper",
+          "Ricochet Chollima"
+        ],
+        "attack_id": "G0067",
+        "created": "2018-04-18T17:59:24.739Z",
+        "deprecated": false,
+        "description": "[APT37](https://attack.mitre.org/groups/G0067) is a North Korean state-sponsored cyber espionage group that has been active since at least 2012. The group has targeted victims primarily in South Korea, but also in Japan, Vietnam, Russia, Nepal, China, India, Romania, Kuwait, and other parts of the Middle East. [APT37](https://attack.mitre.org/groups/G0067) has also been linked to the following campaigns between 2016-2018: Operation Daybreak, Operation Erebus, Golden Time, Evil New Year, Are you Happy?, FreeMilk, North Korean Human Rights, and Evil New Year 2018.(Citation: FireEye APT37 Feb 2018)(Citation: Securelist ScarCruft Jun 2016)(Citation: Talos Group123)\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters or subgroups.",
+        "modified": "2024-11-17T15:01:33.384Z",
+        "name": "APT37",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/groups/G0067"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "intrusion-set--4a2ce82e-1a74-468a-a6fb-bbead541383c"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "intrusion-set--899ce53f-13a0-479b-a0e4-67d46e241542",
+      "name": "APT29",
+      "properties": {
+        "aliases": [
+          "APT29",
+          "IRON RITUAL",
+          "IRON HEMLOCK",
+          "NobleBaron",
+          "Dark Halo",
+          "NOBELIUM",
+          "UNC2452",
+          "YTTRIUM",
+          "The Dukes",
+          "Cozy Bear",
+          "CozyDuke",
+          "SolarStorm",
+          "Blue Kitsune",
+          "UNC3524",
+          "Midnight Blizzard"
+        ],
+        "attack_id": "G0016",
+        "created": "2017-05-31T21:31:52.748Z",
+        "deprecated": false,
+        "description": "[APT29](https://attack.mitre.org/groups/G0016) is threat group that has been attributed to Russia's Foreign Intelligence Service (SVR).(Citation: White House Imposing Costs RU Gov April 2021)(Citation: UK Gov Malign RIS Activity April 2021) They have operated since at least 2008, often targeting government networks in Europe and NATO member countries, research institutes, and think tanks. [APT29](https://attack.mitre.org/groups/G0016) reportedly compromised the Democratic National Committee starting in the summer of 2015.(Citation: F-Secure The Dukes)(Citation: GRIZZLY STEPPE JAR)(Citation: Crowdstrike DNC June 2016)(Citation: UK Gov UK Exposes Russia SolarWinds April 2021)\n\nIn April 2021, the US and UK governments attributed the [SolarWinds Compromise](https://attack.mitre.org/campaigns/C0024) to the SVR; public statements included citations to [APT29](https://attack.mitre.org/groups/G0016), Cozy Bear, and The Dukes.(Citation: NSA Joint Advisory SVR SolarWinds April 2021)(Citation: UK NSCS Russia SolarWinds April 2021) Industry reporting also referred to the actors involved in this campaign as UNC2452, NOBELIUM, StellarParticle, Dark Halo, and SolarStorm.(Citation: FireEye SUNBURST Backdoor December 2020)(Citation: MSTIC NOBELIUM Mar 2021)(Citation: CrowdStrike SUNSPOT Implant January 2021)(Citation: Volexity SolarWinds)(Citation: Cybersecurity Advisory SVR TTP May 2021)(Citation: Unit 42 SolarStorm December 2020)",
+        "modified": "2026-01-20T16:22:04.140Z",
+        "name": "APT29",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/groups/G0016"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "intrusion-set--899ce53f-13a0-479b-a0e4-67d46e241542"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c",
+      "name": "APT28",
+      "properties": {
+        "aliases": [
+          "APT28",
+          "IRON TWILIGHT",
+          "SNAKEMACKEREL",
+          "Swallowtail",
+          "Group 74",
+          "Sednit",
+          "Sofacy",
+          "Pawn Storm",
+          "Fancy Bear",
+          "STRONTIUM",
+          "Tsar Team",
+          "Threat Group-4127",
+          "TG-4127",
+          "Forest Blizzard",
+          "FROZENLAKE",
+          "GruesomeLarch"
+        ],
+        "attack_id": "G0007",
+        "created": "2017-05-31T21:31:48.664Z",
+        "deprecated": false,
+        "description": "[APT28](https://attack.mitre.org/groups/G0007) is a threat group that has been attributed to Russia's General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (GTsSS) military unit 26165.(Citation: NSA/FBI Drovorub August 2020)(Citation: Cybersecurity Advisory GRU Brute Force Campaign July 2021) This group has been active since at least 2004.(Citation: DOJ GRU Indictment Jul 2018)(Citation: Ars Technica GRU indictment Jul 2018)(Citation: Crowdstrike DNC June 2016)(Citation: FireEye APT28)(Citation: SecureWorks TG-4127)(Citation: FireEye APT28 January 2017)(Citation: GRIZZLY STEPPE JAR)(Citation: Sofacy DealersChoice)(Citation: Palo Alto Sofacy 06-2018)(Citation: Symantec APT28 Oct 2018)(Citation: ESET Zebrocy May 2019)\n\n[APT28](https://attack.mitre.org/groups/G0007) reportedly compromised the Hillary Clinton campaign, the Democratic National Committee, and the Democratic Congressional Campaign Committee in 2016 in an attempt to interfere with the U.S. presidential election.(Citation: Crowdstrike DNC June 2016) In 2018, the US indicted five GRU Unit 26165 officers associated with [APT28](https://attack.mitre.org/groups/G0007) for cyber operations (including close-access operations) conducted between 2014 and 2018 against the World Anti-Doping Agency (WADA), the US Anti-Doping Agency, a US nuclear facility, the Organization for the Prohibition of Chemical Weapons (OPCW), the Spiez Swiss Chemicals Laboratory, and other organizations.(Citation: US District Court Indictment GRU Oct 2018) Some of these were conducted with the assistance of GRU Unit 74455, which is also referred to as [Sandworm Team](https://attack.mitre.org/groups/G0034). ",
+        "modified": "2026-05-12T15:12:00.732Z",
+        "name": "APT28",
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/groups/G0007"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c"
+        }
+      ],
+      "rank_score": 1.71
+    }
+  ],
+  "malware": [
+    {
+      "distance": 2,
+      "id": "malware--05318127-5962-444b-b900-a9dcfe0ff6e9",
+      "name": "Amadey",
+      "properties": {
+        "attack_id": "S1025",
+        "created": "2022-07-14T17:30:54.927Z",
+        "deprecated": false,
+        "description": "[Amadey](https://attack.mitre.org/software/S1025) is a Trojan bot that has been used since at least October 2018.(Citation: Korean FSI TA505 2020)(Citation: BlackBerry Amadey 2020)",
+        "modified": "2026-05-12T15:12:00.732Z",
+        "name": "Amadey",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S1025"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "malware--05318127-5962-444b-b900-a9dcfe0ff6e9"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "malware--3161d76a-e2b2-4b97-9906-24909b735386",
+      "name": "Aria-body",
+      "properties": {
+        "attack_id": "S0456",
+        "created": "2020-05-26T19:36:04.663Z",
+        "deprecated": false,
+        "description": "[Aria-body](https://attack.mitre.org/software/S0456) is a custom backdoor that has been used by [Naikon](https://attack.mitre.org/groups/G0019) since approximately 2017.(Citation: CheckPoint Naikon May 2020)",
+        "modified": "2025-10-22T02:32:48.657Z",
+        "name": "Aria-body",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0456"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "malware--3161d76a-e2b2-4b97-9906-24909b735386"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "malware--36801ffb-5c85-4c50-9121-6122e389366d",
+      "name": "Action RAT",
+      "properties": {
+        "attack_id": "S1028",
+        "created": "2022-08-07T14:57:28.124Z",
+        "deprecated": false,
+        "description": "[Action RAT](https://attack.mitre.org/software/S1028) is a  remote access tool written in Delphi that has been used by [SideCopy](https://attack.mitre.org/groups/G1008) since at least December 2021 against Indian and Afghani government personnel.(Citation: MalwareBytes SideCopy Dec 2021)",
+        "modified": "2025-04-16T20:38:02.568Z",
+        "name": "Action RAT",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S1028"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "malware--36801ffb-5c85-4c50-9121-6122e389366d"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "malware--40d3e230-ed32-469f-ba89-be70cc08ab39",
+      "name": "Agent.btz",
+      "properties": {
+        "attack_id": "S0092",
+        "created": "2017-05-31T21:32:59.153Z",
+        "deprecated": false,
+        "description": "[Agent.btz](https://attack.mitre.org/software/S0092) is a worm that primarily spreads itself via removable devices such as USB drives. It reportedly infected U.S. military networks in 2008. (Citation: Securelist Agent.btz)",
+        "modified": "2025-04-25T14:43:05.955Z",
+        "name": "Agent.btz",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0092"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "malware--40d3e230-ed32-469f-ba89-be70cc08ab39"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "malware--5f1d4579-4e8f-48e7-860e-2da773ae432e",
+      "name": "Anchor",
+      "properties": {
+        "attack_id": "S0504",
+        "created": "2020-09-10T15:54:21.805Z",
+        "deprecated": false,
+        "description": "[Anchor](https://attack.mitre.org/software/S0504) is one of a family of backdoor malware that has been used in conjunction with [TrickBot](https://attack.mitre.org/software/S0266) on selected high profile targets since at least 2018.(Citation: Cyberreason Anchor December 2019)(Citation: Medium Anchor DNS July 2020)",
+        "modified": "2023-12-04T20:02:47.052Z",
+        "name": "Anchor",
+        "platforms": [
+          "Linux",
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0504"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "malware--5f1d4579-4e8f-48e7-860e-2da773ae432e"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "malware--a0ebedca-d558-4e48-8ff7-4bf76208d90c",
+      "name": "ABK",
+      "properties": {
+        "attack_id": "S0469",
+        "created": "2020-06-10T16:58:56.032Z",
+        "deprecated": false,
+        "description": "[ABK](https://attack.mitre.org/software/S0469) is a downloader that has been used by [BRONZE BUTLER](https://attack.mitre.org/groups/G0060) since at least 2019.(Citation: Trend Micro Tick November 2019)",
+        "modified": "2025-04-25T14:44:14.945Z",
+        "name": "ABK",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0469"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "malware--a0ebedca-d558-4e48-8ff7-4bf76208d90c"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "malware--bb6f2a5c-dbc9-45b0-bd3f-a0b7849959c2",
+      "name": "AshTag",
+      "properties": {
+        "attack_id": "S9031",
+        "created": "2026-04-20T14:04:02.153Z",
+        "deprecated": false,
+        "description": "[AshTag](https://attack.mitre.org/software/S9031) is a modular .NET backdoor with multiple features that has been used by [WIRTE](https://attack.mitre.org/groups/G0090) since at least 2025. [AshTag](https://attack.mitre.org/software/S9031) is designed for persistence and remote command execution and can masquerade as a legitimate VisualServer utility.(Citation: Palo Alto Ashen Lepus DEC 2025)",
+        "modified": "2026-05-12T15:12:00.739Z",
+        "name": "AshTag",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S9031"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "malware--bb6f2a5c-dbc9-45b0-bd3f-a0b7849959c2"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "malware--dcd9548e-df9e-47c2-81f3-bc084289959d",
+      "name": "ANDROMEDA",
+      "properties": {
+        "attack_id": "S1074",
+        "created": "2023-05-16T19:24:37.394Z",
+        "deprecated": false,
+        "description": "[ANDROMEDA](https://attack.mitre.org/software/S1074) is commodity malware that was widespread in the early 2010's and continues to be observed in infections across a wide variety of industries. During the 2022 [C0026](https://attack.mitre.org/campaigns/C0026) campaign, threat actors re-registered expired [ANDROMEDA](https://attack.mitre.org/software/S1074) C2 domains to spread malware to select targets in Ukraine.(Citation: Mandiant Suspected Turla Campaign February 2023)",
+        "modified": "2023-09-29T18:11:31.659Z",
+        "name": "ANDROMEDA",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S1074"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "malware--dcd9548e-df9e-47c2-81f3-bc084289959d"
+        }
+      ],
+      "rank_score": 1.71
+    }
+  ],
+  "prediction": "Bot",
+  "products": [],
+  "provenance": [
+    {
+      "category": "detection_guidance",
+      "confidence": "source",
+      "entity_id": "x-mitre-detection-strategy--67677c4c-5778-49eb-ae74-1920645b8554",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "DETECTED_BY",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "x-mitre-detection-strategy--67677c4c-5778-49eb-ae74-1920645b8554"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--00f67a77-86a4-4adf-be26-1a54fc713340",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--00f67a77-86a4-4adf-be26-1a54fc713340"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--0bbdf25b-30ff-4894-a1cd-49260d0dd2d9",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--0bbdf25b-30ff-4894-a1cd-49260d0dd2d9"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--38fd6a28-3353-4f2b-bb2b-459fecd5c648",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--38fd6a28-3353-4f2b-bb2b-459fecd5c648"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--4a2ce82e-1a74-468a-a6fb-bbead541383c",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--4a2ce82e-1a74-468a-a6fb-bbead541383c"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--899ce53f-13a0-479b-a0e4-67d46e241542",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--899ce53f-13a0-479b-a0e4-67d46e241542"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--c4d50cdf-87ce-407d-86d8-862883485842",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--c4d50cdf-87ce-407d-86d8-862883485842"
+    },
+    {
+      "category": "groups",
+      "confidence": "source",
+      "entity_id": "intrusion-set--fbd29c89-18ba-4c2d-b792-51c0adee049f",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "intrusion-set--fbd29c89-18ba-4c2d-b792-51c0adee049f"
+    },
+    {
+      "category": "ids_label",
+      "confidence": null,
+      "entity_id": "Bot",
+      "inferred": false,
+      "method": null,
+      "origin_node": "Bot",
+      "relationship_type": "SELF",
+      "source": "TrustSecAI",
+      "target_node": "Bot"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--05318127-5962-444b-b900-a9dcfe0ff6e9",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--05318127-5962-444b-b900-a9dcfe0ff6e9"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--3161d76a-e2b2-4b97-9906-24909b735386",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--3161d76a-e2b2-4b97-9906-24909b735386"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--36801ffb-5c85-4c50-9121-6122e389366d",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--36801ffb-5c85-4c50-9121-6122e389366d"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--40d3e230-ed32-469f-ba89-be70cc08ab39",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--40d3e230-ed32-469f-ba89-be70cc08ab39"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--5f1d4579-4e8f-48e7-860e-2da773ae432e",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--5f1d4579-4e8f-48e7-860e-2da773ae432e"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--a0ebedca-d558-4e48-8ff7-4bf76208d90c",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--a0ebedca-d558-4e48-8ff7-4bf76208d90c"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--bb6f2a5c-dbc9-45b0-bd3f-a0b7849959c2",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--bb6f2a5c-dbc9-45b0-bd3f-a0b7849959c2"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--dcd9548e-df9e-47c2-81f3-bc084289959d",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--dcd9548e-df9e-47c2-81f3-bc084289959d"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--e7a5229f-05eb-440e-b982-9a6d2b2b87c8",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--e7a5229f-05eb-440e-b982-9a6d2b2b87c8"
+    },
+    {
+      "category": "malware",
+      "confidence": "source",
+      "entity_id": "malware--edb24a93-1f7a-4bbf-a738-1397a14662c6",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "malware--edb24a93-1f7a-4bbf-a738-1397a14662c6"
+    },
+    {
+      "category": "mitigations",
+      "confidence": "source",
+      "entity_id": "M1031",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "MITIGATED_BY",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "M1031"
+    },
+    {
+      "category": "mitigations",
+      "confidence": "source",
+      "entity_id": "M1037",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "MITIGATED_BY",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "M1037"
+    },
+    {
+      "category": "tactics",
+      "confidence": "source",
+      "entity_id": "TA0011",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "HAS_TACTIC",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "TA0011"
+    },
+    {
+      "category": "technique",
+      "confidence": "low",
+      "entity_id": "T1105",
+      "inferred": false,
+      "method": null,
+      "origin_node": "Bot",
+      "relationship_type": "DETECTED_AS",
+      "source": "TrustSecAI",
+      "target_node": "T1105"
+    },
+    {
+      "category": "tools",
+      "confidence": "source",
+      "entity_id": "tool--3433a9e8-1c47-4320-b9bf-ed449061d1c3",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "tool--3433a9e8-1c47-4320-b9bf-ed449061d1c3"
+    },
+    {
+      "category": "tools",
+      "confidence": "source",
+      "entity_id": "tool--5256c0f8-9108-4c92-8b09-482dfacdcd94",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "tool--5256c0f8-9108-4c92-8b09-482dfacdcd94"
+    },
+    {
+      "category": "tools",
+      "confidence": "source",
+      "entity_id": "tool--5fc81b43-62b5-41b1-9113-c79ae5f030c4",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "tool--5fc81b43-62b5-41b1-9113-c79ae5f030c4"
+    },
+    {
+      "category": "tools",
+      "confidence": "source",
+      "entity_id": "tool--64764dc6-a032-495f-8250-1e4c06bdc163",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "tool--64764dc6-a032-495f-8250-1e4c06bdc163"
+    },
+    {
+      "category": "tools",
+      "confidence": "source",
+      "entity_id": "tool--6a5947f3-1a36-4653-8734-526df3e1d28d",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "tool--6a5947f3-1a36-4653-8734-526df3e1d28d"
+    },
+    {
+      "category": "tools",
+      "confidence": "source",
+      "entity_id": "tool--75d8b521-6b6a-42ff-8af3-d97e20ce12a5",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "tool--75d8b521-6b6a-42ff-8af3-d97e20ce12a5"
+    },
+    {
+      "category": "tools",
+      "confidence": "source",
+      "entity_id": "tool--975737f1-b10d-476f-8bda-3ec26ea57172",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "tool--975737f1-b10d-476f-8bda-3ec26ea57172"
+    },
+    {
+      "category": "tools",
+      "confidence": "source",
+      "entity_id": "tool--a7b5df47-73bb-4d47-b701-869f185633a6",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "tool--a7b5df47-73bb-4d47-b701-869f185633a6"
+    },
+    {
+      "category": "tools",
+      "confidence": "source",
+      "entity_id": "tool--c8655260-9f4b-44e3-85e1-6538a5f6e4f4",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "tool--c8655260-9f4b-44e3-85e1-6538a5f6e4f4"
+    },
+    {
+      "category": "tools",
+      "confidence": "source",
+      "entity_id": "tool--cb69b20d-56d0-41ab-8440-4a4b251614d4",
+      "inferred": false,
+      "method": null,
+      "origin_node": "T1105",
+      "relationship_type": "USES_TECHNIQUE",
+      "source": "MITRE ATT&CK Enterprise",
+      "target_node": "tool--cb69b20d-56d0-41ab-8440-4a4b251614d4"
+    }
+  ],
+  "references": [],
+  "retrieval": {
+    "latency_ms": 83.007,
+    "relationships_traversed": 35
+  },
+  "tools": [
+    {
+      "distance": 2,
+      "id": "tool--3433a9e8-1c47-4320-b9bf-ed449061d1c3",
+      "name": "Empire",
+      "properties": {
+        "attack_id": "S0363",
+        "created": "2019-03-11T14:13:40.648Z",
+        "deprecated": false,
+        "description": "[Empire](https://attack.mitre.org/software/S0363) is an open-source, cross-platform remote administration and post-exploitation framework that is publicly available on GitHub. While the tool itself is primarily written in Python, the post-exploitation agents are written in pure [PowerShell](https://attack.mitre.org/techniques/T1059/001) for Windows and Python for Linux/macOS. [Empire](https://attack.mitre.org/software/S0363) was one of five tools singled out by a joint report on public hacking tools being widely used by adversaries.(Citation: NCSC Joint Report Public Tools)(Citation: Github PowerShell Empire)(Citation: GitHub ATTACK Empire)",
+        "modified": "2025-10-24T03:33:19.777Z",
+        "name": "Empire",
+        "platforms": [
+          "Linux",
+          "macOS",
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0363"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "tool--3433a9e8-1c47-4320-b9bf-ed449061d1c3"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "tool--5256c0f8-9108-4c92-8b09-482dfacdcd94",
+      "name": "CSPY Downloader",
+      "properties": {
+        "attack_id": "S0527",
+        "created": "2020-11-09T14:30:35.202Z",
+        "deprecated": false,
+        "description": "[CSPY Downloader](https://attack.mitre.org/software/S0527) is a tool designed to evade analysis and download additional payloads used by [Kimsuky](https://attack.mitre.org/groups/G0094).(Citation: Cybereason Kimsuky November 2020)",
+        "modified": "2025-04-16T20:38:52.033Z",
+        "name": "CSPY Downloader",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0527"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "tool--5256c0f8-9108-4c92-8b09-482dfacdcd94"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "tool--5fc81b43-62b5-41b1-9113-c79ae5f030c4",
+      "name": "CARROTBALL",
+      "properties": {
+        "attack_id": "S0465",
+        "created": "2020-06-02T19:10:29.513Z",
+        "deprecated": false,
+        "description": "[CARROTBALL](https://attack.mitre.org/software/S0465) is an FTP downloader utility that has been in use since at least 2019. [CARROTBALL](https://attack.mitre.org/software/S0465) has been used as a downloader to install [SYSCON](https://attack.mitre.org/software/S0464).(Citation: Unit 42 CARROTBAT January 2020)",
+        "modified": "2025-04-25T14:45:20.112Z",
+        "name": "CARROTBALL",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0465"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "tool--5fc81b43-62b5-41b1-9113-c79ae5f030c4"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "tool--64764dc6-a032-495f-8250-1e4c06bdc163",
+      "name": "BITSAdmin",
+      "properties": {
+        "attack_id": "S0190",
+        "created": "2018-04-18T17:59:24.739Z",
+        "deprecated": false,
+        "description": "[BITSAdmin](https://attack.mitre.org/software/S0190) is a command line tool used to create and manage [BITS Jobs](https://attack.mitre.org/techniques/T1197). (Citation: Microsoft BITSAdmin)",
+        "modified": "2026-05-12T15:12:00.740Z",
+        "name": "BITSAdmin",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0190"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "tool--64764dc6-a032-495f-8250-1e4c06bdc163"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "tool--6a5947f3-1a36-4653-8734-526df3e1d28d",
+      "name": "AsyncRAT",
+      "properties": {
+        "attack_id": "S1087",
+        "created": "2023-09-20T17:32:59.932Z",
+        "deprecated": false,
+        "description": "[AsyncRAT](https://attack.mitre.org/software/S1087) is an open-source remote access tool originally available through the NYANxCAT Github repository that has been used in malicious campaigns.(Citation: Morphisec Snip3 May 2021)(Citation: Cisco Operation Layover September 2021)(Citation: Telefonica Snip3 December 2021)",
+        "modified": "2026-05-12T15:12:00.740Z",
+        "name": "AsyncRAT",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S1087"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "tool--6a5947f3-1a36-4653-8734-526df3e1d28d"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "tool--75d8b521-6b6a-42ff-8af3-d97e20ce12a5",
+      "name": "Brute Ratel C4",
+      "properties": {
+        "attack_id": "S1063",
+        "created": "2023-02-07T20:26:58.792Z",
+        "deprecated": false,
+        "description": "[Brute Ratel C4](https://attack.mitre.org/software/S1063) is a commercial red-teaming and adversarial attack simulation tool that first appeared in December 2020. [Brute Ratel C4](https://attack.mitre.org/software/S1063) was specifically designed to avoid detection by endpoint detection and response (EDR) and antivirus (AV) capabilities, and deploys agents called badgers to enable arbitrary command execution for lateral movement, privilege escalation, and persistence. In September 2022, a cracked version of [Brute Ratel C4](https://attack.mitre.org/software/S1063) was leaked in the cybercriminal underground, leading to its use by threat actors.(Citation: Dark Vortex Brute Ratel C4)(Citation: Palo Alto Brute Ratel July 2022)(Citation: MDSec Brute Ratel August 2022)(Citation: SANS Brute Ratel October 2022)(Citation: Trend Micro Black Basta October 2022)",
+        "modified": "2024-09-19T15:46:58.008Z",
+        "name": "Brute Ratel C4",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S1063"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "tool--75d8b521-6b6a-42ff-8af3-d97e20ce12a5"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "tool--975737f1-b10d-476f-8bda-3ec26ea57172",
+      "name": "MCMD",
+      "properties": {
+        "attack_id": "S0500",
+        "created": "2020-08-13T17:15:25.702Z",
+        "deprecated": false,
+        "description": "[MCMD](https://attack.mitre.org/software/S0500) is a remote access tool that provides remote command shell capability used by [Dragonfly](https://attack.mitre.org/groups/G0035).(Citation: Secureworks MCMD July 2019)",
+        "modified": "2026-05-12T15:12:00.740Z",
+        "name": "MCMD",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0500"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "tool--975737f1-b10d-476f-8bda-3ec26ea57172"
+        }
+      ],
+      "rank_score": 1.71
+    },
+    {
+      "distance": 2,
+      "id": "tool--a7b5df47-73bb-4d47-b701-869f185633a6",
+      "name": "Donut",
+      "properties": {
+        "attack_id": "S0695",
+        "created": "2022-03-25T13:35:46.781Z",
+        "deprecated": false,
+        "description": "[Donut](https://attack.mitre.org/software/S0695) is an open source framework used to generate position-independent shellcode.(Citation: Donut Github)(Citation: Introducing Donut) [Donut](https://attack.mitre.org/software/S0695) generated code has been used by multiple threat actors to inject and load malicious payloads into memory.(Citation: NCC Group WastedLocker June 2020)",
+        "modified": "2025-04-16T20:38:54.932Z",
+        "name": "Donut",
+        "platforms": [
+          "Windows"
+        ],
+        "revoked": false,
+        "source": "MITRE ATT&CK Enterprise",
+        "url": "https://attack.mitre.org/software/S0695"
+      },
+      "provenance": [
+        {
+          "confidence": "source",
+          "inferred": false,
+          "method": null,
+          "origin_node": "T1105",
+          "relationship_type": "USES_TECHNIQUE",
+          "source": "MITRE ATT&CK Enterprise",
+          "target_node": "tool--a7b5df47-73bb-4d47-b701-869f185633a6"
+        }
+      ],
+      "rank_score": 1.71
+    }
+  ]
+}

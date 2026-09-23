@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-07-10",
+  "model_path": "models/xgboost/xgboost_model.joblib",
+  "feature_order_path": "models/xgboost/feature_order.json",
+  "model_metadata_path": "models/xgboost/model_metadata.json",
+  "model_loads_successfully": true,
+  "feature_order_exists": true,
+  "feature_order_matches_artifact": true,
+  "feature_count": 78,
+  "model_n_features_in": 78,
+  "feature_count_matches_model": true,
+  "inference_sample_size": 25,
+  "predicted_probabilities_available": true,
+  "binary_model_interpretation": {
+    "0": "BENIGN",
+    "1": "ATTACK"
+  },
+  "ids_subtype_rule": "Use CICIDS ground-truth label for retrieval context when binary model predicts ATTACK; do not invent multiclass probabilities.",
+  "sample_predictions": [
+    {
+      "sample_index": 1435999,
+      "true_label": "BENIGN",
+      "binary_label": 0,
+      "prediction": "BENIGN",
+      "confidence": 0.9999999403953552,
+      "probabilities": [
+        0.9999999403953552,
+        5.110268475050361e-08
+      ]
+    },
+    {
+      "sample_index": 2435282,
+      "true_label": "BENIGN",
+      "binary_label": 0,
+      "prediction": "BENIGN",
+      "confidence": 0.9999952912330627,
+      "probabilities": [
+        0.9999952912330627,
+        4.679207904700888e-06
+      ]
+    },
+    {
+      "sample_index": 854964,
+      "true_label": "BENIGN",
+      "binary_label": 0,
+      "prediction": "BENIGN",
+      "confidence": 0.9999999403953552,
+      "probabilities": [
+        0.9999999403953552,
+        5.387058976680237e-08
+      ]
+    },
+    {
+      "sample_index": 2035034,
+      "true_label": "DoS Hulk",
+      "binary_label": 1,
+      "prediction": "ATTACK",
+      "confidence": 0.9999996423721313,
+      "probabilities": [
+        3.5762786865234375e-07,
+        0.9999996423721313
+      ]
+    },
+    {
+      "sample_index": 1292198,
+      "true_label": "BENIGN",
+      "binary_label": 0,
+      "prediction": "BENIGN",
+      "confidence": 0.9999833106994629,
+      "probabilities": [
+        0.9999833106994629,
+        1.667654578341171e-05
+      ]
+    }
+  ],
+  "passed": true
+}

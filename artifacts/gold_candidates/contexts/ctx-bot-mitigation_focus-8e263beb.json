@@ -1,0 +1,516 @@
+{
+  "base_context_id": "ctx-bot-mitigation_focus-8e263beb",
+  "ids_label": "Bot",
+  "classifier": {
+    "prediction": "Bot",
+    "confidence_band": "unavailable"
+  },
+  "shap": {
+    "available": false,
+    "top_features": []
+  },
+  "graph_context": {
+    "prediction": "Bot",
+    "retrieval": {
+      "latency_ms": 83.007,
+      "relationships_traversed": 35
+    },
+    "attack": {
+      "technique": {
+        "id": "T1105",
+        "name": "Ingress Tool Transfer",
+        "summary": "Adversaries may transfer tools or other files from an external system into a compromised environment. Tools or files may be copied from an external adversary-controlled system to the victim network through the command and control channel or through...",
+        "rank_score": 1.23,
+        "distance": 1,
+        "provenance": [
+          {
+            "confidence": "low",
+            "inferred": false,
+            "method": null,
+            "origin_node": "Bot",
+            "relationship_type": "DETECTED_AS",
+            "source": "TrustSecAI",
+            "target_node": "T1105"
+          }
+        ]
+      },
+      "tactics": [
+        {
+          "id": "TA0011",
+          "name": "Command and Control",
+          "summary": "The adversary is trying to communicate with compromised systems to control them. Command and Control consists of techniques that adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to...",
+          "rank_score": 1.71,
+          "distance": 2,
+          "provenance": [
+            {
+              "confidence": "source",
+              "inferred": false,
+              "method": null,
+              "origin_node": "T1105",
+              "relationship_type": "HAS_TACTIC",
+              "source": "MITRE ATT&CK Enterprise",
+              "target_node": "TA0011"
+            }
+          ]
+        }
+      ],
+      "mitigations": [
+        {
+          "id": "M1037",
+          "name": "Filter Network Traffic",
+          "summary": "Employ network appliances and endpoint software to filter ingress, egress, and lateral network traffic. This includes protocol-based filtering, enforcing firewall rules, and blocking or restricting traffic based on predefined conditions to limit adversary...",
+          "rank_score": 1.71,
+          "distance": 2,
+          "provenance": [
+            {
+              "confidence": "source",
+              "inferred": false,
+              "method": null,
+              "origin_node": "T1105",
+              "relationship_type": "MITIGATED_BY",
+              "source": "MITRE ATT&CK Enterprise",
+              "target_node": "M1037"
+            }
+          ]
+        }
+      ]
+    },
+    "capec": [],
+    "cwes": [],
+    "cves": [],
+    "products": [],
+    "references": [],
+    "groups": [],
+    "tools": [],
+    "malware": [],
+    "detection_guidance": [
+      {
+        "id": "x-mitre-detection-strategy--67677c4c-5778-49eb-ae74-1920645b8554",
+        "name": "Detect Ingress Tool Transfers via Behavioral Chain",
+        "rank_score": 1.71,
+        "distance": 2,
+        "provenance": [
+          {
+            "confidence": "source",
+            "inferred": false,
+            "method": null,
+            "origin_node": "T1105",
+            "relationship_type": "DETECTED_BY",
+            "source": "MITRE ATT&CK Enterprise",
+            "target_node": "x-mitre-detection-strategy--67677c4c-5778-49eb-ae74-1920645b8554"
+          }
+        ]
+      }
+    ],
+    "provenance": [
+      {
+        "category": "detection_guidance",
+        "confidence": "source",
+        "entity_id": "x-mitre-detection-strategy--67677c4c-5778-49eb-ae74-1920645b8554",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "DETECTED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "x-mitre-detection-strategy--67677c4c-5778-49eb-ae74-1920645b8554"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--00f67a77-86a4-4adf-be26-1a54fc713340",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--00f67a77-86a4-4adf-be26-1a54fc713340"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--0bbdf25b-30ff-4894-a1cd-49260d0dd2d9",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--0bbdf25b-30ff-4894-a1cd-49260d0dd2d9"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--247cb30b-955f-42eb-97a5-a89fef69341e"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--38fd6a28-3353-4f2b-bb2b-459fecd5c648",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--38fd6a28-3353-4f2b-bb2b-459fecd5c648"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--44e43fad-ffcb-4210-abcf-eaaed9735f80"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--4a2ce82e-1a74-468a-a6fb-bbead541383c",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--4a2ce82e-1a74-468a-a6fb-bbead541383c"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--899ce53f-13a0-479b-a0e4-67d46e241542",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--899ce53f-13a0-479b-a0e4-67d46e241542"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--bef4c620-0787-42a8-a96d-b7eb6e85917c"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--c4d50cdf-87ce-407d-86d8-862883485842",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--c4d50cdf-87ce-407d-86d8-862883485842"
+      },
+      {
+        "category": "groups",
+        "confidence": "source",
+        "entity_id": "intrusion-set--fbd29c89-18ba-4c2d-b792-51c0adee049f",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "intrusion-set--fbd29c89-18ba-4c2d-b792-51c0adee049f"
+      },
+      {
+        "category": "ids_label",
+        "confidence": null,
+        "entity_id": "Bot",
+        "inferred": false,
+        "method": null,
+        "origin_node": "Bot",
+        "relationship_type": "SELF",
+        "source": "TrustSecAI",
+        "target_node": "Bot"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--05318127-5962-444b-b900-a9dcfe0ff6e9",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--05318127-5962-444b-b900-a9dcfe0ff6e9"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--3161d76a-e2b2-4b97-9906-24909b735386",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--3161d76a-e2b2-4b97-9906-24909b735386"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--36801ffb-5c85-4c50-9121-6122e389366d",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--36801ffb-5c85-4c50-9121-6122e389366d"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--40d3e230-ed32-469f-ba89-be70cc08ab39",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--40d3e230-ed32-469f-ba89-be70cc08ab39"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--5f1d4579-4e8f-48e7-860e-2da773ae432e",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--5f1d4579-4e8f-48e7-860e-2da773ae432e"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--a0ebedca-d558-4e48-8ff7-4bf76208d90c",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--a0ebedca-d558-4e48-8ff7-4bf76208d90c"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--bb6f2a5c-dbc9-45b0-bd3f-a0b7849959c2",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--bb6f2a5c-dbc9-45b0-bd3f-a0b7849959c2"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--dcd9548e-df9e-47c2-81f3-bc084289959d",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--dcd9548e-df9e-47c2-81f3-bc084289959d"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--e7a5229f-05eb-440e-b982-9a6d2b2b87c8",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--e7a5229f-05eb-440e-b982-9a6d2b2b87c8"
+      },
+      {
+        "category": "malware",
+        "confidence": "source",
+        "entity_id": "malware--edb24a93-1f7a-4bbf-a738-1397a14662c6",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "malware--edb24a93-1f7a-4bbf-a738-1397a14662c6"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1031",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1031"
+      },
+      {
+        "category": "mitigations",
+        "confidence": "source",
+        "entity_id": "M1037",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "MITIGATED_BY",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "M1037"
+      },
+      {
+        "category": "tactics",
+        "confidence": "source",
+        "entity_id": "TA0011",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "HAS_TACTIC",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "TA0011"
+      },
+      {
+        "category": "technique",
+        "confidence": "low",
+        "entity_id": "T1105",
+        "inferred": false,
+        "method": null,
+        "origin_node": "Bot",
+        "relationship_type": "DETECTED_AS",
+        "source": "TrustSecAI",
+        "target_node": "T1105"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--3433a9e8-1c47-4320-b9bf-ed449061d1c3",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--3433a9e8-1c47-4320-b9bf-ed449061d1c3"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--5256c0f8-9108-4c92-8b09-482dfacdcd94",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--5256c0f8-9108-4c92-8b09-482dfacdcd94"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--5fc81b43-62b5-41b1-9113-c79ae5f030c4",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--5fc81b43-62b5-41b1-9113-c79ae5f030c4"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--64764dc6-a032-495f-8250-1e4c06bdc163",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--64764dc6-a032-495f-8250-1e4c06bdc163"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--6a5947f3-1a36-4653-8734-526df3e1d28d",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--6a5947f3-1a36-4653-8734-526df3e1d28d"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--75d8b521-6b6a-42ff-8af3-d97e20ce12a5",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--75d8b521-6b6a-42ff-8af3-d97e20ce12a5"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--975737f1-b10d-476f-8bda-3ec26ea57172",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--975737f1-b10d-476f-8bda-3ec26ea57172"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--a7b5df47-73bb-4d47-b701-869f185633a6",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--a7b5df47-73bb-4d47-b701-869f185633a6"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--c8655260-9f4b-44e3-85e1-6538a5f6e4f4",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--c8655260-9f4b-44e3-85e1-6538a5f6e4f4"
+      },
+      {
+        "category": "tools",
+        "confidence": "source",
+        "entity_id": "tool--cb69b20d-56d0-41ab-8440-4a4b251614d4",
+        "inferred": false,
+        "method": null,
+        "origin_node": "T1105",
+        "relationship_type": "USES_TECHNIQUE",
+        "source": "MITRE ATT&CK Enterprise",
+        "target_node": "tool--cb69b20d-56d0-41ab-8440-4a4b251614d4"
+      }
+    ]
+  },
+  "evidence_conditions": [
+    "mitigation_focus_retrieval_context",
+    "missing_local_shap_context",
+    "classifier_confidence_unavailable",
+    "no_cve_context",
+    "no_capec_context",
+    "direct_graph_provenance"
+  ],
+  "provenance_type": "direct",
+  "source_artifacts": [
+    "artifacts/retrieval/Bot.json"
+  ]
+}

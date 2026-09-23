@@ -1,0 +1,130 @@
+{
+  "class_distribution": {
+    "full": {
+      "0": {
+        "count": 2095057,
+        "percentage": 83.110864
+      },
+      "1": {
+        "count": 425741,
+        "percentage": 16.889136
+      }
+    },
+    "test": {
+      "0": {
+        "count": 314259,
+        "percentage": 83.110917
+      },
+      "1": {
+        "count": 63861,
+        "percentage": 16.889083
+      }
+    },
+    "train": {
+      "0": {
+        "count": 1466539,
+        "percentage": 83.110841
+      },
+      "1": {
+        "count": 298019,
+        "percentage": 16.889159
+      }
+    },
+    "validation": {
+      "0": {
+        "count": 314259,
+        "percentage": 83.110917
+      },
+      "1": {
+        "count": 63861,
+        "percentage": 16.889083
+      }
+    }
+  },
+  "excluded_columns": [
+    "binary_label",
+    "label",
+    "source_file"
+  ],
+  "feature_count": 78,
+  "hyperparameters": {
+    "class_weight": "balanced_subsample",
+    "criterion": "gini",
+    "max_depth": null,
+    "n_estimators": 100,
+    "n_jobs": -1,
+    "random_state": 42
+  },
+  "input_path": "C:\\Users\\LENOVO\\WORK\\Projects\\TrustSecAI\\artifacts\\processed\\cleaned_cicids.parquet",
+  "model": "RandomForestClassifier",
+  "model_path": "C:\\Users\\LENOVO\\WORK\\Projects\\TrustSecAI\\models\\random_forest\\random_forest_model.joblib",
+  "negative_class": "BENIGN",
+  "positive_class": "ATTACK",
+  "split_config": {
+    "random_state": 42,
+    "test_size": 0.15,
+    "train_size": 0.7,
+    "validation_size": 0.15
+  },
+  "split_sizes": {
+    "test": 378120,
+    "train": 1764558,
+    "validation": 378120
+  },
+  "task": "binary_ids_classification",
+  "test_metrics": {
+    "accuracy": 0.9985269226700518,
+    "confusion_matrix": {
+      "fn": 342,
+      "fp": 215,
+      "labels": [
+        0,
+        1
+      ],
+      "matrix": [
+        [
+          314044,
+          215
+        ],
+        [
+          342,
+          63519
+        ]
+      ],
+      "tn": 314044,
+      "tp": 63519
+    },
+    "f1_score": 0.9956346251812375,
+    "precision": 0.9966266043242226,
+    "recall": 0.9946446187814159,
+    "roc_auc": 0.9997710921189664
+  },
+  "training_time_seconds": 71.36801279999781,
+  "validation_metrics": {
+    "accuracy": 0.9986194858774992,
+    "confusion_matrix": {
+      "fn": 299,
+      "fp": 223,
+      "labels": [
+        0,
+        1
+      ],
+      "matrix": [
+        [
+          314036,
+          223
+        ],
+        [
+          299,
+          63562
+        ]
+      ],
+      "tn": 314036,
+      "tp": 63562
+    },
+    "f1_score": 0.9959105651567617,
+    "precision": 0.9965038802226229,
+    "recall": 0.9953179561860916,
+    "roc_auc": 0.9998177083649861
+  }
+}

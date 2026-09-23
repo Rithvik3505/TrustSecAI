@@ -1,0 +1,90 @@
+{
+  "class_distribution": {
+    "test": {
+      "0": {
+        "count": 394777,
+        "percentage": 64.146219
+      },
+      "1": {
+        "count": 220656,
+        "percentage": 35.853781
+      }
+    },
+    "train": {
+      "0": {
+        "count": 1700280,
+        "percentage": 89.236446
+      },
+      "1": {
+        "count": 205085,
+        "percentage": 10.763554
+      }
+    }
+  },
+  "excluded_columns": [
+    "binary_label",
+    "label",
+    "source_file"
+  ],
+  "feature_count": 78,
+  "hyperparameters": {
+    "colsample_bytree": 0.8,
+    "eval_metric": "logloss",
+    "learning_rate": 0.1,
+    "max_depth": 8,
+    "n_estimators": 300,
+    "n_jobs": -1,
+    "objective": "binary:logistic",
+    "random_state": 42,
+    "scale_pos_weight": 8.290611209986103,
+    "subsample": 0.8,
+    "tree_method": "hist"
+  },
+  "input_path": "C:\\Users\\LENOVO\\WORK\\Projects\\TrustSecAI\\artifacts\\processed\\cleaned_cicids.parquet",
+  "model": "XGBClassifier",
+  "split_sizes": {
+    "test": 615433,
+    "train": 1905365
+  },
+  "task": "binary_ids_day_aware_validation",
+  "test_files": [
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+    "Friday-WorkingHours-Morning.pcap_ISCX.csv"
+  ],
+  "test_metrics": {
+    "accuracy": 0.7713593518709592,
+    "confusion_matrix": {
+      "fn": 140641,
+      "fp": 72,
+      "labels": [
+        0,
+        1
+      ],
+      "matrix": [
+        [
+          394705,
+          72
+        ],
+        [
+          140641,
+          80015
+        ]
+      ],
+      "tn": 394705,
+      "tp": 80015
+    },
+    "f1_score": 0.5321154607089774,
+    "precision": 0.9991009776867656,
+    "recall": 0.36262326879849177,
+    "roc_auc": 0.7889553661678411
+  },
+  "train_files": [
+    "Monday-WorkingHours.pcap_ISCX.csv",
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+    "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "Tuesday-WorkingHours.pcap_ISCX.csv",
+    "Wednesday-workingHours.pcap_ISCX.csv"
+  ],
+  "training_time_seconds": 41.97529030003352
+}

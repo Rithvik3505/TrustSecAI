@@ -1,0 +1,497 @@
+{
+  "metadata": {
+    "example_id": "trustsecai-gold-v1-00810",
+    "base_context_id": "evx-ftp_patator-1562929",
+    "sample_id": 1562929,
+    "ids_label": "FTP-Patator",
+    "model_prediction": "ATTACK",
+    "model_confidence": 0.9999809265136719,
+    "confidence_band": "high",
+    "task_type": "executive_summary",
+    "task_variant": "business_brief",
+    "difficulty": "medium",
+    "provenance_type": "mixed_direct_and_inferred",
+    "has_real_shap": true,
+    "has_cve": true,
+    "source_file": "Tuesday-WorkingHours.pcap_ISCX.csv",
+    "source_artifact_refs": [
+      "artifacts/gold_candidates/evidence_expansion/gold_v1_source_contexts.jsonl",
+      "artifacts/gold_candidates/evidence_expansion/model_predictions.jsonl",
+      "artifacts/gold_candidates/evidence_expansion/local_shap_expanded.jsonl",
+      "artifacts/retrieval/FTP_Patator.json"
+    ],
+    "review_status": "approved",
+    "review_source": "assistant_review_workbook",
+    "review_decision": "approve",
+    "split": "test"
+  },
+  "classifier_evidence": {
+    "ids_label": "FTP-Patator",
+    "model_prediction": "ATTACK",
+    "model_confidence": 0.9999809265136719,
+    "confidence_band": "high",
+    "sample_id": 1562929,
+    "source_file": "Tuesday-WorkingHours.pcap_ISCX.csv",
+    "ids_subtype_basis": "real_cicids_ground_truth_label",
+    "ids_label_ground_truth": "FTP-Patator"
+  },
+  "sample": {
+    "sample_id": 1562929,
+    "source_file": "Tuesday-WorkingHours.pcap_ISCX.csv",
+    "selected_feature_values": {
+      "Destination Port": 21.0,
+      "Flow Duration": 8864281.0,
+      "Total Fwd Packets": 9.0,
+      "Total Backward Packets": 15.0,
+      "Total Length of Fwd Packets": 106.0,
+      "Total Length of Bwd Packets": 188.0,
+      "Fwd Packet Length Max": 23.0,
+      "Fwd Packet Length Min": 0.0,
+      "Fwd Packet Length Mean": 11.77777778,
+      "Fwd Packet Length Std": 9.417772796,
+      "Bwd Packet Length Max": 34.0,
+      "Bwd Packet Length Min": 0.0
+    }
+  },
+  "shap_evidence": {
+    "has_real_shap": true,
+    "top_features": [
+      {
+        "feature": "Destination Port",
+        "value": 21.0,
+        "shap_value": 4.8365254402160645,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 227.0,
+        "shap_value": 0.9310399889945984,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 12.53333333,
+        "shap_value": 0.7522875666618347,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Packet Length Std",
+        "value": 14.54975045,
+        "shap_value": -0.6868763566017151,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Bwd IAT Total",
+        "value": 8864161.0,
+        "shap_value": 0.46657484769821167,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "min_seg_size_forward",
+        "value": 32.0,
+        "shap_value": 0.44431278109550476,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Flow IAT Max",
+        "value": 3271371.0,
+        "shap_value": 0.4182133078575134,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Header Length",
+        "value": 488.0,
+        "shap_value": -0.4147407114505768,
+        "direction": "supports_benign"
+      },
+      {
+        "feature": "Flow IAT Std",
+        "value": 1003954.345,
+        "shap_value": 0.4097411632537842,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Fwd Header Length",
+        "value": 296.0,
+        "shap_value": 0.3836854100227356,
+        "direction": "supports_attack"
+      }
+    ]
+  },
+  "graph_context_summary": {
+    "technique": {
+      "id": "T1110",
+      "name": "Brute Force"
+    },
+    "tactics": [
+      {
+        "id": "TA0006",
+        "name": "Credential Access"
+      }
+    ],
+    "mitigation_ids": [
+      "M1018",
+      "M1027",
+      "M1032",
+      "M1036"
+    ],
+    "capec_ids": [
+      "CAPEC-112"
+    ],
+    "cwe_ids": [
+      "CWE-330",
+      "CWE-521"
+    ],
+    "cve_ids": [
+      "CVE-2026-45673",
+      "CVE-2026-41838",
+      "CVE-2026-50009"
+    ],
+    "provenance_type": "mixed_direct_and_inferred",
+    "has_cve": true
+  },
+  "llm_secondary_assessment": {
+    "ids_label": null,
+    "sample_id": 1562929,
+    "classifier_evidence": "The binary XGBoost classifier predicted ATTACK with 99.9983% confidence; the IDS subtype used for retrieval is the real CICIDS label FTP-Patator.",
+    "shap_evidence": [
+      {
+        "feature": "Destination Port",
+        "value": 21.0,
+        "shap_value": 4.8365,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Init_Win_bytes_backward",
+        "value": 227.0,
+        "shap_value": 0.931,
+        "direction": "supports_attack"
+      },
+      {
+        "feature": "Bwd Packet Length Mean",
+        "value": 12.5333,
+        "shap_value": 0.7523,
+        "direction": "supports_attack"
+      }
+    ],
+    "graph_interpretation": "Retrieved graph context maps the subtype to Brute Force (T1110) under Credential Access (TA0006) as contextual intelligence, not proof of compromise.",
+    "limitations": [
+      "No CVE evidence should be cited as proof of exploitation.",
+      "ATT&CK group, tool, and malware entries are usage context, not attribution.",
+      "Some graph relationships are inferred and should be weighted below direct provenance."
+    ],
+    "provenance_summary": [
+      "Derived associations: CAPEC-112 → CVE-2026-41838, CVE-2026-45673, CVE-2026-50009",
+      "Direct relationships: ATT&CK group, tool, and malware entries are usage context.",
+      "Use caution with CVE and product entries; asset exposure is not established."
+    ],
+    "recommended_actions": [
+      "Alert immediately if independent telemetry corroborates this context.",
+      "Review password policies and user account management.",
+      "Enable multi-factor authentication if not already enabled."
+    ],
+    "parse_ok": true,
+    "raw_output": "{\n  \"executive_summary\": \"The FTP-Patator context should be treated as a high-confidence ATTACK result. The binary XGBoost classifier predicted ATTACK with 99.9983% confidence; the IDS subtype used for retrieval is the real CICIDS label FTP-Patator.\",\n  \"sample_id\": 1562929,\n  \"classifier_evidence\": \"The binary XGBoost classifier predicted ATTACK with 99.9983% confidence; the IDS subtype used for retrieval is the real CICIDS label FTP-Patator.\",\n  \"shap_evidence\": [\n    {\n      \"feature\": \"Destination Port\",\n      \"value\": 21.0,\n      \"shap_value\": 4.8365,\n      \"direction\": \"supports_attack\"\n    },\n    {\n      \"feature\": \"Init_Win_bytes_backward\",\n      \"value\": 227.0,\n      \"shap_value\": 0.931,\n      \"direction\": \"supports_attack\"\n    },\n    {\n      \"feature\": \"Bwd Packet Length Mean\",\n      \"value\": 12.5333,\n      \"shap_value\": 0.7523,\n      \"direction\": \"supports_attack\"\n    }\n  ],\n  \"graph_interpretation\": \"Retrieved graph context maps the subtype to Brute Force (T1110) under Credential Access (TA0006) as contextual intelligence, not proof of compromise.\",\n  \"limitations\": [\n    \"No CVE evidence should be cited as proof of exploitation.\",\n    \"ATT&CK group, tool, and malware entries are usage context, not attribution.\",\n    \"Some graph relationships are inferred and should be weighted below direct provenance.\"\n  ],\n  \"provenance_summary\": [\n    \"Derived associations: CAPEC-112 → CVE-2026-41838, CVE-2026-45673, CVE-2026-50009\",\n    \"Direct relationships: ATT&CK group, tool, and malware entries are usage context.\",\n    \"Use caution with CVE and product entries; asset exposure is not established.\"\n  ],\n  \"recommended_actions\": [\n    \"Alert immediately if independent telemetry corroborates this context.\",\n    \"Review password policies and user account management.\",\n    \"Enable multi-factor authentication if not already enabled.\"\n  ]\n}"
+  },
+  "agreement_result": {
+    "category": "agree_attack_high_confidence",
+    "classifier_prediction": "ATTACK",
+    "classifier_confidence": 0.9999809265136719,
+    "ids_label": "FTP-Patator",
+    "rationale": "Classifier and LLM both support an attack-oriented assessment for FTP-Patator with high classifier confidence."
+  },
+  "attack_chain_prediction": {
+    "mode": "graph",
+    "graph_available": true,
+    "seed": {
+      "ids_label": "FTP-Patator",
+      "technique_id": "T1110",
+      "technique_name": "Brute Force",
+      "tactic": "Credential Access"
+    },
+    "candidate_next_steps": [
+      {
+        "rank": 3,
+        "technique_id": "T1003",
+        "technique_name": "OS Credential Dumping",
+        "tactic": "Credential Access",
+        "rationale": "Shares a tactic with the seed technique; use as a bounded defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "MITRE ATT&CK Enterprise",
+            "relationship_type": "HAS_TACTIC",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "T1110",
+            "target_node": "T1003"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "rank": 3,
+        "technique_id": "T1003.001",
+        "technique_name": "LSASS Memory",
+        "tactic": "Credential Access",
+        "rationale": "Shares a tactic with the seed technique; use as a bounded defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "MITRE ATT&CK Enterprise",
+            "relationship_type": "HAS_TACTIC",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "T1110",
+            "target_node": "T1003.001"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "rank": 3,
+        "technique_id": "T1003.002",
+        "technique_name": "Security Account Manager",
+        "tactic": "Credential Access",
+        "rationale": "Shares a tactic with the seed technique; use as a bounded defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "MITRE ATT&CK Enterprise",
+            "relationship_type": "HAS_TACTIC",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "T1110",
+            "target_node": "T1003.002"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "rank": 3,
+        "technique_id": "T1003.003",
+        "technique_name": "NTDS",
+        "tactic": "Credential Access",
+        "rationale": "Shares a tactic with the seed technique; use as a bounded defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "MITRE ATT&CK Enterprise",
+            "relationship_type": "HAS_TACTIC",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "T1110",
+            "target_node": "T1003.003"
+          }
+        ],
+        "confidence": "low"
+      },
+      {
+        "rank": 3,
+        "technique_id": "T1003.004",
+        "technique_name": "LSA Secrets",
+        "tactic": "Credential Access",
+        "rationale": "Shares a tactic with the seed technique; use as a bounded defensive investigation pivot.",
+        "provenance": [
+          {
+            "source": "MITRE ATT&CK Enterprise",
+            "relationship_type": "HAS_TACTIC",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "T1110",
+            "target_node": "T1003.004"
+          }
+        ],
+        "confidence": "low"
+      }
+    ],
+    "seed_technique": {
+      "id": "T1110",
+      "name": "Brute Force",
+      "tactic": "Credential Access"
+    },
+    "likely_next_tactics_techniques": [
+      {
+        "id": "T1003",
+        "technique": "OS Credential Dumping",
+        "tactic": "Credential Access"
+      },
+      {
+        "id": "T1003.001",
+        "technique": "LSASS Memory",
+        "tactic": "Credential Access"
+      },
+      {
+        "id": "T1003.002",
+        "technique": "Security Account Manager",
+        "tactic": "Credential Access"
+      },
+      {
+        "id": "T1003.003",
+        "technique": "NTDS",
+        "tactic": "Credential Access"
+      },
+      {
+        "id": "T1003.004",
+        "technique": "LSA Secrets",
+        "tactic": "Credential Access"
+      }
+    ],
+    "mitigations": [
+      {
+        "id": "M1036",
+        "name": "Account Use Policies",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1110",
+          "target_node": "M1036"
+        }
+      },
+      {
+        "id": "M1032",
+        "name": "Multi-factor Authentication",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1110",
+          "target_node": "M1032"
+        }
+      },
+      {
+        "id": "M1027",
+        "name": "Password Policies",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1110",
+          "target_node": "M1027"
+        }
+      },
+      {
+        "id": "M1018",
+        "name": "User Account Management",
+        "provenance": {
+          "source": "MITRE ATT&CK Enterprise",
+          "relationship_type": "MITIGATED_BY",
+          "inferred": false,
+          "confidence": "source",
+          "method": null,
+          "origin_node": "T1110",
+          "target_node": "M1018"
+        }
+      }
+    ],
+    "vulnerability_context": {
+      "capec": [
+        {
+          "id": "CAPEC-112",
+          "name": "Brute Force",
+          "provenance": {
+            "source": "TrustSecAI",
+            "relationship_type": "HAS_ATTACK_PATTERN",
+            "inferred": true,
+            "confidence": "source",
+            "method": "inverse_capec_attack_mapping",
+            "origin_node": "T1110",
+            "target_node": "CAPEC-112"
+          }
+        }
+      ],
+      "cwes": [
+        {
+          "id": "CWE-330",
+          "name": null,
+          "provenance": {
+            "source": "CAPEC",
+            "relationship_type": "RELATED_WEAKNESS",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "CAPEC",
+            "target_node": "CWE-330"
+          }
+        },
+        {
+          "id": "CWE-521",
+          "name": null,
+          "provenance": {
+            "source": "CAPEC",
+            "relationship_type": "RELATED_WEAKNESS",
+            "inferred": false,
+            "confidence": "source",
+            "method": null,
+            "origin_node": "CAPEC",
+            "target_node": "CWE-521"
+          }
+        }
+      ],
+      "cves": [
+        {
+          "id": "CVE-2026-45673",
+          "severity": "MEDIUM",
+          "base_score": 6.8,
+          "provenance": {
+            "source": "TrustSecAI",
+            "relationship_type": "ASSOCIATED_CVE",
+            "inferred": true,
+            "confidence": "medium",
+            "method": "shared_cwe_bridge",
+            "origin_node": "CAPEC",
+            "target_node": "CVE-2026-45673"
+          }
+        },
+        {
+          "id": "CVE-2026-41838",
+          "severity": "MEDIUM",
+          "base_score": 4.8,
+          "provenance": {
+            "source": "TrustSecAI",
+            "relationship_type": "ASSOCIATED_CVE",
+            "inferred": true,
+            "confidence": "medium",
+            "method": "shared_cwe_bridge",
+            "origin_node": "CAPEC",
+            "target_node": "CVE-2026-41838"
+          }
+        },
+        {
+          "id": "CVE-2026-50009",
+          "severity": "MEDIUM",
+          "base_score": 4.8,
+          "provenance": {
+            "source": "TrustSecAI",
+            "relationship_type": "ASSOCIATED_CVE",
+            "inferred": true,
+            "confidence": "medium",
+            "method": "shared_cwe_bridge",
+            "origin_node": "CAPEC",
+            "target_node": "CVE-2026-50009"
+          }
+        }
+      ]
+    },
+    "caveats": [
+      "This is a defensive hypothesis for prioritizing investigation, not an instruction sequence.",
+      "Graph traversal returns candidate investigation pivots; it does not prove compromise.",
+      "Group, tool, and malware context must not be treated as attribution."
+    ],
+    "confidence": "medium"
+  },
+  "limitations": [
+    "Offline demo uses frozen LoRA compact evaluation output; it does not run live inference.",
+    "Agreement and attack-chain modules are deterministic scaffolding for the final demo.",
+    "Unsafe-attribution evaluation flags are known to be overbroad and require human interpretation."
+  ],
+  "markdown_report": "# TrustSecAI Security Assessment Report\n\n## Executive Summary\n\nThe classifier identified FTP-Patator with 100.00% confidence and prediction ATTACK. SHAP evidence is led by Destination Port, Init_Win_bytes_backward, and graph context maps the behavior to T1110 Brute Force as contextual intelligence. CVE/CWE candidate enrichment is present, but asset exposure is not established.\n\n## Incident Summary\n\n- IDS label: `FTP-Patator`\n- Binary classifier prediction: `ATTACK`\n- Classifier confidence: `100.00%`\n- Sample ID: `1562929`\n\n## Classifier And SHAP Evidence\n\n- Destination Port = 21.0, SHAP +4.8365, supports attack\n- Init_Win_bytes_backward = 227.0, SHAP +0.9310, supports attack\n- Bwd Packet Length Mean = 12.53333333, SHAP +0.7523, supports attack\n- Bwd Packet Length Std = 14.54975045, SHAP -0.6869, supports benign\n- Bwd IAT Total = 8864161.0, SHAP +0.4666, supports attack\n\n## Graph Context\n\n- Technique: `T1110` Brute Force\n- Tactics: TA0006 Credential Access\n- Mitigations: M1018, M1027, M1032, M1036\n\nGraph context is contextual intelligence and does not prove compromise or attribution.\n\n## LLM Secondary Assessment\n\n- LLM output parsed successfully.\n- Graph interpretation: Retrieved graph context maps the subtype to Brute Force (T1110) under Credential Access (TA0006) as contextual intelligence, not proof of compromise.\n\n### Recommended Actions\n\n- Alert immediately if independent telemetry corroborates this context.\n- Review password policies and user account management.\n- Enable multi-factor authentication if not already enabled.\n\n### LLM Limitations\n\n- No CVE evidence should be cited as proof of exploitation.\n- ATT&CK group, tool, and malware entries are usage context, not attribution.\n- Some graph relationships are inferred and should be weighted below direct provenance.\n\n## Classifier vs LLM Agreement\n\n- Category: `agree_attack_high_confidence`\n- Rationale: Classifier and LLM both support an attack-oriented assessment for FTP-Patator with high classifier confidence.\n\n## Defensive Attack Chain Hypothesis\n\n- Attack-chain mode: graph-backed Neo4j traversal\n- Seed technique: `T1110` Brute Force\n- Confidence: `medium`\n\n### Likely Next Tactics/Techniques\n\n- Credential Access: T1003 OS Credential Dumping\n- Credential Access: T1003.001 LSASS Memory\n- Credential Access: T1003.002 Security Account Manager\n- Credential Access: T1003.003 NTDS\n- Credential Access: T1003.004 LSA Secrets\n\n### Chain Mitigations\n\n- M1036 Account Use Policies\n- M1032 Multi-factor Authentication\n- M1027 Password Policies\n- M1018 User Account Management\n\n### Vulnerability Context\n\n- CAPEC: CAPEC-112 Brute Force\n- CWE: CWE-330, CWE-521\n- CVE: CVE-2026-45673, CVE-2026-41838, CVE-2026-50009\n\n### Caveats\n\n- This is a defensive hypothesis for prioritizing investigation, not an instruction sequence.\n- Graph traversal returns candidate investigation pivots; it does not prove compromise.\n- Group, tool, and malware context must not be treated as attribution.\n\n## Overall Limitations\n\n- Offline demo uses frozen LoRA compact evaluation output; it does not run live inference.\n- Agreement and attack-chain modules are deterministic scaffolding for the final demo.\n- Unsafe-attribution evaluation flags are known to be overbroad and require human interpretation.\n"
+}
